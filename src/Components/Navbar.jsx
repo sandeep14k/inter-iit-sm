@@ -14,9 +14,9 @@ const Navbar = () => {
         <li><a href="#">Live Score</a></li>
         <li><a href="#">Schedule</a></li>
         <li><a href="#">Result</a></li>
-        <li><a href="#">Aquatics</a></li>
-        <li><a href="#">Sponsors</a></li>
+        <li><a href="#">Athletes</a></li>
         <li><a href="#">Contact</a></li>
+        <li><a href="#">Info</a></li>
       </ul>
       <button className="mobile-menu-icon"
               onClick={() => setIsMobile(!isMobile)}>

@@ -3,7 +3,7 @@
     position: relative;
     text-align: center;
     padding: 20px;
-    margin-left: 10%;
+    max-width: 100%;
   }
 
   .title-container {
@@ -59,7 +59,7 @@
   .social-media-cards {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 40px;
     width: 100%;
   }
 
