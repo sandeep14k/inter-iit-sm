@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Footer from '../Components/Footer'
 import Sponser from '../Components/Sponser'
@@ -7,6 +8,7 @@ import About from '../Components/About'
 import Navbar from '../Components/Navbar'
 import Header from '../Components/Header'
 import SocialMediaHandles from '../Components/SocialMediaHandles'
+import FeaturedEvent from '../Components/featured_event'
 const Home = () => {
   return (
     <div className='min-w-[100vw]'>
@@ -14,6 +16,7 @@ const Home = () => {
         <Header />
         <SocialMediaHandles/>
         <About/>
+        <FeaturedEvent />
         <P_IITs/>
         <Sports/>
         <Sponser/>
