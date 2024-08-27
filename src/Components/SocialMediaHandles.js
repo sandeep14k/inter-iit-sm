@@ -1,13 +1,13 @@
 // src/SocialMediaHandles.js
-import React from 'react';
-import '../css/SocialMediaHandles.css';
-import InstagramEmbed from './InstagramEmbed';
+import React from "react";
+import "../css/SocialMediaHandles.css";
+import InstagramEmbed from "./InstagramEmbed";
 
 const SocialMediaHandles = () => {
   const posts = [
-    'https://www.instagram.com/p/C03Ihw1RkOy', // Replace with actual Instagram post URLs
-    'https://www.instagram.com/p/C0xwBviSDRi',
-    'https://www.instagram.com/p/C0v1EMIxhE6',
+    "https://www.instagram.com/p/C03Ihw1RkOy", // Replace with actual Instagram post URLs
+    "https://www.instagram.com/p/C0xwBviSDRi",
+    "https://www.instagram.com/p/C0v1EMIxhE6",
   ];
 
   return (
@@ -18,11 +18,21 @@ const SocialMediaHandles = () => {
         <hr className="line" />
       </div>
       <div className="social-media">
-        <img src="../../assets/Facebook Circled.png" alt="Facebook" className="logo" />
-        <img src='../../assets/TwitterX.png' alt="Twitter" className="logo" />
-        <img src='../../assets/Instagram.png' alt="Instagram" className="logo" />
+        <img
+          src="../../assets/Facebook Circled.png"
+          alt="Facebook"
+          className="logo"
+        />
+        <img src="../../assets/TwitterX.png" alt="Twitter" className="logo" />
+        <img
+          src="../../assets/Instagram.png"
+          alt="Instagram"
+          className="logo"
+        />
       </div>
-      <span className='social-media-cards-title'>Latest stories running around</span>
+      <span className="social-media-cards-title">
+        Latest stories running around
+      </span>
       <hr className="underline" />
       <div className="social-media-cards">
         {posts.map((post, index) => (
