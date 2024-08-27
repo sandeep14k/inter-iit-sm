@@ -16,16 +16,17 @@
 
 .section-title {
     position: absolute;
-    left: 13%;
-    top: 7%;
-    font-size: 240%;
-    font-weight: 300;
+    left: 100px;
+    top: 3%;
+    font-size: 350%;
+    font-weight: 600;
     margin-bottom: 0%;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.175);
 }
 
 .section-date {
     position: absolute;
-    right: 13%;
+    right: 5%;
     top: 77%;
     font-family: 'Roboto Condensed', sans-serif;
     text-align: right;
@@ -36,7 +37,7 @@
 
 .section-date2 {
     position: absolute;
-    right: 13%;
+    right: 5%;
     top: 88%;
     font-family: 'Roboto Condensed', sans-serif;
     text-align: right;
@@ -123,6 +124,6 @@
     font-size: 275px;
     z-index: 100;
     color: #eceaea4d;
-    top: 10%;
+    top: 20%;
     right: 5%;
 }
