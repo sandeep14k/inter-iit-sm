@@ -1,15 +1,28 @@
 import React from "react";
 import "../css/featured.css";
+import { motion } from "framer-motion";
 
 const FeaturedEvent = () => {
   return (
     <div className="Featured">
       <div className="top-section">
         <div className="text-wrapper-35">Inter IIT Featured Events</div>
-        <center><div className="horizontal-line"></div></center>
-        
+        <center>
+          <div className="horizontal-line"></div>
+        </center>
+
         <div className="image-container">
-          <div className="image-wrapper">
+          <motion.div
+            initial={{ x: -200, opacity: 0 }}
+            // animate={{x:0, opacity:1}}
+            transition={{ duration: 0.5 }}
+            whileInView="visible"
+            variants={{
+              visible: { x: 0, opacity: 1 },
+              hidden: { x: -200, opacity: 0 },
+            }}
+            className="image-wrapper"
+          >
             <img
               className="rectangle"
               alt="Rectangle"
@@ -20,8 +33,18 @@ const FeaturedEvent = () => {
               <p className="image-title">Inter IIT Aquatics Meet</p>
               <p className="image-date">4 - 8 October</p>
             </div>
-          </div>
-          <div className="image-wrapper">
+          </motion.div>
+          <motion.div
+            initial={{ y: 200, opacity: 0 }}
+            // animate={{x:0, opacity:1}}
+            transition={{ duration: 0.5 }}
+            whileInView="visible"
+            variants={{
+              visible: { y: 0, opacity: 1 },
+              hidden: { y: 200, opacity: 0 },
+            }}
+            className="image-wrapper"
+          >
             <img
               className="rectangle"
               alt="Rectangle"
@@ -32,8 +55,18 @@ const FeaturedEvent = () => {
               <div className="image-title">Inter IIT Sports Meet</div>
               <div className="image-date">14 - 22 December</div>
             </div>
-          </div>
-          <div className="image-wrapper">
+          </motion.div>
+          <motion.div
+            initial={{ x: 200, opacity: 0 }}
+            // animate={{x:0, opacity:1}}
+            transition={{ duration: 0.5 }}
+            whileInView="visible"
+            variants={{
+              visible: { x: 0, opacity: 1 },
+              hidden: { x: -200, opacity: 0 },
+            }}
+            className="image-wrapper"
+          >
             <img
               className="rectangle"
               alt="Rectangle"
@@ -44,7 +77,7 @@ const FeaturedEvent = () => {
               <div className="image-title">Inter IIT Sports Meet</div>
               <div className="image-date">23 - 26 Dec</div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className="bottom-section"></div>

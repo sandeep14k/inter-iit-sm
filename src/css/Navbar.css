@@ -28,9 +28,12 @@
 .nav-links {
     display: flex;
     list-style: none;
-    background-color: #f8f8f8; /* Different background color */
-    border: 1px solid #dcdcdc; /* Slightly darker border */
-    border-radius: 20px; /* Rounded corners */
+    background-color: #f8f8f8;
+    /* Different background color */
+    border: 1px solid #dcdcdc;
+    /* Slightly darker border */
+    border-radius: 20px;
+    /* Rounded corners */
     padding: 4px;
     margin-right: 4%;
 }
@@ -75,6 +78,7 @@
     .nav-links {
         display: none;
     }
+
     .nav-links-mobile {
         display: flex;
         flex-direction: column;
@@ -87,9 +91,11 @@
         border-top: 1px solid #dcdcdc;
         border-radius: 0 0 20px 20px;
     }
+
     .nav-links-mobile li {
         margin: 15px 0;
     }
+
     .mobile-menu-icon {
         display: block;
         font-size: 24px;

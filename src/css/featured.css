@@ -1,79 +1,84 @@
 .Featured {
-    background: linear-gradient(to bottom, #272727 50%, white 50%);
-    color: white;
-    text-align: center;
-    
-    
-  }
-  
-  .horizontal-line {
-    width: 80%;
-    height: 3px;
-    background-color: white;
-    margin-bottom: 5%;
+  background: linear-gradient(to bottom, #272727 50%, white 50%);
+  color: white;
+  text-align: center;
 
-  }
-  .text-wrapper-35 {
 
-    font-family: "Roboto Flex-Bold", Helvetica;
-    font-size: 50px;
-    color: white;
-    
-  }
-  
-  .image-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .image-wrapper {
-    text-align: center;
-  }
-  
-  .rectangle {
-    height: 300px;
-    width: 360px;
-    border-radius: 10px;
-    object-fit: cover;
-    margin-bottom: 10px;
-    box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.25);
-  }
-  
-  .image-text {
-    color: black;
-    margin: 0; /* Removes space between the lines */
-    line-height: 1.2; /* Tightly packs the lines */
-    padding: 0;
-    scrollbar-width:none;
-  }
-  
-  .image-number {
-    font-family: "Roboto Flex-Bold", Helvetica;
-    font-size: 64px;
-    color: #000000;
-    margin: 0; /* Removes space between the lines */
-  
-  padding: 0; 
-  }
-  
-  .image-title {
-    margin: 0; /* Removes space between the lines */
- 
-  padding: 0; 
-    font-family: "Roboto Flex-Regular", Helvetica;
-    font-size: 32px;
-    color: #000;
-    font-weight: 400;
+}
 
-  }
-  
-  .image-date {
-    margin: 0; /* Removes space between the lines */
-    
-    padding: 0; 
-    font-family: "Roboto Flex-Regular", Helvetica;
-    font-size: 24px;
-    color: #a57979;
-  }
-  
+.horizontal-line {
+  width: 80%;
+  height: 3px;
+  background-color: white;
+  margin-bottom: 5%;
+
+}
+
+.text-wrapper-35 {
+
+  font-family: "Roboto Flex-Bold", Helvetica;
+  font-size: 50px;
+  color: white;
+
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.image-wrapper {
+  text-align: center;
+}
+
+.rectangle {
+  height: 300px;
+  width: 360px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.25);
+}
+
+.image-text {
+  color: black;
+  margin: 0;
+  /* Removes space between the lines */
+  line-height: 1.2;
+  /* Tightly packs the lines */
+  padding: 0;
+  scrollbar-width: none;
+}
+
+.image-number {
+  font-family: "Roboto Flex-Bold", Helvetica;
+  font-size: 64px;
+  color: #000000;
+  margin: 0;
+  /* Removes space between the lines */
+
+  padding: 0;
+}
+
+.image-title {
+  margin: 0;
+  /* Removes space between the lines */
+
+  padding: 0;
+  font-family: "Roboto Flex-Regular", Helvetica;
+  font-size: 32px;
+  color: #000;
+  font-weight: 400;
+
+}
+
+.image-date {
+  margin: 0;
+  /* Removes space between the lines */
+
+  padding: 0;
+  font-family: "Roboto Flex-Regular", Helvetica;
+  font-size: 24px;
+  color: #a57979;
+}
