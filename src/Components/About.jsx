@@ -20,7 +20,7 @@ const About = () => {
           alt=""
           className="saturate-[0.4] contrast-[0.7] md:w-[40vw] md:h-[30vw] w-[100vw] h-[30vh] object-cover"
         />
-        <span className="about font-bold md:text-[8vw] text-[12vw] text-white absolute md:right-[20%] md:top-[25%] right-[32%]">
+        <span className="about font-bold md:text-[10vw] text-[12vw] text-white absolute md:right-[20%] md:top-[25%] right-[32%]">
           About
         </span>
       </motion.div>

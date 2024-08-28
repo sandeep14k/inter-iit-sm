@@ -29,7 +29,7 @@ const FeaturedEvent = () => {
               src="../../assets/8bba0c3775bb18e7c31e385f5c755edb.png"
             />
             <div className="image-text">
-              <p className="image-number">37th</p>
+              <p className="image-number">38th</p>
               <p className="image-title">Inter IIT Aquatics Meet</p>
               <p className="image-date">4 - 8 October</p>
             </div>
@@ -51,9 +51,9 @@ const FeaturedEvent = () => {
               src="../../assets/29b6186c8a377f7251d13cfabed02ba6.png"
             />
             <div className="image-text">
-              <div className="image-number">56th</div>
+              <div className="image-number">57th</div>
               <div className="image-title">Inter IIT Sports Meet</div>
-              <div className="image-date">14 - 22 December</div>
+              <div className="image-date">10 - 17 December</div>
             </div>
           </motion.div>
           <motion.div
@@ -73,9 +73,9 @@ const FeaturedEvent = () => {
               src="../../assets/f3e70efe2889510d777cdc2aa2ce315a.png"
             />
             <div className="image-text">
-              <div className="image-number">28th</div>
+              <div className="image-number">29th</div>
               <div className="image-title">Inter IIT Sports Meet</div>
-              <div className="image-date">23 - 26 Dec</div>
+              <div className="image-date">18 - 21 December</div>
             </div>
           </motion.div>
         </div>
