@@ -28,9 +28,9 @@ function Header() {
           className="card"
         />
         <motion.img
-          initial={{ y: 400, opacity: 0 }}
+          // initial={{ y: 400, opacity: 0 }}
           // animate={{x:0, opacity:1}}
-          transition={{ duration: 0.5, delay: 0.2, ease: "linear" }}
+          // transition={{ duration: 0.5, delay: 0.2, ease: "linear" }}
           whileInView="visible"
           variants={{
             visible: { y: 0, opacity: 1 },
