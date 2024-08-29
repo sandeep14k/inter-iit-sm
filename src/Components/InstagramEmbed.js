@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
+import "../css/SocialMediaHandles.css";
 
 const InstagramEmbed = ({ url }) => {
   useEffect(() => {
@@ -16,9 +17,9 @@ const InstagramEmbed = ({ url }) => {
         style={{
           margin: 0,
           padding: 0,
-          border: 'none',
-          position: 'relative',
-          overflow: 'hidden',
+          border: "none",
+          position: "relative",
+          overflow: "hidden",
         }}
       />
       <div className="overlay"></div>

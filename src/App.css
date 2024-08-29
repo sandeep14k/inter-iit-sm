@@ -75,7 +75,9 @@ fieldset {
 
   .carousel-container {
     margin: 0 auto;
-    padding: 1rem;
+    /* padding: 1rem; */
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .sports{
