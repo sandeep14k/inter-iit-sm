@@ -12,8 +12,8 @@ const Navbar = () => {
           onClick={() => setIsMobile(false)}>
         <li><a href="#">About</a></li>
         <li><a href="#">Live Score</a></li>
-        <li><a href="#">Schedule</a></li>
-        <li><a href="#">Result</a></li>
+        <li><a href="/Schedule">Schedule</a></li>
+        <li><a href="/Result">Result</a></li>
         <li><a href="#">Athletes</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="#">Info</a></li>
