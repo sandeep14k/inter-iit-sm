@@ -87,13 +87,31 @@ const PaginationExample = () => {
         <div>
             {matches.length > 0 ? (
                 matches.map((match, index) => (
-                    <div key={match.id} className="match-card">
-                        <h3>Match {index + 1}</h3>
-                        <p>Sport {match.Sport}</p>
-                        <p>{match.Team1} vs {match.Team2}</p>
-                        <p>Time: {match.Time}</p>
-                        <p>Venue: {match.Venue}</p>
+                    <div className="match-card">
+                        <div className='details'>
+                            <h3>Match {index+1}</h3>
+                            <p className='dete-font'>Pool A</p>
+                            <div className='time'>
+                                <p className='dete-font'>Time:{match.Time}</p>
+                                <p className='dete-font'>Venue:{match.Venue}</p>
+                            </div>
+                        </div>
+                        <div className='box'>
+                            <div className='logos'>
+                                <img className='iitlogo' src="" alt="" />vs<img className='iitlogo' src="" alt="" />
+                            </div>
+                            <div className='versus'>
+                                <p>{match.Team1}<br />vs {match.Team2}</p>
+                            </div>
+                        </div>
                     </div>
+                    // <div key={match.id} className="match-card">
+                    //     <h3>Match {index + 1}</h3>
+                    //     <p>Sport {match.Sport}</p>
+                    //     <p>{match.Team1} vs {match.Team2}</p>
+                    //     <p>Time: {match.Time}</p>
+                    //     <p>Venue: {match.Venue}</p>
+                    // </div>
                 ))
             ) : (
                 <p>No matches found.</p>
