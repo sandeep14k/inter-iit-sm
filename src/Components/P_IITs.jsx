@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "./P_IITs.css";
+import { useRef } from "react";
 const P_IITs = () => {
   var settings = {
     dots: false,
@@ -44,6 +45,9 @@ const P_IITs = () => {
       //   }
       // }
     ],
+    draggable: true, // Allows dragging with the mouse
+    swipeToSlide: true, // Enables swipe or drag to slide functionality
+    pauseOnHover: true, // Pauses sliding when hovering
   };
 
   const IITs = [
@@ -140,6 +144,22 @@ const P_IITs = () => {
       img: "../../IITs_Logo/Tirupati.jpg",
     },
   ];
+
+  const sliderRef = useRef(null);
+
+  const handleScroll = (event) => {
+    if (event.deltaY < 0) {
+      // Scrolling up
+      sliderRef.current.slickPrev();
+    } else if (event.deltaY > 0) {
+      // Scrolling down
+      sliderRef.current.slickNext();
+    }
+  };
+
+  
+
+
   return (
     <div className=" relative w-[100vw] min-h-[65vh] mb-8  border-b-[4px] border-[rgb(173,173,173)] flex flex-col justify-center items-center">
       <fieldset>
@@ -147,23 +167,29 @@ const P_IITs = () => {
           Participating IITs
         </legend>
       </fieldset>
-      <Slider {...settings} className="w-[80vw] overflow-visible">
-        {IITs.map((iit, index) => (
-          <div
-            key={index}
-            className="img flex flex-col justify-center items-center"
-          >
-            <div className="w-[200px] h-[200px] bg-white shadow-2xl rounded-full flex justify-center items-center">
-              <img
-                src={iit.img}
-                alt={iit.name}
-                className="w-[150px] h-[150px] object-contain"
-              />
+      <div className="w-[80vw] h-[50vh] overflow-visible" onWheel={handleScroll}>
+        <Slider
+          {...settings}
+          ref={sliderRef}
+          className="overflow-visible"
+        >
+          {IITs.map((iit, index) => (
+            <div
+              key={index}
+              className="img flex flex-col justify-center items-center"
+            >
+              <div className="w-[200px] h-[200px] bg-white shadow-2xl rounded-full flex justify-center items-center">
+                <img
+                  src={iit.img}
+                  alt={iit.name}
+                  className="w-[150px] h-[150px] object-contain"
+                />
+              </div>
+              <p className="text-lg text-black my-8 text-center">{iit.name}</p>
             </div>
-            <p className="text-lg text-black my-8 text-center">{iit.name}</p>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

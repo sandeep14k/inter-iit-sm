@@ -7,8 +7,63 @@
 
 .slick-prev {
     left: 40%;
+    width: 42px;
+        /* Adjust the size as needed */
+        height: 42px;
+        /* Adjust the size as needed */
+        background-color: white !important;
+        /* Circle color */
+        border-radius: 50% !important;
+        /* Makes the button circular */
+        position: absolute !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
+        bottom: 40%;
+        right: 48%;
+        z-index: 100;
+    
+}
+.slick-prev::before{
+    content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-right: 20px solid black;
+        /* Triangle color */
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        transform: translateX(-5px);
+}
+.slick-next::before{
+    content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-left: 20px solid black;
+        /* Triangle color */
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        transform: translateX(5px);
 }
 
 .slick-next {
     right: 40%;
+    width: 42px;
+        /* Adjust the size as needed */
+        height: 42px;
+        /* Adjust the size as needed */
+        background-color: white !important;
+        /* Circle color */
+        border-radius: 50% !important;
+        /* Makes the button circular */
+        position: absolute !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
+        bottom: 40%;
+        right: 40%;
+        z-index: 100;
 }
