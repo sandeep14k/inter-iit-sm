@@ -1,16 +1,20 @@
 // src/Navbar.js
-import React, { useState } from 'react';
+import { useWindowScroll } from "react-use";
+import React, { useEffect,useState} from 'react';
 import '../css/Navbar.css';
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const { y: pageYOffset } = useWindowScroll();
+
+  const scrollToTop = () => window.scrollTo({ top: 1400, behavior: "smooth" });
 
   return (
     <nav className="navbar">
       <div className="logo"><a href="/">Logo</a></div>
       <ul className={isMobile ? "nav-links-mobile" : "nav-links"}
           onClick={() => setIsMobile(false)}>
-        <li><a href="/About">About</a></li>
+        <li><a onClick={scrollToTop}>About</a></li>
         <li><a href="/Livescore">Live Score</a></li>
         <li><a href="/Schedule">Schedule</a></li>
         <li><a href="/Result">Result</a></li>
