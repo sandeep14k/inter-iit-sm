@@ -17,7 +17,7 @@ function Header() {
         <motion.img
           initial={{ x: -200, opacity: 0 }}
           // animate={{x:0, opacity:1}}
-          transition={{ duration: 0.5, delay: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
           whileInView="visible"
           variants={{
             visible: { x: 0, opacity: 1 },
@@ -28,20 +28,20 @@ function Header() {
           className="card"
         />
         <motion.img
-          // initial={{ y: 400, opacity: 0 }}
+          initial={{ x: -200, opacity: 0 }}
           // animate={{x:0, opacity:1}}
-          // transition={{ duration: 0.5, delay: 0.2, ease: "linear" }}
+          transition={{ duration: 0.5, delay: 0.2}}
           whileInView="visible"
           variants={{
-            visible: { y: 0, opacity: 1 },
-            hidden: { y: 400, opacity: 0 },
+            visible: { x: 0, opacity: 1 },
+            hidden: { x: -200, opacity: 0 },
           }}
           src="../../assets/Rectangle2.png"
           alt="Image 2"
           className="card"
         />
         <motion.img
-          initial={{ x: 200, opacity: 0 }}
+          initial={{ x: -200, opacity: 0 }}
           // animate={{x:0, opacity:1}}
           transition={{ duration: 0.5 }}
           whileInView="visible"
@@ -53,6 +53,7 @@ function Header() {
           alt="Image 3"
           className="card"
         />
+        <div className="play-button"></div>
       </div>
       <div className="section-stage">
         The stage is <br />
