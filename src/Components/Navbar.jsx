@@ -7,16 +7,16 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">Logo</div>
+      <div className="logo"><a href="/">Logo</a></div>
       <ul className={isMobile ? "nav-links-mobile" : "nav-links"}
           onClick={() => setIsMobile(false)}>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Live Score</a></li>
+        <li><a href="/About">About</a></li>
+        <li><a href="/Livescore">Live Score</a></li>
         <li><a href="/Schedule">Schedule</a></li>
         <li><a href="/Result">Result</a></li>
-        <li><a href="#">Athletes</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Info</a></li>
+        <li><a href="/Athletes">Athletes</a></li>
+        <li><a href="/Contacts">Contact</a></li>
+        <li><a href="/Info">Info</a></li>
       </ul>
       <button className="mobile-menu-icon"
               onClick={() => setIsMobile(!isMobile)}>

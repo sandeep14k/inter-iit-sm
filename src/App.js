@@ -1,6 +1,7 @@
 import React, {lazy} from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Home from "./Pages/Home"
+import About from './Components/About'
 import Schedule from "./Pages/Schedule"
 import Result from "./Pages/Result"
 import './App.css'
@@ -11,6 +12,8 @@ const App = () =>{
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path='/Result' element={<Result/>}/>
+        <Route path='/About' element={<About/>}/>
         <Route path="/Schedule" element={<Schedule/>}/>
         <Route path='/Result' element={<Result/>}/>
       </Routes> 
