@@ -24,14 +24,6 @@ function MatchCardR() {
         </div>
       </div>
     </div>
-
-    // <div className="match-card">
-    //   <h3>Match {match.id}</h3>
-    //   <p>Pool {match.pool}</p>
-    //   <p>{match.team1} vs {match.team2}</p>
-    //   <p>Time: {match.time}</p>
-    //   <p>Venue: {match.venue}</p>
-    // </div>
   );
 }
 
