@@ -84,11 +84,11 @@ const PaginationExample = () => {
     };
 
     return (
-        <div>
+        <div className='cardbox'>
             {matches.length > 0 ? (
                 matches.map((match, index) => (
                     <div className="match-card">
-                        <div className='details'>
+                            <div className='details'>
                             <h3>Match {index+1}</h3>
                             <p className='dete-font'>Pool A</p>
                             <div className='time'>
@@ -96,29 +96,28 @@ const PaginationExample = () => {
                                 <p className='dete-font'>Venue:{match.Venue}</p>
                             </div>
                         </div>
-                        <div className='box'>
+                        {/* <div className='box'>
                             <div className='logos'>
-                                <img className='iitlogo' src="" alt="" />vs<img className='iitlogo' src="" alt="" />
+                                <img className='iitlogo' src="" alt="" />
+                                <br />
+                                <p>{match.Team1}</p>
                             </div>
                             <div className='versus'>
-                                <p>{match.Team1}<br />vs {match.Team2}</p>
+                            <img className='iitlogo' src="" alt="" /> <br /><p>{match.Team2}</p>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
-                    // <div key={match.id} className="match-card">
-                    //     <h3>Match {index + 1}</h3>
-                    //     <p>Sport {match.Sport}</p>
-                    //     <p>{match.Team1} vs {match.Team2}</p>
-                    //     <p>Time: {match.Time}</p>
-                    //     <p>Venue: {match.Venue}</p>
-                    // </div>
                 ))
             ) : (
                 <p>No matches found.</p>
             )}
-            <button onClick={handleNextPage} disabled={isLoading}>
+            <br />
+            
+            <button className='button load' onClick={handleNextPage} disabled={isLoading}>
                 {isLoading ? "Loading..." : "Load More"}
             </button>
+            <br />
+            <br />
         </div>
     );
 };

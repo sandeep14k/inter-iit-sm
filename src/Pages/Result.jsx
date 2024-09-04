@@ -1,7 +1,7 @@
 import Footer from '../Components/Footer'
 import Navbar from '../Components/Navbar'
-import MatchCardR from '../Components/MatchCardR';
 import Timeline from '../Components/Timeline';
+import MatchCardSection from '../Components/MatchCardSection';
 import '../css/Schedule.css';
 import React from 'react'
 
@@ -21,9 +21,9 @@ const Schedule = () => {
         <button className="button">Cricket Mens</button>
         <button className="button">Cricket Mens</button>
         <button className="button">Cricket Mens</button>
+        <button className="button">Cricket Mens</button>
       </div>
-      <Timeline/>
-      <MatchCardR/>
+      <MatchCardSection />
       <Footer />
     </div>)
 }

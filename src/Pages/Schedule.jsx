@@ -11,7 +11,7 @@ const Schedule = () => {
     <div className='min-w-[100vw]'>
       <Navbar />
       <Sportsfilter/>
-      <Timeline/>
+      {/* <Timeline/> */}
       <MatchCardSection />
       <Footer />
     </div>)
