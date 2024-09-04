@@ -119,7 +119,7 @@ const Sports = () => {
       >
         {sports.map((sport, index) => (
           <div key={index} className="sports_main ">
-            <div className="sports relative sm:w-[480px] w-[300px] saturate-[0.4] contrast-[0.7] hover:saturate-[1] hover:contrast-[1] hover:brightness-150 transition-all hover:scale-105 hover:z-10 m-2">
+            <div className="sports relative sm:w-[510px] w-[300px] saturate-[0.4] contrast-[0.7] hover:saturate-[1] hover:contrast-[1] hover:brightness-150 transition-all hover:scale-105 hover:z-10 m-2">
               <img
                 src={sport.image}
                 alt={sport.name}

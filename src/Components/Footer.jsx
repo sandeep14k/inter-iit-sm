@@ -9,11 +9,11 @@ import { CiMail } from "react-icons/ci";
 
 const Footer = () => {
   return (
-    <footer className='min-h-[60vh] bg-[rgb(3,81,164)] w-[100vw]'>
+    <footer className='min-h-[60vh] bg-black w-[100vw]'>
         <div className='py-[75px] sm:px-5 px-1 grid md:grid-cols-3 grid-cols-2 sm:gap-10 gap-[0]'>
             <div className='flex flex-col sm:gap-[50px] gap-[25px] mx-5'>
-                <span className='text-white sm:text-2xl text-xl font-semibold main-txt border-b-2 border-blue-800 min-h-[60px]'>Inter IIT Sports Meet 2023</span>
-                <span className='text-white sm:text-xl text-lg border-b-2 border-blue-800 min-h-[70px]'>Official Website of INTER IIT Sports Meet 2024 Copyright &copy; 2024, IIT Kanpur, All rights reserved</span>
+                <span className='text-white sm:text-2xl text-xl font-semibold main-txt border-b-2 border-white min-h-[60px]'>Inter IIT Sports Meet 2023</span>
+                <span className='text-white sm:text-xl text-lg border-b-2 border-white min-h-[70px]'>Official Website of INTER IIT Sports Meet 2024 Copyright &copy; 2024, IIT Kanpur, All rights reserved</span>
                 <span className='text-white sm:text-2xl text-xl font-semibold main-txt'>Connect with us!
                 <div className='flex gap-4 my-2'>
                     <a href="">

@@ -1,6 +1,6 @@
 import Footer from '../Components/Footer'
 import Navbar from '../Components/Navbar'
-import MatchCard from '../Components/MatchCard';
+import MatchCardSection from '../Components/MatchCardSection';
 import Timeline from '../Components/Timeline';
 import Sportsfilter from '../Components/Sportsfilter';
 import '../css/Schedule.css';
@@ -12,10 +12,7 @@ const Schedule = () => {
       <Navbar />
       <Sportsfilter/>
       <Timeline/>
-      <MatchCard />
-      <MatchCard />
-      <MatchCard />
-      <MatchCard />
+      <MatchCardSection />
       <Footer />
     </div>)
 }
