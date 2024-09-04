@@ -1,4 +1,16 @@
 /* src/Navbar.css */
+.ant-btn{
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    overflow-y: hidden !important;
+    padding: 0 !important;
+}
+
+.ant-btn span{
+    font-size: 16px !important;
+    padding-bottom: 8px !important;
+}
 
 .navbar {
     display: flex;
