@@ -6,6 +6,7 @@ import Schedule from "./Pages/Schedule"
 import Result from "./Pages/Result"
 import Athletes from "./Pages/Athletes"
 import './App.css'
+import IITKMap from './Pages/Map'
 
 const App = () =>{
   return <>
@@ -18,6 +19,7 @@ const App = () =>{
         <Route path="/Schedule" element={<Schedule/>}/>
         <Route path='/Result' element={<Result/>}/>
         <Route path='/Athletes' element={<Athletes/>}/>
+        <Route path='/map' element={<IITKMap/>}/>
       </Routes> 
     </BrowserRouter>
   </>
