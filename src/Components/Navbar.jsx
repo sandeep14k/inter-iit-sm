@@ -22,7 +22,9 @@ const Navbar = () => {
 
   const menu = (
     <Menu onClick={handleMenuClick}>
-      <Menu.Item key="1">Gallery</Menu.Item>
+      <Menu.Item key="1">
+        <Link to="/gallery">Gallery</Link>
+      </Menu.Item>
 
       <Menu.Item key="2">
         <Link to="/map">Map</Link>
