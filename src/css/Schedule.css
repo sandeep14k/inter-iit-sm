@@ -40,7 +40,7 @@
   height: 275px;
   float: left;
   border-radius: 28px;
-  background-image: url(E:\inter-iit-sm\public\Cardbg\Cricketbg.jpg);
+  background-image: url("../../public/Cardbg/Cricketbg.jpg");
   box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.25);
   background-position: center;
   background-repeat:no-repeat;

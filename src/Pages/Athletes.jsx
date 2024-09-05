@@ -2,27 +2,18 @@ import React, { useEffect, useState } from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import "../css/Athletes.css";
-import { Input, Select} from "antd";
+import { Input, Select } from "antd";
 import PlayerCard from "../Components/PlayerCard";
 import Database from "../utils/Database";
 
 const { Option } = Select;
-// 
+//
 const Home = () => {
   const [athlete, setAthlete] = useState("");
   const [iit, setIIT] = useState("IITs");
   const [sport, setSport] = useState("Sport");
-  // const [players, setPlayers] = useState();
 
   let db = new Database();
-
-  // useEffect(async ()=>{
-
-  // let data = db.getPlayers();
-  // console.log(data)
-  // setPlayers(data);
-
-  // },[players])
 
   const [loading, setLoading] = useState(false);
   const [players, setPlayers] = useState([]);
@@ -87,6 +78,23 @@ const Home = () => {
     </Select>
   );
 
+  let fplr = players.filter((v) => {
+    let isClg = false;
+    if (iit == "IITs") isClg = true;
+    else if (v.College.toLowerCase() == iit.toLowerCase()) isClg = true;
+
+    let isSpr = false;
+    if (sport == "Sport") isSpr = true;
+    else if (v.Sport.toLowerCase() == sport.toLowerCase()) isSpr = true;
+
+    let isName = true;
+    
+    if (!athlete) isName = true;
+    else if (v.Name.toLowerCase().search(athlete.toLowerCase()) == -1) isSpr = false;
+
+    return isClg && isSpr && isName;
+  });
+
   return (
     <div className="min-w-[100vw]">
       <Navbar />
@@ -109,13 +117,10 @@ const Home = () => {
           placeholder="Search Best Player Here ..."
         />
       </div>
-      <div
-        style={{ minHeight: "60vh" }}
-        className="player-card-box"
-      >
-        {
-          players.map((data,i)=> <PlayerCard key={i} data={data}/>)
-        }
+      <div style={{ minHeight: "60vh" }} className="player-card-box">
+        {fplr.map((data, i) => (
+          <PlayerCard key={i} data={data} />
+        ))}
       </div>
       <Footer />
     </div>
