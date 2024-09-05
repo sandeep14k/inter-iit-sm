@@ -1,15 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
-import "../css/Athletes.css"
+import "../css/Athletes.css";
 import { Input, Select } from "antd";
+import PlayerCard from "../Components/PlayerCard";
+import Database from "../utils/Database";
 
 const { Option } = Select;
-
+//
 const Home = () => {
   const [athlete, setAthlete] = useState("");
   const [iit, setIIT] = useState("IITs");
   const [sport, setSport] = useState("Sport");
+
+  let db = new Database();
+
+  const [loading, setLoading] = useState(false);
+  const [players, setPlayers] = useState([]);
+
+  const fetchData = async () => {
+    setLoading(true);
+
+    const res = await db.getPlayers();
+
+    setPlayers([...res]);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const selectBefore = (
     <Select
@@ -58,11 +78,28 @@ const Home = () => {
     </Select>
   );
 
+  let fplr = players.filter((v) => {
+    let isClg = false;
+    if (iit == "IITs") isClg = true;
+    else if (v.College.toLowerCase() == iit.toLowerCase()) isClg = true;
+
+    let isSpr = false;
+    if (sport == "Sport") isSpr = true;
+    else if (v.Sport.toLowerCase() == sport.toLowerCase()) isSpr = true;
+
+    let isName = true;
+    
+    if (!athlete) isName = true;
+    else if (v.Name.toLowerCase().search(athlete.toLowerCase()) == -1) isSpr = false;
+
+    return isClg && isSpr && isName;
+  });
+
   return (
     <div className="min-w-[100vw]">
       <Navbar />
       <div
-      className="player-search-box"
+        className="player-search-box"
         style={{
           padding: "10px 30px",
           display: "flex",
@@ -73,15 +110,17 @@ const Home = () => {
           addonBefore={selectBefore}
           addonAfter={selectAfter}
           value={athlete}
-          style={{ width: "100%", maxWidth: "1000px"}}
+          style={{ width: "100%", maxWidth: "1000px" }}
           onChange={(e) => {
             setAthlete(e.target.value);
           }}
           placeholder="Search Best Player Here ..."
         />
       </div>
-      <div style={{minHeight: "60vh"}} className="player-card-box flex justify-center items-center">
-          <h1>Searching Students from <b>{iit}</b>, named like <b>{(athlete)?athlete:"Anything"}</b> playing <b>{sport}</b></h1>
+      <div style={{ minHeight: "60vh" }} className="player-card-box">
+        {fplr.map((data, i) => (
+          <PlayerCard key={i} data={data} />
+        ))}
       </div>
       <Footer />
     </div>
