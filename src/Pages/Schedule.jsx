@@ -27,7 +27,7 @@ const Schedule = () => {
     <div className='min-w-[100vw]'>
       <Navbar />
       <Sportsfilter onSearch={handleSearch} onSportSelect={handleSportSelect} />
-      <Timeline onDateSelect={handleDateSelect} />
+      {/* <Timeline onDateSelect={handleDateSelect} /> */}
       <MatchCardSection 
         searchQuery={searchQuery} 
         selectedSport={selectedSport} 
