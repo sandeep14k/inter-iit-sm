@@ -51,7 +51,7 @@ const Navbar = () => {
           <a href="/About">About</a>
         </li>
         <li>
-          <a href="/Livescore">Live Score</a>
+          <a href="/Livescores">Live Score</a>
         </li>
         <li>
           <a href="/Schedule">Schedule</a>
@@ -65,7 +65,7 @@ const Navbar = () => {
         <li>
           <a href="/Contacts">Contact</a>
         </li>
-        <li>
+        <li className="dropdown">
           <Dropdown overlay={menu}>
             <Button overlayStyle={{ outline: "none", boxShadow: "none" }}>
               Info <DownOutlined />
