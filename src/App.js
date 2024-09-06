@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Home from "./Pages/Home"
 import Schedule from "./Pages/Schedule"
 import Result from "./Pages/Result"
+import Livescores from "./Pages/Livescores"
 import Athletes from "./Pages/Athletes"
 import './App.css'
 import IITKMap from './Pages/Map'
@@ -17,7 +18,7 @@ const App = () =>{
         <Route path="/" element={<Home/>} />
         <Route path='/Result' element={<Result/>}/>
         <Route path="/Schedule" element={<Schedule/>}/>
-        <Route path='/Result' element={<Result/>}/>
+        <Route path='/Livescores' element={<Livescores/>}/>
         <Route path='/Athletes' element={<Athletes/>}/>
         <Route path='/map' element={<IITKMap/>}/>
         <Route path='/Contacts' element={<Contacts/>}/>
