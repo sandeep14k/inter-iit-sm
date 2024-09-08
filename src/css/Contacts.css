@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-.body{
-    display: flex;
-}
-
 .leftPart{
     display: flex;
     flex-direction: column;
@@ -15,17 +11,27 @@
 }
 
 h1{
-    font-size: 5vw;
+    font-size: 5.5vw;
     font-weight: 800;
-    margin-top: 7vh;
+    margin-top: 4vh;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#part-1{
+    padding-top: 12vh;
+    padding-bottom: 7vh;
+}
+
+#part-10{
+    padding-bottom: 20vh;
 }
 
 .container_contacts{
     display: flex;
     justify-content: center;
     gap: 5vw;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    padding-top: 20vh;
 }
 
 .box{
@@ -38,7 +44,7 @@ h1{
     overflow: hidden;
     margin: 10px;
     border-radius: 12px;
-    box-shadow: 5px 5px 10px rgba(82, 81, 81, 0.642);
+    box-shadow: 5px 3px 10px rgb(224, 224, 224);
 }
 
 .box img{
@@ -61,8 +67,35 @@ img.hover-img{
     opacity: 1;
 }
 
-.bookmarks{
-    position: fixed;
-    margin-top: 10vh;
-    right: 10vw;
+.ant-anchor-link{
+    width: 24vw;
+    border-radius: 10px;
+    margin-top: 3px;
+}
+
+.ant-anchor-link:hover{
+    background-color: rgb(249, 255, 191);
+    color: aliceblue;
+    box-shadow:1px 4px 3px rgb(209, 209, 209);
+}
+
+.ant-anchor-link:active{
+    background-color: rgb(255, 255, 255);
+    box-shadow: none;
+}
+
+.ant-anchor-link-title{
+    font-size: 25px;
+    color: aliceblue;
+    font-family: "Kanit", system-ui;
+}
+
+.ant-anchor{
+    top: 17vh;
+    height: 70vh;
+}
+
+.ant-anchor-wrapper{
+    position:sticky;
+    height: 90vh;
 }

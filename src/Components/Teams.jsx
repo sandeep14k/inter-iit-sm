@@ -5,6 +5,63 @@ import '../css/Contacts.css'
 const Teams = () => {
   return (
     <Row className="body">
+      <Col className="bookmarks">
+        <Anchor
+          replace
+          items={[
+            {
+              key: "part-1",
+              href: "#part-1",
+              title: "OVERALL COORDINATORS",
+            },
+            {
+              key: "part-2",
+              href: "#part-2",
+              title: "HEADS, EVENTS",
+            },
+            {
+              key: "part-3",
+              href: "#part-3",
+              title: "HEADS, MEDIA AND PUBLICITY",
+            },
+            {
+              key: "part-4",
+              href: "#part-4",
+              title: "HEADS, HOSPITALITY",
+            },
+            {
+              key: "part-5",
+              href: "#part-5",
+              title: "HEADS, PUBLIC RELATIONS",
+            },
+            {
+              key: "part-6",
+              href: "#part-6",
+              title: "HEADS, MARKETING",
+            },
+            {
+              key: "part-7",
+              href: "#part-7",
+              title: "HEADS, SHOW MANAGEMENT",
+            },
+            {
+              key: "part-8",
+              href: "#part-8",
+              title: "HEADS, SECURITY",
+            },
+            {
+              key: "part-9",
+              href: "#part-9",
+              title: "HEADS, WEB AND APP",
+            },
+            {
+              key: "part-10",
+              href: "#part-10",
+              title: "HEADS, DESIGN",
+            },
+          ]}
+        />
+      </Col>
       <Col span={18} className="leftPart">
         <h1>ORGANISING TEAM</h1>
         <div id="part-1" className="container_contacts">
@@ -192,63 +249,6 @@ const Teams = () => {
             />
           </div>
         </div>
-      </Col>
-      <Col className="bookmarks">
-        <Anchor
-          replace
-          items={[
-            {
-              key: "part-1",
-              href: "#part-1",
-              title: "OVERALL COORDINATORS",
-            },
-            {
-              key: "part-2",
-              href: "#part-2",
-              title: "HEADS, EVENTS",
-            },
-            {
-              key: "part-3",
-              href: "#part-3",
-              title: "HEADS, MEDIA AND PUBLICITY",
-            },
-            {
-              key: "part-4",
-              href: "#part-4",
-              title: "HEADS, HOSPITALITY",
-            },
-            {
-              key: "part-5",
-              href: "#part-5",
-              title: "HEADS, PUBLIC RELATIONS",
-            },
-            {
-              key: "part-6",
-              href: "#part-6",
-              title: "HEADS, MARKETING",
-            },
-            {
-              key: "part-7",
-              href: "#part-7",
-              title: "HEADS, SHOW MANAGEMENT",
-            },
-            {
-              key: "part-8",
-              href: "#part-8",
-              title: "HEADS, SECURITY",
-            },
-            {
-              key: "part-9",
-              href: "#part-9",
-              title: "HEADS, WEB AND APP",
-            },
-            {
-              key: "part-10",
-              href: "#part-10",
-              title: "HEADS, DESIGN",
-            },
-          ]}
-        />
       </Col>
     </Row>
   );
