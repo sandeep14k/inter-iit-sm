@@ -1,103 +1,70 @@
 import React, { useState, useEffect, useRef } from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
-import MatchCardSection from "../Components/MatchCardSection";
-import Timeline from "../Components/Timeline";
+import ScheduleCard from "../Components/Schedule/ScheuleCard.jsx";
 import { Input, Select } from "antd";
-import Sportsfilter from "../Components/Sportsfilter";
 import "../css/Schedule.css";
-import axios from "axios";
+import Database from "../utils/Database";
+// import Timeline from "../Components/Timeline";
 
 const { Option } = Select;
 
+const limit = 10;
+
 const Schedule = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSport, setSelectedSport] = useState("");
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedSport, setSelectedSport] = useState("Sport");
+  // const [selectedCategory, setSelectedCategory] = useState("All");
 
-  /// //////////////////////////////////
+  let db = new Database();
   const listInnerRef = useRef();
 
   const [matches, setMatches] = useState([]);
   const [page, setPage] = useState(1);
-  const [limit] = useState(10); // Adjust the limit as per your needs
-  const [sortBy, setSortBy] = useState("date"); // Default sort by 'date'
-  const [order, setOrder] = useState("asc"); // Order can be 'asc' or 'desc'
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const [toFetch, setToFetch] = useState(true);
-  /// //////////////////////////////////
 
-  const [iit, setIIT] = useState("IITs");
-  const [Date, setDate] = useState("Date");
-  const selectBefore = (
-    <Select
-      style={{ minWidth: "130px" }}
-      value={iit}
-      onChange={(e) => setIIT(e)}
-      defaultValue="IITs"
-    >
-      <Option value="IITs">IITs</Option>
-      <Option value="IIT Madras">IIT Madras</Option>
-      <Option value="IIT Delhi">IIT Delhi</Option>
-      <Option value="IIT Bombay">IIT Bombay</Option>
-      <Option value="IIT Guwahati">IIT Guwahati</Option>
-      <Option value="IIT Kanpur">IIT Kanpur</Option>
-      <Option value="IIT Kharagpur">IIT Kharagpur</Option>
-      <Option value="IIT Roorkee">IIT Roorkee</Option>
-      <Option value="IIT Dharwad">IIT Dharwad</Option>
-      <Option value="IIT Ropar">IIT Ropar</Option>
-      <Option value="IIT Hyderabad">IIT Hyderabad</Option>
-      <Option value="IIT Indore">IIT Indore</Option>
-      <Option value="IIT Dhanbad">IIT Dhanbad</Option>
-      <Option value="IIT BHU">IIT BHU</Option>
-      <Option value="IIT Patna">IIT Patna</Option>
-      <Option value="IIT Gandhinagar">IIT Gandhinagar</Option>
-      <Option value="IIT Bhubaneswar">IIT Bhubaneswar</Option>
-      <Option value="IIT Mandi">IIT Mandi</Option>
-      <Option value="IIT Jodhpur">IIT Jodhpur</Option>
-      <Option value="IIT Tirupati">IIT Tirupati</Option>
-      <Option value="IIT Bhilai">IIT Bhilai</Option>
-      <Option value="IIT Jammu">IIT Jammu</Option>
-      <Option value="IIT Palakkad">IIT Palakkad</Option>
-      <Option value="IIT Goa">IIT Goa</Option>
-    </Select>
-  );
+  // const selectBefore = (
+  //   <Select
+  //     style={{ minWidth: "130px" }}
+  //     value={selectedCategory}
+  //     onChange={(e) => setSelectedCategory(e)}
+  //     defaultValue="All"
+  //   >
+  //     <Option value="All">All</Option>
+  //     <Option value="Men">Men</Option>
+  //     <Option value="Women">Women</Option>
+  //     <Option value="Mixed">Mixed</Option>
+  //   </Select>
+  // );
+
   const selectAfter = (
     <Select
       style={{ minWidth: "150px" }}
-      value={Date}
-      onChange={(e) => setDate(e)}
-      defaultValue="Date"
+      value={selectedSport}
+      onChange={(e) => setSelectedSport(e)}
+      defaultValue="Sport"
     >
-      <Option value="Sport">time</Option>
+      <Option value="Sport">Sport</Option>
+      <Option value="hockey">hockey</Option>
+      <Option value="lawn tennis">lawn tennis</Option>
+      <Option value="basketball">basketball</Option>
+      <Option value="volleyball">volleyball</Option>
+      <Option value="cricket">cricket</Option>
+      <Option value="table tennis">table tennis</Option>
     </Select>
   );
 
-  //////////////////////////////////////////////////
-  const fetchMatches = async () => {
+  const fetchData = async () => {
     if (!toFetch || isLoading || !hasMore) return;
-
     setIsLoading(true);
-    const apiUrl = `http://localhost:3000/api/matches?page=${page}&limit=${limit}&sortBy=${"time"}&order=${order}&search=${searchQuery}`;
 
-    try {
-      const response = await axios.get(apiUrl);
-      if (response.status === 200) {
-        const data = response.data;
-        setMatches((prevMatches) => [...prevMatches, ...data.matches]);
-
-        if (data.matches.length < limit) {
-          setHasMore(false);
-        }
-
-        setPage((prevPage) => prevPage + 1);
-      } else {
-        console.log("Failed to load matches");
-      }
-    } catch (error) {
-      console.error("Error fetching matches:", error);
-      console.log(error);
+    const data = await db.getMatches(page, limit, searchQuery);
+    setPage((prevPage) => prevPage + 1);
+    setMatches((prevMatches) => [...prevMatches, ...data]);
+    if (data.length < limit) {
+      setHasMore(false);
     }
 
     setIsLoading(false);
@@ -105,45 +72,85 @@ const Schedule = () => {
   };
 
   useEffect(() => {
-    fetchMatches();
+    if (toFetch) fetchData();
   }, [toFetch]);
 
-  //////////////////////////////////////////////////
+  let filtered_matches = matches.filter((v) => {
+    let isSpr = false;
+    if (selectedSport == "Sport") isSpr = true;
+    else if (v.sport.toLowerCase() == selectedSport.toLowerCase()) isSpr = true;
+
+    return isSpr;
+  });
 
   return (
     <div className="min-w-[100vw]">
       <Navbar />
 
-      {/* ///////////////////////////////////////////////////// */}
-      <div ref={listInnerRef} className="cardbox">
-        {matches.length > 0 ? (
-          matches.map((match, index) => (
-            <div key={index} className="match-card">
-              <div className="details">
-                <h3>Match {match.matchId}</h3>
-                <p className="dete-font">Pool A</p>
-                <div className="time">
-                  <p className="dete-font">Time:{match.time}</p>
-                  <p className="dete-font">Venue:{match.venue}</p>
-                </div>
-              </div>
-            </div>
-          ))
-        ) : (
-          <p>No matches found.</p>
-        )}
-        <div className="fbreak"></div>
-        <button
-          className="button load"
-          onClick={() => {
-            if(!isLoading)
+      <div
+        className="player-search-box"
+        style={{
+          padding: "10px 30px",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Input
+          // addonBefore={selectBefore}
+          addonAfter={selectAfter}
+          value={searchQuery}
+          style={{ width: "100%", maxWidth: "1000px" }}
+          onChange={(e) => {
+            setSearchQuery(e.target.value);
+          }}
+          onKeyUp={(e) => {
+            if (e.code != "Enter") return;
+            setPage(1);
+            setMatches([]);
+            setHasMore(true);
             setToFetch(true);
           }}
-        >
-          {isLoading ? "Loading..." : "Load More"}
-        </button>
+          placeholder="Search Best Player Here ..."
+        />
       </div>
-      {/* ///////////////////////////////////////////////////// */}
+
+      <div
+        // onScroll={(e) => {
+        //   const bottom =
+        //     e.target.scrollHeight - e.target.scrollTop ===
+        //     e.target.clientHeight;
+        //   if (bottom) {
+        //     if (!toFetch && hasMore) setToFetch(true);
+        //   }
+        // }}
+        ref={listInnerRef}
+        className="cardbox"
+      >
+        {filtered_matches.length > 0 ? (
+          filtered_matches.map((match, index) => (
+            <ScheduleCard match={match} key={index} />
+          ))
+        ) : (
+          <p>No Matches found.</p>
+        )}
+
+        {filtered_matches.length > 0 && hasMore ? (
+          <>
+            <div className="fbreak"></div>
+            <button
+              className="button load"
+              onClick={() => {
+                if (!isLoading) setToFetch(true);
+              }}
+            >
+              {isLoading ? "Loading..." : "Load More"}
+            </button>
+          </>
+        ) : (
+          <></>
+        )}
+      </div>
+
       <Footer />
     </div>
   );
