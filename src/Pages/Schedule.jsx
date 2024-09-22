@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Footer from '../Components/Footer';
 import Navbar from '../Components/Navbar';
 import MatchCardSection from '../Components/MatchCardSection';
-import Timeline from '../Components/Timeline';
 import { Input, Select } from "antd";
 import Sportsfilter from '../Components/Sportsfilter';
 import '../css/Schedule.css';
@@ -92,7 +91,6 @@ const Schedule = () => {
         <Input
           addonBefore={selectBefore}
           addonAfter={selectAfter}
-          value="Match..."
           style={{ width: "100%", maxWidth: "1000px" }}
         />
       </div>

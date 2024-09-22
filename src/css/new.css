@@ -1,0 +1,74 @@
+.match-card {
+  background-color: #fff;
+  color: #181818;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid #000;
+  width: 70vw;
+  height: 150px;
+background-image: url(../../public/Cardbg/cricket.png);
+background-position: bottom;
+background-size: 70% 70% ;
+background-repeat:repeat-x ;
+  margin-top: 0px;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+}
+
+.team-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid #000;
+}
+
+.team-right .team-logo {
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.team-left {
+  margin-right: auto;
+}
+
+.team-right {
+  margin-left: auto;
+}
+
+.match-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+  position: relative;
+  top: -20px;
+}
+
+.match-time-format {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-between;
+ 
+}
+
+.match-time-format span:first-child {
+  margin-right: 10px;
+}
+
+.match-details {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
