@@ -79,7 +79,7 @@ const Schedule = () => {
     if (!toFetch || isLoading || !hasMore) return;
 
     setIsLoading(true);
-    const apiUrl = `http://localhost:8080/api/matches?page=${page}&limit=${limit}&sortBy=${"time"}&order=${order}&search=${searchQuery}`;
+    const apiUrl = `http://localhost:3000/api/matches?page=${page}&limit=${limit}&sortBy=${"time"}&order=${order}&search=${searchQuery}`;
 
     try {
       const response = await axios.get(apiUrl);
