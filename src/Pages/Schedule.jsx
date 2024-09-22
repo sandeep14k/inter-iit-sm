@@ -1,29 +1,33 @@
-import React, { useState } from 'react';
-import Footer from '../Components/Footer';
-import Navbar from '../Components/Navbar';
-import MatchCardSection from '../Components/MatchCardSection';
+import React, { useState, useEffect, useRef } from "react";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
+import MatchCardSection from "../Components/MatchCardSection";
+import Timeline from "../Components/Timeline";
 import { Input, Select } from "antd";
-import Sportsfilter from '../Components/Sportsfilter';
-import '../css/Schedule.css';
+import Sportsfilter from "../Components/Sportsfilter";
+import "../css/Schedule.css";
+import axios from "axios";
 
 const { Option } = Select;
 
 const Schedule = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedSport, setSelectedSport] = useState('');
-  const [selectedDate, setSelectedDate] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedSport, setSelectedSport] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
 
-  const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
-  };
+  /// //////////////////////////////////
+  const listInnerRef = useRef();
 
-  const handleSportSelect = (sport) => {
-    setSelectedSport(sport);
-  };
+  const [matches, setMatches] = useState([]);
+  const [page, setPage] = useState(1);
+  const [limit] = useState(10); // Adjust the limit as per your needs
+  const [sortBy, setSortBy] = useState("date"); // Default sort by 'date'
+  const [order, setOrder] = useState("asc"); // Order can be 'asc' or 'desc'
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+  const [toFetch, setToFetch] = useState(true);
+  /// //////////////////////////////////
 
-  const handleDateSelect = (date) => {
-    setSelectedDate(date);
-  };
   const [iit, setIIT] = useState("IITs");
   const [Date, setDate] = useState("Date");
   const selectBefore = (
@@ -66,40 +70,80 @@ const Schedule = () => {
       onChange={(e) => setDate(e)}
       defaultValue="Date"
     >
-      <Option value="Sport">Sport</Option>
-      <Option value="Cricket">Cricket</Option>
-      <Option value="Lawn Tennis">Lawn Tennis</Option>
-      <Option value="Volleyball">Volleyball</Option>
-      <Option value="Basketball">Basketball</Option>
-      <Option value="Hockey">Hockey</Option>
+      <Option value="Sport">time</Option>
     </Select>
   );
 
+  //////////////////////////////////////////////////
+  const fetchMatches = async () => {
+    if (!toFetch || isLoading || !hasMore) return;
+
+    setIsLoading(true);
+    const apiUrl = `http://localhost:3000/api/matches?page=${page}&limit=${limit}&sortBy=${"time"}&order=${order}&search=${searchQuery}`;
+
+    try {
+      const response = await axios.get(apiUrl);
+      if (response.status === 200) {
+        const data = response.data;
+        setMatches((prevMatches) => [...prevMatches, ...data.matches]);
+
+        if (data.matches.length < limit) {
+          setHasMore(false);
+        }
+
+        setPage((prevPage) => prevPage + 1);
+      } else {
+        console.log("Failed to load matches");
+      }
+    } catch (error) {
+      console.error("Error fetching matches:", error);
+      console.log(error);
+    }
+
+    setIsLoading(false);
+    setToFetch(false);
+  };
+
+  useEffect(() => {
+    fetchMatches();
+  }, [toFetch]);
+
+  //////////////////////////////////////////////////
+
   return (
-    <div className='min-w-[100vw]'>
+    <div className="min-w-[100vw]">
       <Navbar />
-      <Sportsfilter onSearch={handleSearch} onSportSelect={handleSportSelect} />
-      {/* <Timeline onDateSelect={handleDateSelect} /> */}
-      <div
-        className="player-search-box"
-        style={{
-          padding: "10px 30px",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <Input
-          addonBefore={selectBefore}
-          addonAfter={selectAfter}
-          style={{ width: "100%", maxWidth: "1000px" }}
-        />
+
+      {/* ///////////////////////////////////////////////////// */}
+      <div ref={listInnerRef} className="cardbox">
+        {matches.length > 0 ? (
+          matches.map((match, index) => (
+            <div key={index} className="match-card">
+              <div className="details">
+                <h3>Match {match.matchId}</h3>
+                <p className="dete-font">Pool A</p>
+                <div className="time">
+                  <p className="dete-font">Time:{match.time}</p>
+                  <p className="dete-font">Venue:{match.venue}</p>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No matches found.</p>
+        )}
+        <div className="fbreak"></div>
+        <button
+          className="button load"
+          onClick={() => {
+            if(!isLoading)
+            setToFetch(true);
+          }}
+        >
+          {isLoading ? "Loading..." : "Load More"}
+        </button>
       </div>
-      
-      <MatchCardSection 
-        searchQuery={searchQuery} 
-        selectedSport={selectedSport} 
-        selectedDate={selectedDate} 
-      />
+      {/* ///////////////////////////////////////////////////// */}
       <Footer />
     </div>
   );
