@@ -129,7 +129,7 @@ const Schedule = () => {
           <p>No Matches found.</p>
         )}
 
-        {filtered_matches.length > 0 && hasMore ? (
+        {matches.length > 0 && hasMore ? (
           <>
             <div className="fbreak"></div>
             <button

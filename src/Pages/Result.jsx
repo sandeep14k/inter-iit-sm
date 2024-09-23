@@ -77,6 +77,7 @@ const Schedule = () => {
   }, [toFetch]);
 
   let filtered_matches = matches.filter((v) => {
+    console.log(v)
     if(v.status != "completed") return; 
 
     let isSpr = false;
@@ -129,7 +130,7 @@ const Schedule = () => {
           <p>No Matches found.</p>
         )}
 
-        {filtered_matches.length > 0 && hasMore ? (
+        {matches.length > 0 && hasMore ? (
           <>
             <div className="fbreak"></div>
             <button
