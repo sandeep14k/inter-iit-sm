@@ -107,7 +107,7 @@ const Schedule = () => {
             setSearchQuery(e.target.value);
           }}
           onKeyUp={(e) => {
-            if (e.code != "Enter") return;
+            if (e.code !== "Enter") return;
             setPage(1);
             setMatches([]);
             setHasMore(true);
