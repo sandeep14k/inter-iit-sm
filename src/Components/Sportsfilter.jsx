@@ -8,11 +8,11 @@ const Sportsfilter = ({ onSearch, onSportSelect }) => {
 
   return (
     <div>
-      <br />
+      <br/>
       <fieldset>
         <legend className='md:text-[50px] sm:text-[40px] text-[30px]  md:px-[75px] px-[20px]'>Schedule</legend>
       </fieldset>
-      <br />
+      <br/>
       <div className="button-container">
         <button className="button" onClick={() => handleSportClick('cricket')}>Cricket</button>
         <button className="button" onClick={() => handleSportClick('lawn Tennis')}>Lawn Tennis</button>
