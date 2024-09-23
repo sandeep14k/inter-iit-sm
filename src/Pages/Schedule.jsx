@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import ScheduleCard from "../Components/Schedule/ScheuleCard.jsx";
+import MatchCardR from "../Components/MatchCardR.jsx";
 import { Input, Select } from "antd";
 import "../css/Schedule.css";
 import Database from "../utils/Database";
@@ -76,6 +77,8 @@ const Schedule = () => {
   }, [toFetch]);
 
   let filtered_matches = matches.filter((v) => {
+    if(v.status != "upcoming") return; 
+
     let isSpr = false;
     if (selectedSport == "Sport") isSpr = true;
     else if (v.sport.toLowerCase() == selectedSport.toLowerCase()) isSpr = true;
@@ -115,20 +118,12 @@ const Schedule = () => {
       </div>
 
       <div
-        // onScroll={(e) => {
-        //   const bottom =
-        //     e.target.scrollHeight - e.target.scrollTop ===
-        //     e.target.clientHeight;
-        //   if (bottom) {
-        //     if (!toFetch && hasMore) setToFetch(true);
-        //   }
-        // }}
         ref={listInnerRef}
         className="cardbox"
       >
         {filtered_matches.length > 0 ? (
           filtered_matches.map((match, index) => (
-            <ScheduleCard match={match} key={index} />
+            <MatchCardR match={match} key={index} />
           ))
         ) : (
           <p>No Matches found.</p>

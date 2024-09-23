@@ -11,11 +11,11 @@
   border: 1px solid #000;
   width: 70vw;
   height: 150px;
-background-image: url(../../public/Cardbg/cricket.png);
-background-position: bottom;
-background-size: 70% 70% ;
-background-repeat:repeat-x ;
-  margin-top: 0px;
+  background-image: url(../../public/Cardbg/cricket.png);
+  background-position: bottom;
+  background-size: 70% 70%;
+  background-repeat: repeat-x;
+  margin: 10px 0;
 }
 
 .team {
@@ -61,7 +61,6 @@ background-repeat:repeat-x ;
   align-items: center;
   margin-bottom: 10px;
   justify-content: space-between;
- 
 }
 
 .match-time-format span:first-child {
