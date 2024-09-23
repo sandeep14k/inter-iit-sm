@@ -221,10 +221,12 @@
   margin: 50px 0;
 }
 
-.cardbox{
+.cardbox {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  
   justify-content: space-around;
-  /* left: 40px; */
+  min-height: calc(100vh - 144px);
+  padding: 25px 0;
 }
