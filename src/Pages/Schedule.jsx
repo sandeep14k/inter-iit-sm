@@ -3,10 +3,9 @@ import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import ScheduleCard from "../Components/Schedule/ScheuleCard.jsx";
 import MatchCardR from "../Components/MatchCardR.jsx";
-import { Input, Select } from "antd";
+import { Input, Select, DatePicker, Space } from "antd";
 import "../css/Schedule.css";
 import Database from "../utils/Database";
-// import Timeline from "../Components/Timeline";
 
 const { Option } = Select;
 
@@ -15,7 +14,7 @@ const limit = 10;
 const Schedule = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSport, setSelectedSport] = useState("Sport");
-  // const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedDate, setSelectedDate] = useState(undefined);
 
   let db = new Database();
   const listInnerRef = useRef();
@@ -26,23 +25,21 @@ const Schedule = () => {
   const [hasMore, setHasMore] = useState(true);
   const [toFetch, setToFetch] = useState(true);
 
-  // const selectBefore = (
-  //   <Select
-  //     style={{ minWidth: "130px" }}
-  //     value={selectedCategory}
-  //     onChange={(e) => setSelectedCategory(e)}
-  //     defaultValue="All"
-  //   >
-  //     <Option value="All">All</Option>
-  //     <Option value="Men">Men</Option>
-  //     <Option value="Women">Women</Option>
-  //     <Option value="Mixed">Mixed</Option>
-  //   </Select>
-  // );
+  const selectBefore = (
+    <Space direction="vertical">
+      <DatePicker
+        style={{ minWidth: "120px" }}
+        onChange={(e) => {
+          if(!e) setSelectedDate(undefined);
+          else setSelectedDate(new Date(e.$d));
+        }}
+      />
+    </Space>
+  );
 
   const selectAfter = (
     <Select
-      style={{ minWidth: "150px" }}
+      style={{ minWidth: "100px" }}
       value={selectedSport}
       onChange={(e) => setSelectedSport(e)}
       defaultValue="Sport"
@@ -77,13 +74,23 @@ const Schedule = () => {
   }, [toFetch]);
 
   let filtered_matches = matches.filter((v) => {
-    if(v.status != "upcoming") return; 
+    if (v.status != "upcoming") return;
+
+    let td = new Date(v.time);
+    let isdate = true;
+    if(!selectedDate){}
+    else if (
+      selectedDate != undefined &&
+      (td.getDate() != selectedDate.getDate() ||
+        td.getMonth() != selectedDate.getMonth() ||
+        td.getFullYear() != selectedDate.getFullYear())
+    ) isdate = false;
 
     let isSpr = false;
     if (selectedSport == "Sport") isSpr = true;
     else if (v.sport.toLowerCase() == selectedSport.toLowerCase()) isSpr = true;
 
-    return isSpr;
+    return isSpr && isdate;
   });
 
   return (
@@ -99,7 +106,7 @@ const Schedule = () => {
         }}
       >
         <Input
-          // addonBefore={selectBefore}
+          addonBefore={selectBefore}
           addonAfter={selectAfter}
           value={searchQuery}
           style={{ width: "100%", maxWidth: "1000px" }}
@@ -117,10 +124,7 @@ const Schedule = () => {
         />
       </div>
 
-      <div
-        ref={listInnerRef}
-        className="cardbox"
-      >
+      <div ref={listInnerRef} className="cardbox">
         {filtered_matches.length > 0 ? (
           filtered_matches.map((match, index) => (
             <MatchCardR match={match} key={index} />
