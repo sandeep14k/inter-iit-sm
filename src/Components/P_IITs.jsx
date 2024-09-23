@@ -161,7 +161,7 @@ const P_IITs = () => {
 
 
   return (
-    <div className=" relative w-[100vw] min-h-[65vh] mb-8  border-b-[4px] border-[rgb(173,173,173)] flex flex-col justify-center items-center">
+    <div className=" relative w-[100vw] mb-8  border-b-[4px] border-[rgb(173,173,173)] flex flex-col justify-center items-center">
       <fieldset>
         <legend className="md:text-[50px] sm:text-[40px] text-[30px]  md:px-[75px] px-[20px]">
           Participating IITs

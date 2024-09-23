@@ -5,6 +5,7 @@ import '../css/Navbar.css';
 import { Menu, Dropdown, Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import {Link, useNavigate} from 'react-router-dom';
+import { GiHamburgerMenu } from "react-icons/gi";
 // import Brochure from "../../public/Brochure/Brochure.pdf";
 
 const Navbar = () => {
@@ -41,7 +42,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <a href="/">Logo</a>
+        <a href="/">
+          <img src="../../assets/logo.jpg" alt="#logo" />
+        </a>
       </div>
       <ul
         className={isMobile ? "nav-links-mobile" : "nav-links"}
@@ -74,13 +77,17 @@ const Navbar = () => {
         </li>
       </ul>
       <button
-        className="mobile-menu-icon"
+        className="mobile-menu-icon p-4"
         onClick={() => setIsMobile(!isMobile)}
       >
         {isMobile ? (
-          <i className="fas fa-times"></i>
+          <i className="fas fa-times">
+            <GiHamburgerMenu />
+          </i>
         ) : (
-          <i className="fas fa-bars"></i>
+          <i className="fas fa-bars">
+            <GiHamburgerMenu />
+          </i>
         )}
       </button>
     </nav>
