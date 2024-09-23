@@ -73,7 +73,7 @@ function MatchCardR({ match }) {
       </div>
       <div className="team team-right">
         <span>{match.team2}</span>
-        <img src={IITs[match.team1]} alt="IIT Logo" className="team-logo" />
+        <img src={IITs[match.team2]} alt="IIT Logo" className="team-logo" />
       </div>
     </div>
   );
