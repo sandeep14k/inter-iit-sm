@@ -34,7 +34,7 @@
         /* Triangle color */
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
-        transform: translateX(-5px);
+        transform: translateX(-2px);
 }
 .slick-next::before{
     content: "";
@@ -45,7 +45,7 @@
         /* Triangle color */
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
-        transform: translateX(5px);
+        transform: translateX(2px);
 }
 
 .slick-next {
@@ -66,4 +66,13 @@
         bottom: 40%;
         right: 40%;
         z-index: 100;
+}
+
+@media only screen and (max-width: 740px) {
+    .slick-next{
+        right: 20%
+    }
+    .slick-prev{
+        left: 20%
+    }
 }

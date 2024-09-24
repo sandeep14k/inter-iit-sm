@@ -34,6 +34,26 @@
     font-weight: 500;
     margin-bottom: 0%;
 }
+@media screen and (max-width: 1200px) {
+    .section-title {
+        font-size: 300% !important;
+            left: 66px;
+                top: 0%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .section-title {
+        font-size: 250% !important;
+        top: -2% !important;
+    }
+    
+}
+@media screen and (max-width: 400px) {
+    .section-title {
+        font-size: 220% !important;
+        top: -2% !important;
+    }
+}
 
 .section-date2 {
     position: absolute;
@@ -67,7 +87,7 @@
     position: absolute;
     top: 100px;
     left: 9%;
-    z-index: 3;
+    z-index: 1;
     height: 90%;
 }
 
@@ -85,7 +105,7 @@
     top: 0;
     left: 55%;
     /* Adjust based on card width */
-    z-index: 1;
+    z-index: 3;
     height: 90%;
 }
 
@@ -107,6 +127,12 @@
         transform: translateY(0);
         z-index: 1;
     }
+    .section-date{
+        font-size: 55px;
+    }
+    .section-date2{
+        font-size: 45px;
+    }
 }
 
 .section-stage {
@@ -121,12 +147,60 @@
 .sportsbg {
     position: absolute;
     font-family: 'Orbitron', sans-serif;
+    width: 100vw;
     font-size: 275px;
     z-index: 100;
     color: #eceaea4d;
     top: 20%;
-    right: 5%;
+    text-align: center;
 }
+@media screen and (max-width: 1200px) {
+    .sportsbg {
+        font-size: 200px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .sportsbg {
+        font-size: 180px;
+    }
+}
+@media screen and (max-width: 850px) {
+    .sportsbg {
+        top: 28%;
+        font-size: 160px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .sportsbg {
+
+        font-size: 140px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .sportsbg {
+
+        font-size: 120px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .sportsbg {
+
+        font-size: 100px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .sportsbg {
+
+        font-size: 80px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .sportsbg {
+        top: 35%;
+        font-size: 60px;
+    }
+}
+
  .play-button {
      width: 75px;
      /* Adjust the size as needed */
@@ -167,4 +241,42 @@
      /* Orange shadow on hover */
      cursor: pointer;
      /* Pointer cursor on hover */
+ }
+
+ @media screen and (max-width: 600px) {
+     
+    .section-date {
+            font-size: 50px;
+            top: 72%;
+        }
+    
+        .section-date2 {
+            font-size: 40px;
+            top: 82%;
+        }
+    
+ }
+ @media screen and (max-width: 470px) {
+     
+    .section-date {
+        font-size: 40px;
+            top: 68%;
+        }
+    
+        .section-date2 {
+            font-size: 30px;
+            top: 78%;
+        }
+    
+ }
+ @media screen and (max-width: 350px) {
+     
+    .section-date {
+            top: 73%;
+        }
+    
+        .section-date2 {
+            top: 80%;
+        }
+    
  }

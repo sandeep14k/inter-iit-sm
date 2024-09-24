@@ -14,7 +14,9 @@ const SocialMediaHandles = () => {
     <div className="container">
       <div className="title-container">
         <hr className="line" />
-        <span className="separator">Social Media Handles</span>
+        <span className="separator md:text-[60px] sm:text-[40px] text-[30px]">
+          Social Media Handles
+        </span>
         <hr className="line" />
       </div>
       <div className="social-media">
@@ -30,7 +32,7 @@ const SocialMediaHandles = () => {
           className="logo"
         />
       </div>
-      <span className="social-media-cards-title">
+      <span className="social-media-cards-title md:text-[64px] sm:text-[40px] text-[30px]">
         Latest stories running around
       </span>
       <hr className="underline" />
