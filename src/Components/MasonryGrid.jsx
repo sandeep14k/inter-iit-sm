@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const images = [
   "../../public/gallery/IMG_0308.JPG",
   "../../public/gallery/IMG_7606.JPG",
