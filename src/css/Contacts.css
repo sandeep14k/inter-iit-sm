@@ -15,23 +15,14 @@ h1{
     font-weight: 800;
     margin-top: 4vh;
     padding: 0;
-    margin-bottom: 0;
-}
-
-#part-1{
-    padding-top: 12vh;
-    padding-bottom: 7vh;
-}
-
-#part-10{
-    padding-bottom: 20vh;
 }
 
 .container_contacts{
     display: flex;
     justify-content: center;
-    gap: 5vw;
-    padding-top: 20vh;
+    gap: 3vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
 }
 
 .box{
@@ -39,12 +30,15 @@ h1{
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 17.2vw;
+    width: 18.2vw;
     height: 57vh;
     overflow: hidden;
-    margin: 10px;
+    margin: 1vw;
+    margin-top: 6vh;
+    margin-bottom: 5vh;
     border-radius: 12px;
-    box-shadow: 5px 3px 10px rgb(224, 224, 224);
+    box-shadow: 4px 3px 14px #bebebe;
+    /* border: 2px solid #e37B78 ; */
 }
 
 .box img{
@@ -65,37 +59,4 @@ img.hover-img{
 
 .box:hover img.hover-img{
     opacity: 1;
-}
-
-.ant-anchor-link{
-    width: 24vw;
-    border-radius: 10px;
-    margin-top: 3px;
-}
-
-.ant-anchor-link:hover{
-    background-color: rgb(249, 255, 191);
-    color: aliceblue;
-    box-shadow:1px 4px 3px rgb(209, 209, 209);
-}
-
-.ant-anchor-link:active{
-    background-color: rgb(255, 255, 255);
-    box-shadow: none;
-}
-
-.ant-anchor-link-title{
-    font-size: 25px;
-    color: aliceblue;
-    font-family: "Kanit", system-ui;
-}
-
-.ant-anchor{
-    top: 17vh;
-    height: 70vh;
-}
-
-.ant-anchor-wrapper{
-    position:sticky;
-    height: 90vh;
 }
