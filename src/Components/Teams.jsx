@@ -1,68 +1,9 @@
 import React from 'react'
-import { Anchor, Col, Row } from 'antd';
 import '../css/Contacts.css'
 
 const Teams = () => {
   return (
-    <Row className="body">
-      <Col className="bookmarks">
-        <Anchor
-          replace
-          items={[
-            {
-              key: "part-1",
-              href: "#part-1",
-              title: "OVERALL COORDINATORS",
-            },
-            {
-              key: "part-2",
-              href: "#part-2",
-              title: "HEADS, EVENTS",
-            },
-            {
-              key: "part-3",
-              href: "#part-3",
-              title: "HEADS, MEDIA AND PUBLICITY",
-            },
-            {
-              key: "part-4",
-              href: "#part-4",
-              title: "HEADS, HOSPITALITY",
-            },
-            {
-              key: "part-5",
-              href: "#part-5",
-              title: "HEADS, PUBLIC RELATIONS",
-            },
-            {
-              key: "part-6",
-              href: "#part-6",
-              title: "HEADS, MARKETING",
-            },
-            {
-              key: "part-7",
-              href: "#part-7",
-              title: "HEADS, SHOW MANAGEMENT",
-            },
-            {
-              key: "part-8",
-              href: "#part-8",
-              title: "HEADS, SECURITY",
-            },
-            {
-              key: "part-9",
-              href: "#part-9",
-              title: "HEADS, WEB AND APP",
-            },
-            {
-              key: "part-10",
-              href: "#part-10",
-              title: "HEADS, DESIGN",
-            },
-          ]}
-        />
-      </Col>
-      <Col span={18} className="leftPart">
+      <div className="leftPart">
         <h1>ORGANISING TEAM</h1>
         <div id="part-1" className="container_contacts">
           <div className="box">
@@ -80,19 +21,34 @@ const Teams = () => {
         </div>
         <div id="part-2" className="container_contacts">
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Nitin" />
+            <img src="../../Contacts/nitinF.png" alt="nitin" />
             <img
-              src="../../Contacts/HeadB.png"
-              alt="Nitin"
+              src="../../Contacts/nitinB.png"
+              alt="nitin"
               className="hover-img"
             />
           </div>
-
           <div className="box">
             <img src="../../Contacts/HeadF.png" alt="Pravesh" />
             <img
               src="../../Contacts/HeadB.png"
               alt="Pravesh"
+              className="hover-img"
+            />
+          </div>
+          <div className="box">
+            <img src="../../Contacts/netrajF.png" alt="netraj" />
+            <img
+              src="../../Contacts/netrajB.png"
+              alt="netraj"
+              className="hover-img"
+            />
+          </div>
+          <div className="box">
+            <img src="../../Contacts/sushantF.png" alt="sushant" />
+            <img
+              src="../../Contacts/sushantB.png"
+              alt="sushant"
               className="hover-img"
             />
           </div>
@@ -106,111 +62,124 @@ const Teams = () => {
               className="hover-img"
             />
           </div>
-
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Pravesh" />
+            <img src="../../Contacts/jayantF.png" alt="jayant" />
             <img
-              src="../../Contacts/HeadB.png"
-              alt="Pravesh"
+              src="../../Contacts/jayantB.png"
+              alt="jayant"
+              className="hover-img"
+            />
+          </div>
+          <div className="box">
+            <img src="../../Contacts/shivaniF.png" alt="shivani" />
+            <img
+              src="../../Contacts/shivaniB.png"
+              alt="shivani"
+              className="hover-img"
+            />
+          </div>
+          <div className="box">
+            <img src="../../Contacts/nishantF.png" alt="nishant" />
+            <img
+              src="../../Contacts/nishantB.png"
+              alt="nishant"
               className="hover-img"
             />
           </div>
         </div>
         <div id="part-4" className="container_contacts">
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Nitin" />
+            <img src="../../Contacts/naveenF.png" alt="naveen" />
             <img
-              src="../../Contacts/HeadB.png"
-              alt="Nitin"
+              src="../../Contacts/naveenB.png"
+              alt="naveen"
               className="hover-img"
             />
           </div>
-
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Pravesh" />
+            <img src="../../Contacts/manujaF.png" alt="manuja" />
             <img
-              src="../../Contacts/HeadB.png"
-              alt="Pravesh"
+              src="../../Contacts/manujaB.png"
+              alt="manuja"
               className="hover-img"
             />
           </div>
-
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Pravesh" />
+            <img src="../../Contacts/sahilF.png" alt="sahil" />
             <img
-              src="../../Contacts/HeadB.png"
-              alt="Pravesh"
+              src="../../Contacts/sahilB.png"
+              alt="sahil"
+              className="hover-img"
+            />
+          </div>
+          <div className="box">
+            <img src="../../Contacts/prasangF.png" alt="prasang" />
+            <img
+              src="../../Contacts/prasangB.png"
+              alt="prasang"
               className="hover-img"
             />
           </div>
         </div>
         <div id="part-5" className="container_contacts">
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Nitin" />
+            <img src="../../Contacts/HeadF.png" alt="keshav" />
             <img
               src="../../Contacts/HeadB.png"
-              alt="Nitin"
+              alt="keshav"
               className="hover-img"
             />
           </div>
-
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Pravesh" />
+            <img src="../../Contacts/kartikF.png" alt="kartik" />
             <img
-              src="../../Contacts/HeadB.png"
-              alt="Pravesh"
+              src="../../Contacts/kartikB.png"
+              alt="kartik"
+              className="hover-img"
+            />
+          </div>
+          <div className="box">
+            <img src="../../Contacts/nikhilF.png" alt="nikhil" />
+            <img
+              src="../../Contacts/nikhilB.png"
+              alt="nikhil"
+              className="hover-img"
+            />
+          </div>
+          <div className="box">
+            <img src="../../Contacts/mayankF.png" alt="mayank" />
+            <img
+              src="../../Contacts/mayankB.png"
+              alt="mayank"
               className="hover-img"
             />
           </div>
         </div>
         <div id="part-6" className="container_contacts">
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Nitin" />
+            <img src="../../Contacts/ujjawalF.png" alt="ujjawal" />
             <img
-              src="../../Contacts/HeadB.png"
-              alt="Nitin"
+              src="../../Contacts/ujjawalB.png"
+              alt="ujjawal"
               className="hover-img"
             />
           </div>
-
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Pravesh" />
+            <img src="../../Contacts/priyanshuF.png" alt="priyanshu" />
             <img
-              src="../../Contacts/HeadB.png"
-              alt="Pravesh"
+              src="../../Contacts/priyanshuB.png"
+              alt="priyanshu"
               className="hover-img"
             />
           </div>
-        </div>
-        <div id="part-7" className="container_contacts">
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Nitin" />
+            <img src="../../Contacts/rudrakshF.png" alt="rudraksh" />
             <img
-              src="../../Contacts/HeadB.png"
-              alt="Nitin"
+              src="../../Contacts/rudrakshB.png"
+              alt="rudraksh"
               className="hover-img"
             />
           </div>
-
-          <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Pravesh" />
-            <img
-              src="../../Contacts/HeadB.png"
-              alt="Pravesh"
-              className="hover-img"
-            />
-          </div>
-
-          <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Pravesh" />
-            <img
-              src="../../Contacts/HeadB.png"
-              alt="Pravesh"
-              className="hover-img"
-            />
-          </div>
-        </div>
-        <div id="part-8" className="container_contacts">
           <div className="box">
             <img src="../../Contacts/HeadF.png" alt="Nitin" />
             <img
@@ -220,37 +189,7 @@ const Teams = () => {
             />
           </div>
         </div>
-        <div id="part-9" className="container_contacts">
-          <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Nitin" />
-            <img
-              src="../../Contacts/HeadB.png"
-              alt="Nitin"
-              className="hover-img"
-            />
-          </div>
-
-          <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Pravesh" />
-            <img
-              src="../../Contacts/HeadB.png"
-              alt="Pravesh"
-              className="hover-img"
-            />
-          </div>
-        </div>
-        <div id="part-10" className="container_contacts">
-          <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Nitin" />
-            <img
-              src="../../Contacts/HeadB.png"
-              alt="Nitin"
-              className="hover-img"
-            />
-          </div>
-        </div>
-      </Col>
-    </Row>
+      </div>
   );
 }
 
