@@ -1,6 +1,6 @@
 // src/Navbar.js
 import { useWindowScroll } from "react-use";
-import React, { useEffect,useState} from 'react';
+import React, { useEffect,useRef,useState} from 'react';
 import '../css/Navbar.css';
 import { Menu, Dropdown, Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
@@ -38,6 +38,12 @@ const Navbar = () => {
     </Menu>
   );
 
+  const ref =useRef(null)
+
+  const handleClick = () => {
+    
+  }
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -48,7 +54,7 @@ const Navbar = () => {
         onClick={() => setIsMobile(false)}
       >
         <li>
-          <a href="/About">About</a>
+          <a href='/' onClick={handleClick}>About</a>
         </li>
         <li>
           <a href="/Livescores">Live Score</a>
