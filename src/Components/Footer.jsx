@@ -42,6 +42,10 @@ const Footer = () => {
                     <FaArrowRight className='text-white sm:text-xl text-lg'/>
                     <span className='text-white sm:text-xl text-lg'>Results</span>
                 </a>
+                <a href="" className='flex items-center gap-3'>
+                    <FaArrowRight className='text-white sm:text-xl text-lg'/>
+                    <span className='text-white sm:text-xl text-lg'>Brochure</span>
+                </a>
             </div>
             <div className='flex flex-col md:items-start justify-center items-center sm:gap-[30px] gap-[10px] md:col-span-1 col-span-2'>
                 <div>
