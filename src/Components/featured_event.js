@@ -6,20 +6,22 @@ const FeaturedEvent = () => {
   return (
     <div className="Featured">
       <div className="top-section">
-        <div className="text-wrapper-35">Inter IIT Featured Events</div>
+        <div className="text-wrapper-35 md:text-[50px] sm:text-[40px] text-[30px]">
+          Inter IIT Featured Events
+        </div>
         <center>
           <div className="horizontal-line"></div>
         </center>
 
         <div className="image-container">
           <motion.div
-            initial={{ x: -200, opacity: 0 }}
+            initial={{ x: -75, opacity: 0 }}
             // animate={{x:0, opacity:1}}
             transition={{ duration: 0.5 }}
             whileInView="visible"
             variants={{
               visible: { x: 0, opacity: 1 },
-              hidden: { x: -200, opacity: 0 },
+              hidden: { x: -75, opacity: 0 },
             }}
             className="image-wrapper"
           >
@@ -57,13 +59,13 @@ const FeaturedEvent = () => {
             </div>
           </motion.div>
           <motion.div
-            initial={{ x: 200, opacity: 0 }}
+            initial={{ x: 75, opacity: 0 }}
             // animate={{x:0, opacity:1}}
             transition={{ duration: 0.5 }}
             whileInView="visible"
             variants={{
               visible: { x: 0, opacity: 1 },
-              hidden: { x: -200, opacity: 0 },
+              hidden: { x: 75, opacity: 0 },
             }}
             className="image-wrapper"
           >

@@ -19,7 +19,6 @@
 }
 
 .social-media-cards-title {
-  font-size: 64px;
   color: #000000;
   font-family: 'Ubuntu Condensed', sans-serif;
 }
@@ -90,6 +89,18 @@ h1 {
   width: 60px;
   height: 60px;
 }
+@media only screen and (max-width: 600px) {
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  .social-media-card{
+    height: 250px;
+  }
+  .social-media-cards{
+    gap: 20px;
+  }
+}
 
 .social-media-cards:after {
   content: '';
@@ -99,15 +110,15 @@ h1 {
   width: 100%;
   height: 40%;
   /* Adjust as necessary */
-  background-color: #272727;
+  background-color: #242424;;
   /* Pure black */
   z-index: -1;
 }
 
 .social-media-card {
   /* border: 1px solid #ccc; */
+  
   border-radius: 10px;
-  box-shadow: 5px 10px 10px 5px rgba(0, 0, 0, 0.1);
   /* margin-bottom: 0px; */
   overflow: hidden;
 

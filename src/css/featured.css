@@ -1,5 +1,5 @@
 .Featured {
-  background: linear-gradient(to bottom, #272727 50%, white 50%);
+  background: linear-gradient(to bottom, #242424 50%, white 50%);
   color: white;
   text-align: center;
   margin-bottom: 2%;
@@ -16,10 +16,11 @@
 .text-wrapper-35 {
 
   font-family: "Roboto Flex-Bold", Helvetica;
-  font-size: 50px;
+  
   color: white;
 
 }
+
 
 .image-container {
   display: flex;
@@ -40,6 +41,38 @@
   box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.25);
 }
 
+@media only screen and (max-width: 740px) {
+  .rectangle {
+    height: 200px;
+    width: 240px;
+  }
+    .image-number {
+      font-size: 40px !important;
+    }
+  
+    .image-title {
+      font-size: 24px !important;
+    }
+  
+    .image-date {
+      font-size: 18px !important;
+    }
+}
+@media only screen and (max-width: 550px) {
+  .rectangle {
+    height: 150px;
+    width: 200px;
+  }
+  .image-number{
+    font-size: 32px !important;
+  }
+  .image-title{
+    font-size: 18px !important;
+  }
+  .image-date{
+    font-size: 15px !important;
+  }
+}
 .image-text {
   color: black;
   margin: 0;

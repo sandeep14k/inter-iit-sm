@@ -36,7 +36,7 @@ const About = () => {
         }}
         className="lg:w-[50vw] w-[95vw] flex flex-col lg:items-end items-center lg:pr-[100px] text-white"
       >
-        <div className="my-5 txt lg:text-lg md:text-sm text-[13px]">
+        <div className="my-5 txt xl:text-lg md:text-sm text-[13px]">
           Started in 1961, the Inter IIT Sports Meet has an illustrious legacy
           as the longest-running inter-collegiate sports event, showcasing the
           prowess of India's top engineering institutions. With unwavering
@@ -44,13 +44,13 @@ const About = () => {
           over 4,000 talented athletes from all 23 IITs, competing in 13 diverse
           sports, all vying for the coveted General Championship Trophy.
         </div>
-        <div className="txt lg:text-lg md:text-sm text-[13px]">
+        <div className="txt xl:text-lg md:text-sm text-[13px]">
           The Inter IIT Sports Meet is an eagerly anticipated annual sports
           tournament of the Indian Institutes of Technology. Typically organized
           in December, the Aquatics events are held separately in October,
           making it a highlight on the academic calendar.
         </div>
-        <div className="txt w-[120px] lg:text-[14px] text-[12px]  my-5 text-end">
+        <div className="txt w-[120px] xl:text-[14px] text-[12px]  my-5 lg:text-end text-center">
           Preparation for the inter IITs starts way before the event with
           hundreds of students involved in the success of the event
         </div>
