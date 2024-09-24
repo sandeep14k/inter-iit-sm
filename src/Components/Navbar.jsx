@@ -48,10 +48,12 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <a href="/">
+        <a href="/" className="IISM">
           <img src="../../assets/logo.jpg" alt="#logo" />
+          {/* <h3>IISM'24</h3> */}
         </a>
       </div>
+      
       <ul
         className={isMobile ? "nav-links-mobile" : "nav-links"}
         onClick={() => setIsMobile(false)}
@@ -74,12 +76,8 @@ const Navbar = () => {
         <li>
           <a href="/Contacts">Contact</a>
         </li>
-        <li className="dropdown">
-          <Dropdown overlay={menu}>
-            <Button overlayStyle={{ outline: "none", boxShadow: "none" }}>
-              Info <DownOutlined />
-            </Button>
-          </Dropdown>
+        <li>
+          <a href="/gallery">Gallery</a>
         </li>
       </ul>
       <button
