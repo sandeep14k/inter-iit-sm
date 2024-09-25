@@ -31,9 +31,9 @@ const Navbar = () => {
         <Link to="/map">Map</Link>
       </Menu.Item>
       <Menu.Item key="3">
-        <a href="../../Brochure/Brochure.pdf" target="_blank">
+        <Link to="../../Brochure/Brochure.pdf" target="_blank">
           Brochure
-        </a>
+        </Link>
       </Menu.Item>
     </Menu>
   );
@@ -41,29 +41,29 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <a href="/">Logo</a>
+        <Link to="/">Logo</Link>
       </div>
       <ul
         className={isMobile ? "nav-links-mobile" : "nav-links"}
         onClick={() => setIsMobile(false)}
       >
         <li>
-          <a href="/About">About</a>
+          <Link to="/About">About</Link>
         </li>
         <li>
-          <a href="/Livescores">Live Score</a>
+          <Link to="/Livescores">Live Score</Link>
         </li>
         <li>
-          <a href="/Schedule">Schedule</a>
+          <Link to="/Schedule">Schedule</Link>
         </li>
         <li>
-          <a href="/Result">Result</a>
+          <Link to="/Result">Result</Link>
         </li>
         <li>
-          <a href="/Athletes">Athletes</a>
+          <Link to="/Athletes">Athletes</Link>
         </li>
         <li>
-          <a href="/Contacts">Contact</a>
+          <Link to="/Contacts">Contact</Link>
         </li>
         <li className="dropdown">
           <Dropdown overlay={menu}>

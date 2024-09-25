@@ -1,21 +1,37 @@
+@font-face {
+  font-family: aptops;
+  src: url("/public/fonts/Aptos-SemiBold.ttf");
+}
+
 .match-card {
-  background-color: #fff;
-  color: #181818;
-  padding: 10px;
-  border-radius: 8px;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 15px;
+
+  box-shadow: 0px 0px 10px #00000020;
+  border: 1px solid #000;
+  width: clamp(100px, 95vw, 1000px);
+  background: rgb(5, 0, 98);
+  background: linear-gradient(
+    153deg,
+    rgba(5, 0, 98, 1) 0%,
+    rgba(9, 9, 121, 1) 37%,
+    rgba(0, 101, 222, 1) 100%
+  );
+  /* background: linear-gradient(45deg, #000, #fff); */
+  /* background: url(../../public/Cardbg/cricket.png);
+  /* background-position: bottom;
+  background-size: 70% 70%;
+  background-repeat: repeat-x; */
+  transition: 300ms;
+}
+
+.card-info {
+  padding: 15px 0;
+  position: relative;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  border: 1px solid #000;
-  width: 70vw;
-  height: 150px;
-  background-image: url(../../public/Cardbg/cricket.png);
-  background-position: bottom;
-  background-size: 70% 70%;
-  background-repeat: repeat-x;
-  margin: 10px 0;
 }
 
 .team {
@@ -24,50 +40,111 @@
 }
 
 .team-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-  border: 1px solid #000;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  padding: 5px;
+  background: #fff;
 }
 
-.team-right .team-logo {
-  margin-left: 10px;
-  margin-right: 0;
+.team span {
+  font-size: 20px;
+  font-family: aptops;
+  width: 167px;
 }
 
-.team-left {
-  margin-right: auto;
+.team-left span {
+  text-align: left;
+  padding-left: 20px;
 }
 
-.team-right {
-  margin-left: auto;
+.team-right span {
+  text-align: right;
+  padding-right: 20px;
 }
 
 .match-info {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 20px;
   position: relative;
-  top: -20px;
+}
+
+.match-info > div {
+  width: 100%;
 }
 
 .match-time-format {
-  font-size: 24px;
-  font-weight: bold;
+  font-family: aptops;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 10px;
-  justify-content: space-between;
 }
 
-.match-time-format span:first-child {
-  margin-right: 10px;
+.match-time-format span {
+  padding: 0 15px;
+  font-size: 18px;
 }
 
 .match-details {
-  font-size: 18px;
-  margin-bottom: 10px;
+  position: relative;
+  font-weight: bold;
+  font-size: 21px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.extra-box {
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-around;
+}
+
+.extra-button {
+  padding: 5px 15px;
+  font-weight: bold;
+  font-family: aptops;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.show-result {
+  background: #ffffff;
+  color: #0428f6; 
+}
+
+.watch-live {
+  color: #fff;
+  background: red;
+}
+
+.location {
+  color: #fff;
+  background: #15b568;
+}
+
+.extra-button:hover {
+  box-shadow: 0 0 10px #000;
+}
+
+@media screen and (max-width: 775px) {
+  .match-time-format span {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .team-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .team span {
+    font-size: 15px;
+  }
 }
