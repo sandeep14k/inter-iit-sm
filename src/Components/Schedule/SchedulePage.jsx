@@ -8,7 +8,7 @@ import Database from "../../utils/Database";
 
 const { Option } = Select;
 
-const limit = 10;
+const limit = 5;
 
 export default function SchedulePage({pageStatus}) {
   const [searchQuery, setSearchQuery] = useState("");
