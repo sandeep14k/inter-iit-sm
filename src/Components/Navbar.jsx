@@ -1,10 +1,11 @@
 // src/Navbar.js
 import { useWindowScroll } from "react-use";
-import React, { useEffect,useState} from 'react';
+import React, { useEffect,useRef,useState} from 'react';
 import '../css/Navbar.css';
 import { Menu, Dropdown, Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import {Link, useNavigate} from 'react-router-dom';
+import { GiHamburgerMenu } from "react-icons/gi";
 // import Brochure from "../../public/Brochure/Brochure.pdf";
 
 const Navbar = () => {
@@ -38,11 +39,18 @@ const Navbar = () => {
     </Menu>
   );
 
+  const ref =useRef(null)
+
+  const handleClick = () => {
+    
+  }
+
   return (
     <nav className="navbar">
       <div className="logo">
         <Link to="/">Logo</Link>
       </div>
+      
       <ul
         className={isMobile ? "nav-links-mobile" : "nav-links"}
         onClick={() => setIsMobile(false)}
@@ -65,22 +73,22 @@ const Navbar = () => {
         <li>
           <Link to="/Contacts">Contact</Link>
         </li>
-        <li className="dropdown">
-          <Dropdown overlay={menu}>
-            <Button overlayStyle={{ outline: "none", boxShadow: "none" }}>
-              Info <DownOutlined />
-            </Button>
-          </Dropdown>
+        <li>
+          <a href="/gallery">Gallery</a>
         </li>
       </ul>
       <button
-        className="mobile-menu-icon"
+        className="mobile-menu-icon p-4"
         onClick={() => setIsMobile(!isMobile)}
       >
         {isMobile ? (
-          <i className="fas fa-times"></i>
+          <i className="fas fa-times">
+            <GiHamburgerMenu />
+          </i>
         ) : (
-          <i className="fas fa-bars"></i>
+          <i className="fas fa-bars">
+            <GiHamburgerMenu />
+          </i>
         )}
       </button>
     </nav>

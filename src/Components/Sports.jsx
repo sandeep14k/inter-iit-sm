@@ -46,12 +46,14 @@ function SamplePrevArrow(props) {
 }
 
 const sports = [
-  { name: "Athletics", image: "../../Sports/Athletics.svg" },
+  { name: "Cricket", image: "../../Sports/cricket.jpg" },
   { name: "Badminton", image: "../../Sports/Badminton.svg" },
-  { name: "Basket Ball", image: "../../Sports/Basketball.svg" },
-  { name: "Squash", image: "../../Sports/Squash.svg" },
-  { name: "Swimming", image: "../../Sports/Swimming.svg" },
-  { name: "Volleyball", image: "../../Sports/Volleyball.svg" },
+  { name: "Basket Ball", image: "../../Sports/basketball.jpg" },
+  { name: "Hockey", image: "../../Sports/hockey.jpg" },
+  {name: "Football", image: "../../Sports/football.jpg"},
+  {name: "Lawn Tennis", image: "../../Sports/tennin.jpg"},
+  {name: "Table Tennis", image: "../../Sports/tt.jpg"},
+  {name: "Swimming", image: "../../Sports/Swimming.svg"},
 ];
 
 const Sports = () => {
@@ -87,9 +89,17 @@ const Sports = () => {
         breakpoint: 768,
         settings: {
           centerMode: true,
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          centerMode: true,
+          slidesToShow: 1.25,
+          slidesToScroll: 1,
+      }
       },
       {
         breakpoint: 480,
@@ -115,18 +125,18 @@ const Sports = () => {
       </div>
       <Slider
         {...settings}
-        className="btn overflow-visible w-[100vw] flex flex-row justify-center items-center"
+        className="btn overflow-visible w-[100vw] mx-auto flex flex-row justify-center items-center"
       >
         {sports.map((sport, index) => (
           <div key={index} className="sports_main ">
-            <div className="sports relative sm:w-[510px] w-[300px] saturate-[0.4] contrast-[0.7] hover:saturate-[1] hover:contrast-[1] hover:brightness-150 transition-all hover:scale-105 hover:z-10 m-2">
+            <div className=" sports overflow-y-hidden relative sm:w-[510px] w-[300px] saturate-[0.4] contrast-[0.7] hover:saturate-[1] hover:contrast-[1] hover:brightness-150 transition-all hover:scale-105 hover:z-10 m-2">
               <img
                 src={sport.image}
                 alt={sport.name}
                 className="w-full sm:h-[300px] h-[240px] object-cover "
               />
               <div className="absolute inset-0 bg-black bg-opacity-50 flex">
-                <div className="sports_name text-white text-center  font-semibold absolute bottom-0 left-0 m-4">
+                <div className="sports_name md:text-[45px] text-[30px] text-white text-center  font-semibold absolute bottom-0 left-0 m-4">
                   {sport.name}
                 </div>
               </div>

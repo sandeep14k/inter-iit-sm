@@ -11,21 +11,24 @@
     font-size: 16px !important;
     padding-bottom: 8px !important;
 }
-
+.IISM{
+    display: inline-flex;
+}
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 5px 2px;
     background-color: white;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
+    display: inline-flex;
+    flex-direction: row;
 }
-
 .tagline {
     font-size: 14px;
     color: grey;
@@ -35,6 +38,7 @@
 .logo-container {
     display: flex;
     align-items: center;
+    max-width: fit-content;
 }
 
 .nav-links {
@@ -70,7 +74,7 @@
 }
 
 .nav-links li:hover::after {
-    width: 100%;
+    width: 50%;
 }
 
 .nav-links a {
@@ -80,11 +84,14 @@
 
 .nav-links-mobile {
     display: none;
+    z-index: 1000;
+    transition: all 0.3s ease-in;
 }
 
 .mobile-menu-icon {
     display: none;
 }
+
 
 @media (max-width: 768px) {
     .nav-links {
@@ -97,11 +104,12 @@
         position: absolute;
         top: 60px;
         right: 0;
-        width: 100%;
+        width: 30%;
         height: calc(100vh - 60px);
         background-color: white;
         border-top: 1px solid #dcdcdc;
         border-radius: 0 0 20px 20px;
+        padding: 10px;
     }
 
     .nav-links-mobile li {
@@ -115,7 +123,145 @@
     }
 }
 
-.dropdown{
-    position: relative;
-    bottom: 2px;
+@media  screen and (max-width: 460px) {
+    .nav-links-mobile {
+        width: 50%;
+    }
+    
+}
+
+@media screen and (max-width: 900px){
+    .card{
+        width: 350px !important;
+    }
+    .card:nth-child(1) {
+            position: absolute !important;
+            top: 150px !important;
+            left: 2%   !important;
+            z-index: 1 !important;
+            height: 75%     !important;
+    }
+        .card:nth-child(2) {
+            position: absolute !important;
+            top: 97px !important;
+            left: 27% !important;
+            z-index: 2;
+            height: 75% !important;
+        }
+
+                        .card:nth-child(3) {
+                            position: absolute !important;
+                            top: 32px !important;
+                            left: 54% !important;
+                            z-index: 3 !important;
+                            height: 75% !important;
+                        }
+}
+
+@media screen and (max-width: 768px){
+    .card:nth-child(1){
+        left: 2% !important;
+    }
+    .card:nth-child(2){
+        left: 24% !important;
+    }
+    .card:nth-child(3){
+        left: 50% !important;
+    }
+}
+@media screen and (max-width: 650px){
+    
+    .card:nth-child(1){
+        left: -8% !important;
+    }
+    .card:nth-child(2){
+        left: 20% !important;
+    }
+    .card:nth-child(3){
+        left: 50% !important;
+    }
+}
+@media screen and (max-width: 575px){
+    .card{
+        width: 300px !important;
+    }
+    .card:nth-child(1){
+        height: 70% !important;
+        left: -4% !important;
+    }
+    .card:nth-child(2){
+        height: 70% !important;
+        left: 23% !important;
+    }
+    .card:nth-child(3){
+        height: 70% !important;
+        left: 53% !important;
+    }
+}
+@media screen and (max-width: 470px){
+    .card {
+            width: 250px !important;
+        }
+    
+    .card:nth-child(1){
+        top: 160px !important;
+        height: 60% !important;
+        left: -7% !important;
+    }
+    .card:nth-child(2){
+        top: 105px !important;
+        height: 60% !important;
+        left: 22% !important;
+    }
+    .card:nth-child(3){
+        top: 45px !important;
+        height: 60% !important;
+        left: 55% !important;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    
+
+    .card:nth-child(1) {
+        left: -8% !important;
+    }
+
+    .card:nth-child(2) {
+        left: 20% !important;
+    }
+
+    .card:nth-child(3) {
+        left: 51% !important;
+    }
+}
+@media screen and (max-width: 400px) {
+    
+
+    .card:nth-child(1) {
+        left: -11% !important;
+    }
+
+    .card:nth-child(2) {
+        left: 17% !important;
+    }
+
+    .card:nth-child(3) {
+        left: 47% !important;
+    }
+}
+@media screen and (max-width: 350px) {
+    
+
+    .card:nth-child(1) {
+        left: -13% !important;
+    }
+
+    .card:nth-child(2) {
+        left: 14% !important;
+    }
+
+    .card:nth-child(3) {
+        left: 41% !important;
+    }
 }
