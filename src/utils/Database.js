@@ -18,34 +18,21 @@ export default class Database {
     this.db = getFirestore(this.app);
   }
 
-  async getMatches(page, limit, searchQuery) {
-    const apiUrl = `http://localhost:3000/api/matches?page=${page}&limit=${limit}&sortBy=time&search=${searchQuery}`;
-    
+  async getMatches(page, limit, searchQuery, date, sport, status) {
+    // const apiUrl = `http://localhost:3000/api/matches?page=${page}&limit=${limit}&sortBy=time&search=${searchQuery}${(date) ? `&date=${date.toString()}`:''}${(sport != "Sport") ? `&sport=${sport}`:''}`;
+    const apiUrl = `http://localhost:3000/api/getMatch?page=${page}&limit=${limit}&search=${searchQuery}${(date) ? `&date=${date.toString()}` : ''}&sport=${sport}&status=${status}`;
+
     try {
       const response = await axios.get(apiUrl);
-      if (response.status === 200) {
-        const data = await response.data;
+      const data = await response.data;
+      console.log(data)
+      let matches = [];
 
-        let matches = [];
-
-        data.matches.forEach(
-          (item) => {
-            matches.push(new Match(
-              item.category,
-              item.liveStreamUrl,
-              item.matchId,
-              item.sport,
-              item.status,
-              item.team1,
-              item.team2,
-              item.time,
-              item.venue
-            ))
-          })
-        return matches;
-      } else {
-        console.log("Failed to load matches");
-      }
+      data.matches.forEach(
+        (item) => {
+          matches.push(new Match(item))
+        })
+      return matches;
     } catch (error) {
       console.error("Error fetching matches:", error);
       console.log(error);
