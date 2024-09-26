@@ -1,23 +1,15 @@
-export default function (
-  category,
-  liveStreamUrl,
-  matchId,
-  sport,
-  status,
-  team1,
-  team2,
-  time,
-  venue
-) {
+export default function (item) {
   return {
-    category: category,
-    liveStreamUrl: liveStreamUrl,
-    matchId: matchId,
-    sport: sport,
-    status: status,
-    team1: team1,
-    team2: team2,
-    time: time,
-    venue: venue
+    category: item.category,
+    liveStreamUrl: item.liveStreamUrl,
+    locationUrl: item.locationUrl,
+    matchID: item.matchID,
+    sport: item.sport,
+    status: item.status,
+    team1: item.team1,
+    team2: item.team2,
+    date: item.date,
+    time: item.time,
+    venue: item.venue
   }
 }
