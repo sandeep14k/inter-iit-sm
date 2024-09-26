@@ -2,6 +2,7 @@ import MasonryGrid from "../Components/MasonryGrid";
 import React from 'react'
 import Navbar from '../Components/Navbar'
 import { Typography } from "@mui/material";
+import  Footer  from "../Components/Footer";
 
 const Pictures = () => {
   return (
@@ -11,6 +12,9 @@ const Pictures = () => {
         Gallery
       </Typography>
       <MasonryGrid/>
+      <div>
+      <Footer/>
+      </div>
     </>
   )
 }

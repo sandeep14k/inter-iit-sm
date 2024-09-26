@@ -13,14 +13,20 @@ const images = [
 const MasonryGrid = () => {
   return (
     <div className="columns-1 sm:columns-2 lg:columns-3 py-10 md:py-20 gap-4">
+
       
-          {images.map((src, index) => (
-            <div key={index} className="mb-4 break-inside-avoid">
-              <div class="box" id="box1">
-              <img src={src} alt="#" className="w-full object-cover rounded-lg" />
-              </div>
+      <div class="bg">
+        <h1>IISM'24</h1>
+      </div>
+      {images.map((src, index) => (
+        <div key={index} className="mb-4 break-inside-avoid">
+          <div class="nft">
+            <div class='main'>
+              <img class='tokenImage' src={src} alt="NFT" />
             </div>
-          ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

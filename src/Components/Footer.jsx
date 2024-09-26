@@ -19,10 +19,10 @@ const Footer = () => {
                     <a href="">
                         <CiFacebook className='text-white sm:text-3xl text-xl hover:text-gray-400 transition-all'/>
                     </a>
-                    <a href="">
+                    <a href="https://www.instagram.com/interiit_sports2024?igsh=MmpteTdsMTFnemg2">
                         <CiInstagram className='text-white sm:text-3xl text-xl hover:text-gray-400 transition-all'/>
                     </a>
-                    <a href="">
+                    <a href="https://www.linkedin.com/company/inter-iit-sports-meet/about/">
                         <CiLinkedin className='text-white sm:text-3xl text-xl hover:text-gray-400 transition-all'/>
                     </a>
                 </div>
@@ -30,19 +30,19 @@ const Footer = () => {
             </div>
             <div className='flex flex-col gap-6'>
                 <span className='text-white sm:text-2xl text-xl font-semibold main-txt'>Quick Links</span>
-                <a href="" className='flex items-center gap-3'>
+                <a href="/" className='flex items-center gap-3'>
                     <FaArrowRight className='text-white sm:text-xl text-lg'/>
                     <span className='text-white sm:text-xl text-lg'>Home</span>
                 </a>
-                <a href="" className='flex items-center gap-3'>
+                <a href="/Schedule" className='flex items-center gap-3'>
                     <FaArrowRight className='text-white sm:text-xl text-lg'/>
                     <span className='text-white sm:text-xl text-lg'>Schedule</span>
                 </a>
-                <a href="" className='flex items-center gap-3'>
+                <a href="/Result" className='flex items-center gap-3'>
                     <FaArrowRight className='text-white sm:text-xl text-lg'/>
                     <span className='text-white sm:text-xl text-lg'>Results</span>
                 </a>
-                <a href="" className='flex items-center gap-3'>
+                <a href="/Brochure" className='flex items-center gap-3'>
                     <FaArrowRight className='text-white sm:text-xl text-lg'/>
                     <span className='text-white sm:text-xl text-lg'>Brochure</span>
                 </a>
