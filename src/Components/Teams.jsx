@@ -5,12 +5,12 @@ const Teams = () => {
   return (
       <div className="leftPart">
         <h1>ORGANISING TEAM</h1>
-        <div id="part-1" className="container_contacts">
-          <div className="box">
-            <img src="../../Contacts/OCF.png" alt="Avi" />
-            <img src="../../Contacts/OCB.png" alt="Avi" className="hover-img" />
+        <div className="ocContainer_contacts">
+          <div className="box ocBox">
+            <img src="../../Contacts/aviF.png" alt="avi" />
+            <img src="../../Contacts/aviB.png" alt="avi" className="hover-img" />
           </div>
-          <div className="box">
+          <div className="box ocBox">
             <img src="../../Contacts/OCF.png" alt="Mukul" />
             <img
               src="../../Contacts/OCB.png"
@@ -19,7 +19,7 @@ const Teams = () => {
             />
           </div>
         </div>
-        <div id="part-2" className="container_contacts">
+        <div className="container_contacts">
           <div className="box">
             <img src="../../Contacts/nitinF.png" alt="nitin" />
             <img
@@ -29,10 +29,10 @@ const Teams = () => {
             />
           </div>
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Pravesh" />
+            <img src="../../Contacts/praveshF.png" alt="pravesh" />
             <img
-              src="../../Contacts/HeadB.png"
-              alt="Pravesh"
+              src="../../Contacts/praveshB.png"
+              alt="pravesh"
               className="hover-img"
             />
           </div>
@@ -53,12 +53,12 @@ const Teams = () => {
             />
           </div>
         </div>
-        <div id="part-3" className="container_contacts">
+        <div className="container_contacts">
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Nitin" />
+            <img src="../../Contacts/prathamF.png" alt="pratham" />
             <img
-              src="../../Contacts/HeadB.png"
-              alt="Nitin"
+              src="../../Contacts/prathamB.png"
+              alt="pratham"
               className="hover-img"
             />
           </div>
@@ -87,7 +87,7 @@ const Teams = () => {
             />
           </div>
         </div>
-        <div id="part-4" className="container_contacts">
+        <div className="container_contacts">
           <div className="box">
             <img src="../../Contacts/naveenF.png" alt="naveen" />
             <img
@@ -121,11 +121,11 @@ const Teams = () => {
             />
           </div>
         </div>
-        <div id="part-5" className="container_contacts">
+        <div className="container_contacts">
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="keshav" />
+            <img src="../../Contacts/keshavF.png" alt="keshav" />
             <img
-              src="../../Contacts/HeadB.png"
+              src="../../Contacts/keshavB.png"
               alt="keshav"
               className="hover-img"
             />
@@ -155,7 +155,7 @@ const Teams = () => {
             />
           </div>
         </div>
-        <div id="part-6" className="container_contacts">
+        <div className="container_contacts">
           <div className="box">
             <img src="../../Contacts/ujjawalF.png" alt="ujjawal" />
             <img
@@ -181,10 +181,10 @@ const Teams = () => {
             />
           </div>
           <div className="box">
-            <img src="../../Contacts/HeadF.png" alt="Nitin" />
+            <img src="../../Contacts/shivamF.png" alt="shivam" />
             <img
-              src="../../Contacts/HeadB.png"
-              alt="Nitin"
+              src="../../Contacts/shivamB.png"
+              alt="shivam"
               className="hover-img"
             />
           </div>
