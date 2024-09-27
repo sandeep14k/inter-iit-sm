@@ -160,8 +160,9 @@
   margin: 25px 0;
   font-size: 0.9em;
   font-family: sans-serif;
-  min-width: 400px;
+  width: clamp(100px, 95vw, 1000px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  overflow: scroll;
 }
 
 .styled-table thead tr {
@@ -173,6 +174,7 @@
 .styled-table th,
 .styled-table td {
     padding: 12px 15px;
+    text-align: center;
 }
 
 .styled-table tbody tr {

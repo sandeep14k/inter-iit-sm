@@ -12,7 +12,7 @@ const limit = 10;
 
 export default function SchedulePage({pageStatus}) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSport, setSelectedSport] = useState("cricket");
+  const [selectedSport, setSelectedSport] = useState("Sport");
   const [selectedDate, setSelectedDate] = useState(undefined);
 
   let db = new Database();
