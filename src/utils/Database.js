@@ -25,7 +25,6 @@ export default class Database {
     try {
       const response = await axios.get(apiUrl);
       const data = await response.data;
-      console.log(data)
       let matches = [];
 
       data.matches.forEach(
@@ -33,6 +32,20 @@ export default class Database {
           matches.push(new Match(item))
         })
       return matches;
+    } catch (error) {
+      console.error("Error fetching matches:", error);
+      console.log(error);
+    }
+  }
+  
+  async getScore(matchID, sport) {
+    // const apiUrl = `http://localhost:3000/api/matches?page=${page}&limit=${limit}&sortBy=time&search=${searchQuery}${(date) ? `&date=${date.toString()}`:''}${(sport != "Sport") ? `&sport=${sport}`:''}`;
+    const apiUrl = `http://localhost:3000/api/getScore?sport=${sport}&matchID=${matchID}`;
+
+    try {
+      const response = await axios.get(apiUrl);
+      const data = await response.data;
+      return data.score;
     } catch (error) {
       console.error("Error fetching matches:", error);
       console.log(error);

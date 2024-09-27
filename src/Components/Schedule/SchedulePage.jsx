@@ -8,11 +8,11 @@ import Database from "../../utils/Database";
 
 const { Option } = Select;
 
-const limit = 5;
+const limit = 10;
 
 export default function SchedulePage({pageStatus}) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSport, setSelectedSport] = useState("Sport");
+  const [selectedSport, setSelectedSport] = useState("cricket");
   const [selectedDate, setSelectedDate] = useState(undefined);
 
   let db = new Database();
@@ -52,7 +52,6 @@ export default function SchedulePage({pageStatus}) {
         setSelectedSport(e);
         reset();
       }}
-      defaultValue="Sport"
     >
       <Option value="Sport">Sport</Option>
       <Option value="hockey">hockey</Option>
