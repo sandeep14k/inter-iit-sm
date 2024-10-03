@@ -38,18 +38,18 @@ function MatchCardR({ match }) {
     "IIT Tirupati": "/IITs_Logo/Tirupati.jpg",
   };
   const fetchScore = async () => {
-    if(toFetch==false) return;
+    if (toFetch == false) return;
     let s = await db.getScore(match.matchID, match.sport);
     setScore(s);
-    console.log(s)
+    console.log(s);
     setToFetch(false);
-  }
-  
-  useEffect(()=>{
+  };
+
+  useEffect(() => {
     fetchScore();
-  },[toFetch])
-  if(score) console.log(score)
-    else console.log(123);
+  }, [toFetch]);
+  if (score) console.log(score);
+  else console.log(123);
   // console.log(Object.keys(score).forEach((e,i) => 1))
   return (
     <>
@@ -72,47 +72,85 @@ function MatchCardR({ match }) {
             <img src={IITs[match.team2]} alt="IIT Logo" className="team-logo" />
           </div>
         </div>
-        {match.status != "upcoming" &&
+        {match.status != "upcoming" && (
           <div className="extra-box">
-            {
-              match.status == "ongoing" &&
-              <Link target="_blank" to={match.liveStreamUrl} className="watch-live extra-button">See Live Match</Link>
-            }
-            <div onClick={() => setToFetch(true)} className="show-result extra-button">{match.status == "ongoing" ? "Fetch Live" : "See"} Result</div>
-            {
-              match.status == "ongoing" &&
-              <Link target="_blank" to={match.locationUrl} className="location extra-button">Maps to Venue</Link>
-            }
+            {match.status == "ongoing" && (
+              <Link
+                target="_blank"
+                to={match.liveStreamUrl}
+                className="watch-live extra-button"
+              >
+                See Live Match
+              </Link>
+            )}
+            <div
+              onClick={() => setToFetch(true)}
+              className="show-result extra-button"
+            >
+              {match.status == "ongoing" ? "Fetch Live" : "See"} Result
+            </div>
+            {match.status == "ongoing" && (
+              <Link
+                target="_blank"
+                to={match.locationUrl}
+                className="location extra-button"
+              >
+                Maps to Venue
+              </Link>
+            )}
           </div>
-        }
-
-        
+        )}
       </div>
-      {
-        match.status != "upcoming" && score &&
-
-        <div className="result">
-        <table className="styled-table">
-          <thead>
-
-          <tr>
-          {
-            Object.keys(score).map((e,i)=><th key={i}>{e}</th>)
-          }
-          </tr>
-            </thead>
-            <tbody>
-
-          <tr>
-          {
-            Object.values(score).map((e,i)=><td key={i}>{e}</td>)
-          }
-          </tr>
-          </tbody>
-        </table>
-        
-      </div>
-      }
+      {match.status != "upcoming" &&
+        score &&
+        (match.sport == "basketball" || match.sport == "hockey") && (
+          <div className="result basket hockey">
+            <div className="logo-r">
+              <img
+                src={IITs[match.team1]}
+                alt="IIT Logo"
+                className="team-logo"
+              />
+            </div>
+            <div className="score">
+              {match.sport == "hockey" ? score.team1_goals : score.team1_score}{" "}
+              &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+              {match.sport == "hockey" ? score.team2_goals : score.team2_score}
+              <br />
+              <span className="score-type">{match.sport == "hockey" ? "Goals" : "Baskets"}</span>
+            </div>
+            <div className="logo-r">
+              <img
+                src={IITs[match.team2]}
+                alt="IIT Logo"
+                className="team-logo"
+              />
+            </div>
+          </div>
+        )}
+      {match.status != "upcoming" && score && match.sport == "cricket" && (
+        <div className="result cricket">
+          <div className="logo-r">
+            <img src={IITs[match.team1]} alt="IIT Logo" className="team-logo" />
+          </div>
+          <div className="score">
+            {score.team1_score}{" "}
+            &nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;
+            {score.team1_wickets}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            -
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {score.team2_score}{" "}
+            &nbsp;&nbsp;<span>/</span>&nbsp;&nbsp; {score.team2_score}
+            {score.team2_wickets}
+            <br />
+            <span className="overs">{score.overs}</span>
+            </div>
+          <div className="logo-r">
+            <img src={IITs[match.team2]} alt="IIT Logo" className="team-logo" />
+          </div>
+        </div>
+      )}
     </>
   );
 }

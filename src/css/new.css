@@ -18,11 +18,6 @@
     rgba(9, 9, 121, 1) 37%,
     rgba(0, 101, 222, 1) 100%
   );
-  /* background: linear-gradient(45deg, #000, #fff); */
-  /* background: url(../../public/Cardbg/cricket.png);
-  /* background-position: bottom;
-  background-size: 70% 70%;
-  background-repeat: repeat-x; */
   transition: 300ms;
 }
 
@@ -119,7 +114,7 @@
 
 .show-result {
   background: #ffffff;
-  color: #0428f6; 
+  color: #0428f6;
 }
 
 .watch-live {
@@ -155,41 +150,27 @@
 
 /* //////////////////////////////// */
 
-.styled-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  font-family: sans-serif;
-  width: clamp(100px, 95vw, 1000px);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  overflow: scroll;
+.result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: #e1e1e1;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  font-family: aptops;
 }
 
-.styled-table thead tr {
-  background-color: #009879;
-  color: #ffffff;
-  text-align: left;
+.result .score {
+  font-size: 21px;
+  margin: 0 25px;
 }
 
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-    text-align: center;
-}
-
-.styled-table tbody tr {
-  border-bottom: 1px solid #dddddd;
-}
-
-.styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
-}
-
-.styled-table tbody tr.active-row {
-  font-weight: bold;
-  color: #009879;
+.result.basket .score span.score-type,
+.result.cricket .score span.overs,
+.result.hockey .score span.score-type {
+  text-align: center;
+  font-size: 18px;
+  color: #3b3b3b;
+  display: block;
 }
