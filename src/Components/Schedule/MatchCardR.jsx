@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Database from "../../utils/Database";
 import { Link } from "react-router-dom";
 import "../../css/new.css";
 
 function MatchCardR({ match }) {
   let d = new Date(match.date);
   let date = d.toDateString().split(" ");
+
+  const db = new Database();
+
+  const [score, setScore] = useState();
+  const [toFetch, setToFetch] = useState(false);
+
   const IITs = {
     "IIT Bombay": "/IITs_Logo/Bombay.svg",
     "IIT Delhi": "/IITs_Logo/Delhi.jpg",
@@ -30,6 +37,20 @@ function MatchCardR({ match }) {
     "IIT Palakkad": "/IITs_Logo/Palakkad.jpg",
     "IIT Tirupati": "/IITs_Logo/Tirupati.jpg",
   };
+  const fetchScore = async () => {
+    if (toFetch == false) return;
+    let s = await db.getScore(match.matchID, match.sport);
+    setScore(s);
+    console.log(s);
+    setToFetch(false);
+  };
+
+  useEffect(() => {
+    fetchScore();
+  }, [toFetch]);
+  if (score) console.log(score);
+  else console.log(123);
+  // console.log(Object.keys(score).forEach((e,i) => 1))
   return (
     <>
       <div className="match-card">
@@ -42,6 +63,7 @@ function MatchCardR({ match }) {
             <div className="match-details">{match.venue}</div>
             <div className="match-time-format">
               <span>{date[2] + " " + date[1]}&nbsp;</span>|
+              <span className="sport-name">{match.sport.toUpperCase()}</span>|
               <span>{match.time.split(":").splice(0, 2).join(":")}&nbsp;</span>
             </div>
           </div>
@@ -50,21 +72,85 @@ function MatchCardR({ match }) {
             <img src={IITs[match.team2]} alt="IIT Logo" className="team-logo" />
           </div>
         </div>
-        {match.status != "upcoming" &&
+        {match.status != "upcoming" && (
           <div className="extra-box">
-            {
-              match.status == "ongoing" &&
-              <Link target="_blank" to={match.liveStreamUrl} className="watch-live extra-button">See Live Match</Link>
-            }
-            <div className="show-result extra-button">See {match.status == "ongoing" && "Live"} Result</div>
-            {
-              match.status == "ongoing" &&
-              <Link target="_blank" to={match.locationUrl} className="location extra-button">Maps to Venue</Link>
-            }
+            {match.status == "ongoing" && (
+              <Link
+                target="_blank"
+                to={match.liveStreamUrl}
+                className="watch-live extra-button"
+              >
+                See Live Match
+              </Link>
+            )}
+            <div
+              onClick={() => setToFetch(true)}
+              className="show-result extra-button"
+            >
+              {match.status == "ongoing" ? "Fetch Live" : "See"} Result
+            </div>
+            {match.status == "ongoing" && (
+              <Link
+                target="_blank"
+                to={match.locationUrl}
+                className="location extra-button"
+              >
+                Maps to Venue
+              </Link>
+            )}
           </div>
-        }
+        )}
       </div>
-      <div className="result"></div>
+      {match.status != "upcoming" &&
+        score &&
+        (match.sport == "basketball" || match.sport == "hockey") && (
+          <div className="result basket hockey">
+            <div className="logo-r">
+              <img
+                src={IITs[match.team1]}
+                alt="IIT Logo"
+                className="team-logo"
+              />
+            </div>
+            <div className="score">
+              {match.sport == "hockey" ? score.team1_goals : score.team1_score}{" "}
+              &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
+              {match.sport == "hockey" ? score.team2_goals : score.team2_score}
+              <br />
+              <span className="score-type">{match.sport == "hockey" ? "Goals" : "Baskets"}</span>
+            </div>
+            <div className="logo-r">
+              <img
+                src={IITs[match.team2]}
+                alt="IIT Logo"
+                className="team-logo"
+              />
+            </div>
+          </div>
+        )}
+      {match.status != "upcoming" && score && match.sport == "cricket" && (
+        <div className="result cricket">
+          <div className="logo-r">
+            <img src={IITs[match.team1]} alt="IIT Logo" className="team-logo" />
+          </div>
+          <div className="score">
+            {score.team1_score}{" "}
+            &nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;
+            {score.team1_wickets}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            -
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {score.team2_score}{" "}
+            &nbsp;&nbsp;<span>/</span>&nbsp;&nbsp; {score.team2_score}
+            {score.team2_wickets}
+            <br />
+            <span className="overs">{score.overs}</span>
+            </div>
+          <div className="logo-r">
+            <img src={IITs[match.team2]} alt="IIT Logo" className="team-logo" />
+          </div>
+        </div>
+      )}
     </>
   );
 }

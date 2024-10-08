@@ -10,6 +10,7 @@ import IITKMap from './Pages/Map'
 import Contacts from './Pages/Contacts'
 import QuiltedImageList from './Pages/Gallery'
 import Pictures from './Pages/Pictures'
+import Gallery from './Pages/Gallery'
 
 const App = () =>{
   return <>
@@ -23,7 +24,7 @@ const App = () =>{
         <Route path='/Athletes' element={<Athletes/>}/>
         <Route path='/map' element={<IITKMap/>}/>
         <Route path='/Contacts' element={<Contacts/>}/>
-        <Route path='/gallery' element={<Pictures/>}/>
+        <Route path='/gallery' element={<Gallery/>}/>
       </Routes> 
     </BrowserRouter>
   </>

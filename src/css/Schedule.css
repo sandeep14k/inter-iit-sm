@@ -135,30 +135,29 @@
   margin-bottom: 10px;
   display: flex;
   justify-content: space-evenly;
-  /* Adjust spacing as needed */
 }
 
 .button {
-  background-color: #fff;
-  border: 1px solid #000000;
+  background-color: #2e2e2e;
+  color: #fff;
+  border: 1px solid transparent;
   width: 10%;
   height: 34px;
   cursor: pointer;
-  color: #000;
   text-align: center;
   font-family: aptops;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out,
-    border-radius 0.4s ease-in-out;
+  transition: 300ms;
+  border-radius: 17px;
 }
 
-.button:hover {
-  background-color: #2e2e2e;
-  color: #fff;
-  border-radius: 17px;
+.button.active:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
 }
 
 .timeline {
@@ -218,15 +217,6 @@
   line-height: normal;
 }
 
-.fbreak {
-  flex-basis: 100%;
-  height: 0;
-}
-
-.load {
-  margin: 50px 0;
-}
-
 .cardbox {
   position: relative;
   display: flex;
@@ -239,3 +229,17 @@
   padding: 25px 0;
   gap: 15px;
 }
+
+.next-pre-box {
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.disable {
+  background: #9e9e9e;
+  color: #313131;
+}
+

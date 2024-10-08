@@ -48,7 +48,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <Link to="/">Logo</Link>
+        <Link to="/">
+          <img src='/assets/logo.jpg' alt="logo" />
+          </Link>
       </div>
       
       <ul

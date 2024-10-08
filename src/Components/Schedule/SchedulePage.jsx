@@ -8,9 +8,9 @@ import Database from "../../utils/Database";
 
 const { Option } = Select;
 
-const limit = 5;
+const limit = 10;
 
-export default function SchedulePage({pageStatus}) {
+export default function SchedulePage({ pageStatus }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSport, setSelectedSport] = useState("Sport");
   const [selectedDate, setSelectedDate] = useState(undefined);
@@ -24,8 +24,8 @@ export default function SchedulePage({pageStatus}) {
   const [toFetch, setToFetch] = useState(true);
 
   const reset = () => {
-    setPage(1);
     setMatches([]);
+    setPage(1);
     setHasMore(true);
     setToFetch(true);
   };
@@ -52,7 +52,6 @@ export default function SchedulePage({pageStatus}) {
         setSelectedSport(e);
         reset();
       }}
-      defaultValue="Sport"
     >
       <Option value="Sport">Sport</Option>
       <Option value="hockey">hockey</Option>
@@ -85,11 +84,10 @@ export default function SchedulePage({pageStatus}) {
       selectedSport,
       pageStatus
     );
-    setPage((prevPage) => prevPage + 1);
-    setMatches((prevMatches) => [...prevMatches, ...data]);
     if (data.length < limit) {
       setHasMore(false);
     }
+    if (data.length > 0) setMatches(data);
 
     setIsLoading(false);
     setToFetch(false);
@@ -138,24 +136,32 @@ export default function SchedulePage({pageStatus}) {
           ""
         )}
 
-        {hasMore ? (
-          <>
-            <div className="fbreak"></div>
-            <button
-              className="button load"
-              onClick={() => {
-                if (!isLoading) setToFetch(true);
-              }}
-            >
-              {isLoading ? "Loading..." : "Load More"}
-            </button>
-          </>
-        ) : (
-          <></>
-        )}
+        <div className="next-pre-box">
+          <button
+            className={`button load ${page == 1 ? "disable" : "active"}`}
+            onClick={() => {
+              if (page == 1) return;
+              setPage((e) => e - 1);
+              setHasMore(true)
+              if (!isLoading) setToFetch(true);
+            }}
+          >
+            Previos
+          </button>
+          <button
+            className={`button load ${!hasMore ? "disable" : "active"}`}
+            onClick={() => {
+              if (!hasMore) return;
+              setPage((e) => e + 1);
+              if (!isLoading) setToFetch(true);
+            }}
+          >
+            Next
+          </button>
+        </div>
       </div>
 
       <Footer />
     </div>
   );
-};
+}

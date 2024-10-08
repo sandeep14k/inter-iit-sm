@@ -151,109 +151,61 @@ body {
       align-items: center;
     }
 
-    .title { 
-      margin: 0 auto 15px;
-      max-width: 1000px;
-      font: 300 50px/1.2 "Oswald", sans-serif;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-    }
+.player-card .name,
+.player-card .dual-data {
+  width: 100%;
+}
 
-    .text {
-      margin: 0 auto;
-      max-width: 1000px;
-      font-size: 18px;
-      line-height: 1.4;
-    }
+.player-card * {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
-    .btn {
-      margin: 15px 0 0;
-      border-color: #fff;
+.player-card:hover {
+  background: #f3f2f2;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 0 1px #000;
+}
 
-      &::before {
-        background:#fff
-      }
-    }
-  }
+.player-card .image {
+  border-radius: 10px;
+  width: 180px;
+}
 
-  .pagination { 
-    position: absolute;
-    bottom: 35px;
-    left: 0;
-    width: 100%;
-    height: 12px;
-    cursor: default;
-    z-index: 2;
-    text-align: center;
+.player-card .name {
+  padding-top: 10px;
+  text-transform: capitalize;
+  font-weight: normal;
+  font-size: large;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  color: #000;
+}
 
-    .item { 
-      display: inline-block;
-      padding: 15px 5px;
-      position: relative;
-      width: 46px;
-      height: 32px;
-      cursor: pointer;
-      text-indent: -999em;
-      z-index: 1;
+.player-card .sport {
+  text-transform: capitalize;
+  font-size: 19px;
+  padding: 10px 0;
+}
 
-      + .page {
-        margin-left: -2px;
-      }
+.player-card .college {
+  text-transform: uppercase;
+}
 
-      &::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 15px;
-        left: 5px;
-        width: 36px;
-        height: 2px;
-        background: rgba(255, 255, 255, 0.5);
-        transition: background 0.2s ease;
-      }
+.player-card .dual-data {
+  display: flex;
+  justify-content: space-between;
+  font-size: small;
+}
 
-      &::after {
-        width: 0;
-        background: #fff;
-        z-index: 2;
-        transition: width 0.2s ease;
-      }
+.next-pre-box {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
-      &:hover::before,
-      &.is-active::before {
-        background-color: #fff;
-      }
-    }
-  }
-
-  .arrows {
-    .arrow {
-      margin: -33px 0 0;padding: 20px;position: absolute;top: 50%;cursor: pointer;z-index: 3;
-    }
-
-    .prev {
-      left: 30px;
-
-      &:hover .svg {
-        left: -10px;
-      }
-    }
-
-    .next {
-      right: 30px;
-
-      &:hover .svg {
-        left: 10px;
-      }
-    }
-
-    .svg {
-      position: relative;
-      left: 0;
-      width: 14px;
-      height: 26px;
-      fill: #fff;
-      transition: left 0.2s ease;
-    }
-  }
+.disable {
+  background: #9e9e9e;
+  color: #313131;
 }

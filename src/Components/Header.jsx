@@ -61,7 +61,7 @@ function Header() {
         top spot
       </div>
       <div className="section-date">IIT Kanpur </div>
-      <div className="section-date2">12th Dec to 20th Dec</div>
+      <div className="section-date2">10th Dec to 17th Dec</div>
     </div>
   );
 }

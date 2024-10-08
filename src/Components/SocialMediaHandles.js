@@ -12,9 +12,9 @@ const SocialMediaHandles = () => {
 
   return (
     <div className="container">
-      <div className="title-container">
+      <div className="socialtitle-container">
         <hr className="line" />
-        <span className="separator md:text-[60px] sm:text-[40px] text-[30px]">
+        <span className="socialmediaTitle md:text-[40px] sm:text-[20px] text-[10px]">
           Social Media Handles
         </span>
         <hr className="line" />
@@ -23,13 +23,13 @@ const SocialMediaHandles = () => {
         <img
           src="../../assets/Facebook Circled.png"
           alt="Facebook"
-          className="logo"
+          className="socialmedialogo"
         />
-        <img src="../../assets/TwitterX.png" alt="Twitter" className="logo" />
+        <img src="../../assets/TwitterX.png" alt="Twitter" className="socialmedialogo" />
         <img
           src="../../assets/Instagram.png"
           alt="Instagram"
-          className="logo"
+          className="socialmedialogo"
         />
       </div>
       <span className="social-media-cards-title md:text-[64px] sm:text-[40px] text-[30px]">
