@@ -50,10 +50,16 @@ const sports = [
   { name: "Badminton", image: "../../Sports/Badminton.svg" },
   { name: "Basket Ball", image: "../../Sports/basketball.jpg" },
   { name: "Hockey", image: "../../Sports/hockey.jpg" },
-  {name: "Football", image: "../../Sports/football.jpg"},
-  {name: "Lawn Tennis", image: "../../Sports/tennin.jpg"},
-  {name: "Table Tennis", image: "../../Sports/tt.jpg"},
-  {name: "Swimming", image: "../../Sports/Swimming.svg"},
+  { name: "Football", image: "../../Sports/football.jpg"},
+  { name: "Lawn Tennis", image: "../../Sports/tennin.jpg"},
+  { name: "Table Tennis", image: "../../Sports/tt.jpg"},
+  { name: "Swimming", image: "../../Sports/Swimming.svg"},
+  { name: "Athletics", image: "../../Sports/atheltics.jpg" },
+  { name: "Water Polo", image: "../../Sports/waterpolo.jpg" },
+  { name: "Weightlifting", image: "../../Sports/weightlifting.jpg" },
+  { name: "Squash" , image: "../../Sports/Squash.jpg"},
+  { name: "Volleyball", image: "../../Sports/Volleyball.jpg"},
+  {name: "Kho Kho", image: "../../Sports/weightlifting.jpg"}
 ];
 
 const Sports = () => {
