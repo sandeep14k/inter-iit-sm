@@ -12,9 +12,7 @@ const Pictures = () => {
         Gallery
       </Typography>
       <MasonryGrid/>
-      <div>
       <Footer/>
-      </div>
     </>
   )
 }
