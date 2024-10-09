@@ -58,7 +58,7 @@ const Navbar = () => {
         onClick={() => setIsMobile(false)}
       >
         <li>
-          <Link to="/About">About</Link>
+          <Link to="/">About</Link>
         </li>
         <li>
           <Link to="/Livescores">Live Score</Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
           <Link to="/Result">Result</Link>
         </li>
         <li>
-          <Link to="/Athletes">Athletes</Link>
+          <Link to="/Athletes">Players</Link>
         </li>
         <li>
           <Link to="/Contacts">Contact</Link>
