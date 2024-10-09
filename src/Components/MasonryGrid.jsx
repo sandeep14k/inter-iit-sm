@@ -2,7 +2,7 @@ import React from "react";
 import "../css/gallery.css"
 
 const images = [
-  "/gallery/cricket1.jpg",
+  "/gallery/IMG_0308.JPG",
   "/gallery/IMG_7606.JPG",
   "/gallery/IMG_7798.JPG",
   "/gallery/IMG_7852.JPG",
