@@ -1,3 +1,5 @@
+
+
 /* .box{
     display: flex;
     justify-content: space-around;
@@ -197,13 +199,13 @@
 
 .sideItems{
   display: flex;
-  width: 22vw;
+  width: 29vw;
   padding-top: 1vh;
   flex-direction: column;
-  gap: 5vh;
+  gap: 2vh;
   justify-content: space-between;
   align-items: center;
-  height: 65vh;
+  height: auto;
   padding-bottom: 1vh;
 }
 
@@ -221,7 +223,7 @@
 }
 
 .imageItem{
-  width: 20vw;
+  width: 26vw;
   border-radius: 10px;
   transition: 0.4s ease;
   border: 1px solid black;
@@ -229,10 +231,15 @@
 }
 
 .imageItem:hover{
-  width: 21vw;
+  width: 28vw;
   box-shadow: 5px 5px 5px rgb(55, 55, 55);
 }
 
+@font-face {
+  font-family:Aptos-SemiBold;
+  src: url("/public/fonts/Aptos-SemiBold.ttf");
+}
 .galleryHeading h1{
   font-size: 6vw;
+  font-style:italic 
 }
