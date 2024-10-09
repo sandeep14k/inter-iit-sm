@@ -94,12 +94,12 @@ const Home = () => {
       }}
     >
       <Option value="Sport">Sport</Option>
-      <Option value="hockey">Hockey</Option>
-      <Option value="lawn tennis">Lawn Tennis</Option>
-      <Option value="basketball">Basketball</Option>
-      <Option value="volleyball">Volleyball</Option>
-      <Option value="cricket">Cricket</Option>
-      <Option value="table tennis">Table Tennis</Option>
+      <Option value="hockey">hockey</Option>
+      <Option value="lawn tennis">lawn tennis</Option>
+      <Option value="basketball">basketball</Option>
+      <Option value="volleyball">volleyball</Option>
+      <Option value="cricket">cricket</Option>
+      <Option value="table tennis">table tennis</Option>
     </Select>
   );
 
@@ -145,7 +145,7 @@ const Home = () => {
             if (!loading) setToFetch(true);
           }}
         >
-          Previous
+          Previos
         </button>
         <button
           className={`button load ${!hasMore ? "disable" : "active"}`}
