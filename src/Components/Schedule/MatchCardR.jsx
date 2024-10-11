@@ -40,8 +40,19 @@ function MatchCardR({ match }) {
   const fetchScore = async () => {
     if (toFetch == false) return;
     let s = await db.getScore(match.matchID, match.sport);
-    setScore(s);
-    console.log(s);
+
+    let t1_won = 0;
+    let t2_won = 0;
+
+    if (match.sport == "volleyball" || match.sport == "table tennis" || match.sport == "lawn tennis") {
+      for (let i = 1; i <= 5; i++) {
+        if (s[`set${i}_score1`] > s[`set${i}_score2`]) t1_won++;
+        else if (s[`set${i}_score1`] < s[`set${i}_score2`]) t2_won++;
+      }
+    }
+
+    setScore({ ...s, t1_won, t2_won });
+
     setToFetch(false);
   };
 
@@ -49,8 +60,6 @@ function MatchCardR({ match }) {
     fetchScore();
   }, [toFetch]);
   if (score) console.log(score);
-  else console.log(123);
-  // console.log(Object.keys(score).forEach((e,i) => 1))
   return (
     <>
       <div className="match-card">
@@ -117,7 +126,9 @@ function MatchCardR({ match }) {
               &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
               {match.sport == "hockey" ? score.team2_goals : score.team2_score}
               <br />
-              <span className="score-type">{match.sport == "hockey" ? "Goals" : "Baskets"}</span>
+              <span className="score-type">
+                {match.sport == "hockey" ? "Goals" : "Baskets"}
+              </span>
             </div>
             <div className="logo-r">
               <img
@@ -134,21 +145,74 @@ function MatchCardR({ match }) {
             <img src={IITs[match.team1]} alt="IIT Logo" className="team-logo" />
           </div>
           <div className="score">
-            {score.team1_score}{" "}
-            &nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;
+            {score.team1_score} &nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;
             {score.team1_wickets}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            -
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {score.team2_score}{" "}
-            &nbsp;&nbsp;<span>/</span>&nbsp;&nbsp; {score.team2_score}
+            {score.team2_score} &nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;{" "}
+            {score.team2_score}
             {score.team2_wickets}
             <br />
             <span className="overs">{score.overs}</span>
-            </div>
+          </div>
           <div className="logo-r">
             <img src={IITs[match.team2]} alt="IIT Logo" className="team-logo" />
           </div>
+        </div>
+      )}
+      {match.status != "upcoming" && score && 
+      (match.sport == "volleyball" || match.sport == "table tennis" || match.sport == "lawn tennis") 
+      && (
+        <div className="result volley">
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <td>Set 1</td>
+                <td>Set 2</td>
+                <td>Set 3</td>
+                <td>Set 4</td>
+                <td>Set 5</td>
+                <td>Sets Won</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div className="logo-r">
+                    <img
+                      src={IITs[match.team1]}
+                      alt="IIT Logo"
+                      className="team-logo"
+                    />
+                  </div>
+                </td>
+                <td>{score.set1_score1}</td>
+                <td>{score.set2_score1}</td>
+                <td>{score.set3_score1}</td>
+                <td>{score.set4_score1}</td>
+                <td>{score.set5_score1}</td>
+                <td>{score.t1_won}</td>
+              </tr>
+              <tr>
+                <td>
+                  <div className="logo-r">
+                    <img
+                      src={IITs[match.team2]}
+                      alt="IIT Logo"
+                      className="team-logo"
+                    />
+                  </div>
+                </td>
+                <td>{score.set1_score2}</td>
+                <td>{score.set2_score2}</td>
+                <td>{score.set3_score2}</td>
+                <td>{score.set4_score2}</td>
+                <td>{score.set5_score2}</td>
+                <td>{score.t2_won}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       )}
     </>

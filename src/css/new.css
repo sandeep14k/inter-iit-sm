@@ -151,14 +151,38 @@
 /* //////////////////////////////// */
 
 .result {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 15px 25px;
   background: #e1e1e1;
   border-radius: 15px;
   margin-bottom: 30px;
   font-family: aptops;
+}
+
+.result.basket,
+.result.cricket,
+.result.hockey {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result.volley table tr td {
+  padding: 5px 20px;
+  transition: 300ms;
+  text-align: center;
+}
+
+.result.volley table thead td{
+  padding: 10px 20px;
+  border-bottom: 1px solid #000;
+}
+
+.result.volley table td:nth-child(odd) {
+  background: #ebeaea;
+}
+
+.result.volley table td:nth-child(7) {
+  background: #faf9f9;
 }
 
 .result .score {
