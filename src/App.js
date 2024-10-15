@@ -8,8 +8,6 @@ import Athletes from "./Pages/Athletes"
 import './App.css'
 import IITKMap from './Pages/Map'
 import Contacts from './Pages/Contacts'
-import QuiltedImageList from './Pages/Gallery'
-import Pictures from './Pages/Pictures'
 import Gallery from './Pages/Gallery'
 
 const App = () =>{

@@ -5,7 +5,6 @@ import axios from 'axios';
 export default class Database {
 
   async getMatches(page, limit, searchQuery, date, sport, status) {
-    // const apiUrl = `http://localhost:3000/api/matches?page=${page}&limit=${limit}&sortBy=time&search=${searchQuery}${(date) ? `&date=${date.toString()}`:''}${(sport != "Sport") ? `&sport=${sport}`:''}`;
     const apiUrl = `http://localhost:3000/api/getMatch?page=${page}&limit=${limit}&search=${searchQuery}${(date) ? `&date=${date.toString()}` : ''}&sport=${sport}&status=${status}`;
 
     try {
@@ -19,13 +18,12 @@ export default class Database {
         })
       return matches;
     } catch (error) {
-      console.error("Error fetching matches:", error);
-      console.log(error);
+      console.error("Error fetching matches:", error.message);
+      return [];
     }
   }
-  
+
   async getScore(matchID, sport) {
-    // const apiUrl = `http://localhost:3000/api/matches?page=${page}&limit=${limit}&sortBy=time&search=${searchQuery}${(date) ? `&date=${date.toString()}`:''}${(sport != "Sport") ? `&sport=${sport}`:''}`;
     const apiUrl = `http://localhost:3000/api/getScore?sport=${sport}&matchID=${matchID}`;
 
     try {
@@ -33,16 +31,14 @@ export default class Database {
       const data = await response.data;
       return data.score;
     } catch (error) {
-      console.error("Error fetching matches:", error);
-      console.log(error);
+      console.error("Error fetching matches:", error.message);
     }
   }
 
   async getPlayers(page, limit, searchQuery, sport, collage) {
-    // const apiUrl = `http://localhost:3000/api/matches?page=${page}&limit=${limit}&sortBy=time&search=${searchQuery}${(date) ? `&date=${date.toString()}`:''}${(sport != "Sport") ? `&sport=${sport}`:''}`;
     const apiUrl = `http://localhost:3000/api/athletes?page=${page}&limit=${limit}&search=${searchQuery}&sport=${sport}&collage=${collage}`;
     try {
-      
+
       const response = await axios.get(apiUrl);
       const data = await response.data;
 
@@ -54,8 +50,8 @@ export default class Database {
         })
       return athletes;
     } catch (error) {
-      console.error("Error fetching matches:", error);
-      console.log(error);
+      console.error("Error fetching matches:", error.message);
+      return [];
     }
   }
 }

@@ -50,7 +50,7 @@ const Navbar = () => {
       <div className="logo">
         <Link to="/">
           <img src='/assets/logo.jpg' alt="logo" />
-          </Link>
+        </Link>
       </div>
       
       <ul

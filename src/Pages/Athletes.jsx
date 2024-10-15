@@ -130,7 +130,7 @@ const Home = () => {
         />
       </div>
       <div style={{ minHeight: "60vh" }} className="player-card-box">
-        {players.map((data, i) => (
+        {players.length == 0 ? "No Players Found": players.map((data, i) => (
           <PlayerCard key={i} data={data} />
         ))}
       </div>

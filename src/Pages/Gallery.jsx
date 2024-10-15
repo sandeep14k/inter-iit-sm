@@ -2,7 +2,6 @@ import React from 'react'
 import Photos from '../Components/Photos'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
-import MasonryGrid from '../Components/MasonryGrid'
 import { Carousel } from "antd";
 
 const Gallery = () => {
@@ -18,9 +17,7 @@ const Gallery = () => {
       <Navbar/>
       <div >
         <Carousel autoplay effect="fade" >
-        {/* // arrows infinite={false}> */}
           <div style={contentStyle}>
-            {/* <h3 style={contentStyle}>1</h3> */}
             <img src="/gallery/cricket3.jpg" alt=""/>
           </div>
           <div>
@@ -34,6 +31,7 @@ const Gallery = () => {
           </div>
         </Carousel>
       </div>
+      <h2 className='photo-sep'>Gallery</h2>
       <Photos/>
       <Footer/>
     </div>
