@@ -16,17 +16,17 @@ export default function PlayerCard(prop) {
       <div className="player-card">
         <div className="image">
           <img
-            src={data.Photo}
+            src={data.photo}
             alt="Player Photo"
             className="player-image"
           />
         </div>
-        <div className="name">{data.Name}</div>
+        <div className="name">{data.name || "----- ----"}</div>
         <div className="dual-data">
-          <div className="college">{data.Collage}</div>
+          <div className="college">{data.team || "None"}</div>
           <div className="gender">{gIcon}</div>
         </div>
-        <div className="sport">{data.Sport}</div>
+        <div className="sport">{data.sport || "None"}</div>
       </div>
     </>
   );

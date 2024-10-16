@@ -12,7 +12,7 @@ const limit = 10;
 
 export default function SchedulePage({ pageStatus }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSport, setSelectedSport] = useState("Sport");
+  const [selectedSport, setSelectedSport] = useState((pageStatus != "upcoming") ? "Cricket" : "Sport");
   const [selectedDate, setSelectedDate] = useState(undefined);
 
   let db = new Database();
@@ -53,7 +53,7 @@ export default function SchedulePage({ pageStatus }) {
         reset();
       }}
     >
-      <Option value="Sport">Sport</Option>
+      {pageStatus == "ongoing" && <Option value="Sport">Sport</Option>}
       <Option value="hockey">Hockey</Option>
       <Option value="lawn tennis">Lawn Tennis</Option>
       <Option value="basketball">Basketball</Option>
@@ -80,8 +80,7 @@ export default function SchedulePage({ pageStatus }) {
       page,
       limit,
       searchQuery,
-      date,
-      selectedSport,
+      selectedSport.toLowerCase(),
       pageStatus
     );
     if (data.length < limit) {
@@ -110,7 +109,7 @@ export default function SchedulePage({ pageStatus }) {
         }}
       >
         <Input
-          addonBefore={selectBefore}
+          // addonBefore={selectBefore}
           addonAfter={selectAfter}
           value={searchQuery}
           style={{ width: "100%", maxWidth: "1000px" }}

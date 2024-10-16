@@ -115,8 +115,8 @@ const Home = () => {
         }}
       >
         <Input
-          addonBefore={selectBefore}
-          addonAfter={selectAfter}
+          // addonBefore={selectBefore}
+          // addonAfter={selectAfter}
           value={athlete}
           style={{ width: "100%", maxWidth: "1000px" }}
           onChange={(e) => {
