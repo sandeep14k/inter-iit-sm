@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Database from "../../utils/Database";
 import { Link } from "react-router-dom";
 import "../../css/new.css";
+import { SiYoutube, SiGooglemaps } from "react-icons/si";
 
 function MatchCardR({ match }) {
   let d = new Date(match.date);
@@ -40,18 +41,17 @@ function MatchCardR({ match }) {
   const fetchScore = async () => {
     if (toFetch == false) return;
     let s = await db.getScore(match.matchID, match.sport);
-
-    let t1_won = 0;
-    let t2_won = 0;
-
-    if (match.sport == "volleyball" || match.sport == "table tennis" || match.sport == "lawn tennis") {
+    
+    if (s && (match.sport == "volleyball" || match.sport == "table tennis" || match.sport == "lawn tennis")) {
+      let t1_won = 0;
+      let t2_won = 0;
       for (let i = 1; i <= 5; i++) {
         if (s[`set${i}_score1`] > s[`set${i}_score2`]) t1_won++;
         else if (s[`set${i}_score1`] < s[`set${i}_score2`]) t2_won++;
       }
+      setScore({ ...s, t1_won, t2_won });
     }
-
-    setScore({ ...s, t1_won, t2_won });
+    else setScore(s);
 
     setToFetch(false);
   };
@@ -59,7 +59,7 @@ function MatchCardR({ match }) {
   useEffect(() => {
     fetchScore();
   }, [toFetch]);
-  if (score) console.log(score);
+
   return (
     <>
       <div className="match-card">
@@ -71,9 +71,15 @@ function MatchCardR({ match }) {
           <div className="match-info">
             <div className="match-details">{match.venue}</div>
             <div className="match-time-format">
+              {match.status == "upcoming" && 
+              <>
               <span>{date[2] + " " + date[1]}&nbsp;</span>|
-              <span className="sport-name">{match.sport.toUpperCase()}</span>|
-              <span>{match.time.split(":").splice(0, 2).join(":")}&nbsp;</span>
+              </>}
+              <span className="sport-name">{match.sport.toUpperCase()}</span>
+              {match.status == "upcoming" && 
+              <>
+              |<span>{match.time.split(":").splice(0, 2).join(":")}&nbsp;</span>
+              </>}
             </div>
           </div>
           <div className="team team-right">
@@ -81,7 +87,6 @@ function MatchCardR({ match }) {
             <img src={IITs[match.team2]} alt="IIT Logo" className="team-logo" />
           </div>
         </div>
-        {match.status != "upcoming" && (
           <div className="extra-box">
             {match.status == "ongoing" && (
               <Link
@@ -89,26 +94,27 @@ function MatchCardR({ match }) {
                 to={match.liveStreamUrl}
                 className="watch-live extra-button"
               >
-                See Live Match
+                <SiYoutube style={{display:"inline-block", marginRight:"5px"}} /> Live Match
               </Link>
             )}
+              {match.status != "upcoming" && (
             <div
               onClick={() => setToFetch(true)}
               className="show-result extra-button"
             >
               {match.status == "ongoing" ? "Fetch Live" : "See"} Result
             </div>
-            {match.status == "ongoing" && (
+            )}
+            {match.status != "completed" && (
               <Link
                 target="_blank"
                 to={match.locationUrl}
                 className="location extra-button"
               >
-                Maps to Venue
+                <SiGooglemaps style={{display:"inline-block", marginRight:"5px"}} /> Location
               </Link>
             )}
           </div>
-        )}
       </div>
       {match.status != "upcoming" &&
         score &&

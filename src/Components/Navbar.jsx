@@ -78,7 +78,7 @@ const Navbar = () => {
           <Link to="/Contacts">Contact</Link>
         </li>
         <li>
-          <a href="/gallery">Gallery</a>
+          <Link to="/gallery">Gallery</Link>
         </li>
       </ul>
       <button

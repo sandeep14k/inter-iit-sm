@@ -127,8 +127,8 @@ export default function SchedulePage({ pageStatus }) {
 
       <div className="cardbox">
         {matches.length > 0 ? (
-          matches.map((match, index) => (
-            <MatchCardR match={match} key={index} />
+          matches.map((match) => (
+            <MatchCardR match={match} key={match.matchID} />
           ))
         ) : !isLoading ? (
           <p>No Matches found.</p>
