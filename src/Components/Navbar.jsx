@@ -47,12 +47,14 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">
-        <Link to="/">
-          <img src='/assets/logo.jpg' alt="logo" />
-        </Link>
+      <div className="logo-motto">
+        <div className="logo">
+          <Link to="/">
+            <img src="/assets/logo.jpg" alt="logo" />
+          </Link>
+        </div>
+        <div className="Motto">Awe Conquer Inspire</div>
       </div>
-      
       <ul
         className={isMobile ? "nav-links-mobile" : "nav-links"}
         onClick={() => setIsMobile(false)}

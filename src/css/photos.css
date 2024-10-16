@@ -10,7 +10,7 @@
 }
 
 .galleryBody .photo-box {
-  width: 480px;
+  width: 350px;
   height: 260px;
   overflow: hidden;
   background-size: 100% 100%;
@@ -45,12 +45,61 @@
 }
 
 .photo-sep {
-  margin: 20px 0;
-  padding: 10px 150px;
-  margin-top: 50px;
-  font-size: larger;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 50px;
+  font-weight: 350;
+  color: #333;
+  text-align: left;
+  margin: 20px 10%;
+  padding: 10px 0 10px 20px;
+  /* border-left: 4px solid #007bff; */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  /* overflow: auto; */
+}
+
+.pagination button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+  padding: 12px 22px; /* Adjust the padding instead */
+}
+
+.pagination button:disabled {
+  background-color: #d3d3d3;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 18px;
   font-weight: bold;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background: #efeeee;
-  color: #aa9090;
+  color: #333;
 }
