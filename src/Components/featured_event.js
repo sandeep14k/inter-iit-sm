@@ -76,8 +76,8 @@ const FeaturedEvent = () => {
             />
             <div className="image-text">
               <div className="image-number">29th</div>
-              <div className="image-title">Inter IIT Sports Meet</div>
-              <div className="image-date">18 - 21 December</div>
+              <div className="image-title">Inter IIT Staff Meet</div>
+              <div className="image-date">18 - 25 December</div>
             </div>
           </motion.div>
         </div>

@@ -3,6 +3,7 @@ import Photos from '../Components/Photos'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import { Carousel } from "antd";
+import "../css/Gallery.css";
 
 const Gallery = () => {
   const contentStyle = {
@@ -15,7 +16,7 @@ const Gallery = () => {
   return (
     <div>
       <Navbar/>
-      <div >
+      {/* <div >
         <Carousel autoplay effect="fade" >
           <div style={contentStyle}>
             <img src="/gallery/cricket3.jpg" alt=""/>
@@ -30,8 +31,8 @@ const Gallery = () => {
             <img src="/gallery/hockey1.jpg" alt="" />
           </div>
         </Carousel>
-      </div>
-      <h2 className='photo-sep'>Gallery</h2>
+      </div> */}
+      <div className='photo-sep'>Gallery<div><hr className='custom-line'></hr></div></div>
       <Photos/>
       <Footer/>
     </div>

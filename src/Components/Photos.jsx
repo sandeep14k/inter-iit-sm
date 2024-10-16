@@ -1,40 +1,60 @@
-import React from 'react'
-import "../css/photos.css"
+import React, { useEffect, useState } from "react";
+import { db, collection, getDocs } from "../firebase"; // Adjust this import based on your file structure
+import "../css/photos.css"; // Import your CSS file
 
 const Photos = () => {
-  let images = [
-    {url:"/gallery/badminton1.jpg", title:"Example Title"},
-    {url:"/gallery/cricket1.JPG", title:"Example Title"},
-    {url:"/gallery/discuss1.jpg", title:"Example Title"},
-    {url:"/gallery/hockey1.jpg", title:"Example Title"},
-    {url:"/gallery/sprint1.JPG", title:"Example Title"},
-    {url:"/gallery/swimming2.JPG", title:"Example Title"},
-    {url:"/gallery/volleyball1.jpg", title:"Example Title"},
-    {url:"/gallery/basketball1.jpg", title:"Example Title"},
-    {url:"/gallery/cricket2.JPG", title:"Example Title"},
-    {url:"/gallery/football1.JPG", title:"Example Title"},
-    {url:"/gallery/iism23.JPG", title:"Example Title"},
-    {url:"/gallery/squash1.jpg", title:"Example Title"},
-    {url:"/gallery/tennis1.JPG", title:"Example Title"},
-    {url:"/gallery/weightlift1.jpg", title:"Example Title"},
-    {url:"/gallery/chess1.jpg", title:"Example Title"},
-    {url:"/gallery/cricket3.jpg", title:"Example Title"},
-    {url:"/gallery/football2.JPG", title:"Example Title"},
-    {url:"/gallery/marathon1.jpg", title:"Example Title"},
-    {url:"/gallery/swimming1.jpg", title:"Example Title"},
-    {url:"/gallery/tt1.jpg", title:"Example Title"},
-  ];
+  const [images, setImages] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const imagesPerPage = 12;
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      const querySnapshot = await getDocs(collection(db, "gallery")); // Replace with your Firebase collection name
+      const fetchedImages = querySnapshot.docs.map((doc) => doc.data());
+      console.log(fetchedImages);
+      setImages(fetchedImages);
+    };
+
+    fetchImages();
+  }, []);
+
+  // Calculate pagination
+  const indexOfLastImage = currentPage * imagesPerPage;
+  const indexOfFirstImage = indexOfLastImage - imagesPerPage;
+  const currentImages = images.slice(indexOfFirstImage, indexOfLastImage);
+
+  const nextPage = () => {
+    if (currentPage < Math.ceil(images.length / imagesPerPage)) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   return (
-    <div className='galleryBody'>
-      {
-        images.map((el,i)=>
-          <div className='photo-box' style={{backgroundImage:`url("${el.url}")`}} ><div className='photo-title'>{el.title}</div></div>
-        )
-      }
-          
-    </div>
-  )
-}
+    <>
+    <div className="galleryBody">
+      {currentImages.map((el, i) => (
+        <div key={i} className="photo-box" style={{ backgroundImage: `url("${el.ImageUrl}")` }}>
+          <div className="photo-title">{el.title}</div>
+        </div>
+      ))}
+      </div>
+      <div className="pagination">
+        <button onClick={prevPage} disabled={currentPage === 1}>
+          Previous
+        </button>
+        <span>{currentPage}</span>
+        <button onClick={nextPage} disabled={currentPage >= Math.ceil(images.length / imagesPerPage)}>
+          Next
+        </button>
+      </div>
+    </>
+  );
+};
 
-export default Photos
+export default Photos;

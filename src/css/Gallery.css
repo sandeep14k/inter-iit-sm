@@ -1,0 +1,6 @@
+.custom-line {
+    height: 3px; /* Adjust thickness */
+    background-color: #333; /* Customize color */
+    border: none; /* Remove default border */
+    margin: 2px 0; /* Optional spacing */
+  }

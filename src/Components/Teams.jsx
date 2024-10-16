@@ -3,21 +3,26 @@ import '../css/Contacts.css'
 
 const Teams = () => {
   return (
+      <>
+      <div className='team-heading'>Organising Team <div><hr className='custom-line'></hr></div></div>
       <div className="leftPart">
-        <h1>ORGANISING TEAM</h1>
         <div className="ocContainer_contacts">
           <div className="box ocBox">
             <img src="../../Contacts/aviF.png" alt="avi" />
             <img src="../../Contacts/aviB.png" alt="avi" className="hover-img" />
           </div>
           <div className="box ocBox">
+            <img src="../../Contacts/aviF.png" alt="Mukul" />
+            <img src="../../Contacts/aviB.png" alt="Mukul" className="hover-img" />
+          </div>
+          {/* <div className="box ocBox">
             <img src="../../Contacts/OCF.png" alt="Mukul" />
             <img
               src="../../Contacts/OCB.png"
               alt="Mukul"
               className="hover-img"
             />
-          </div>
+          </div> */}
         </div>
         <div className="container_contacts">
           <div className="box">
@@ -190,6 +195,7 @@ const Teams = () => {
           </div>
         </div>
       </div>
+      </>
   );
 }
 
