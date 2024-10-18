@@ -3,32 +3,75 @@
   src: url("/public/fonts/Aptos-SemiBold.ttf");
 }
 
+.cardbox {
+  filter: drop-shadow(0 3px 5px rgb(187, 187, 187));
+}
+
 .match-card {
+  --active-color: #60dede;
+  --active-text-color: #0c004a;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  color: #0c004a;
-  padding: 25px;
+  padding: 7px;
   border-radius: 15px;
-  box-shadow: 0px 0px 10px #00000020;
-  border: 7px solid #6ee3e7ca;
+  
+  background-color: var(--active-color);
+  color: #0c004a;
+  
   width: clamp(100px, 95vw, 1000px);
-  background: #36d1dc; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #36d1dc, #5b86e5); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(135deg, #36d1dc 30%, #5b86e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   transition: 300ms;
+  
+  clip-path: polygon(
+    0 25px,
+    25px 0,
+    calc(100% - 25px) 0,
+    100% 25px,
+    100% calc(100% - 25px),
+    calc(100% - 25px) 100%,
+    25px 100%,
+    0 calc(100% - 25px),
+    0 25px
+    );
+}
+  
+.match-card:hover {
+    transform: translateY(-5px) translateX(5px);
+}
+
+.match-card.live {
+  --active-color: #e53b3b;
+  --active-text-color: #fff;
+}
+
+.match-card.completed {
+  --active-text-color: #fff;
+  --active-color: #909090;
 }
 
 .card-info {
+  background-color: #eee;
   padding: 15px 0;
-  position: relative;
+  padding-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  clip-path: polygon(
+    0 25px,
+    25px 0,
+    calc(100% - 25px) 0,
+    100% 25px,
+    100% calc(100% - 25px),
+    calc(100% - 25px) 100%,
+    25px 100%,
+    0 calc(100% - 25px),
+    0 25px
+  );
 }
+
 
 .team {
   display: flex;
@@ -69,7 +112,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .match-info > div {
@@ -85,14 +127,31 @@
 
 .match-time-format span {
   font-family: aptops;
-  padding: 0 15px;
-  font-size: 17px;font-weight: bold;
+  padding: 0 10px;
+  font-size: 17px;
+  font-weight: bold;
 }
 
 span.sport-name {
+  position: absolute;
   font-family: aptops;
-  font-size: 25px;
-  padding-bottom: 20px;
+  font-size: 20px;
+  top: 0;
+  left: 50%;
+  translate: -50%;
+  background: var(--active-color);
+  color: var(--active-text-color);
+  padding: 7px 20px;
+  padding-top: 7px;
+  border-radius: 0 0 15px 15px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px));
+}
+
+.vs {
+  font-family: aptops;
+  font-weight: bold;
+  font-size: x-large;
+  padding: 20px 0;
 }
 
 .match-details {
@@ -106,12 +165,6 @@ span.sport-name {
   align-items: center;
 }
 
-.extra-box {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-}
-
 .extra-button {
   padding: 7px 0;
   width: 125px;
@@ -121,12 +174,21 @@ span.sport-name {
   font-size: 14px;
   transition: 300ms;
   cursor: pointer;
+  margin: 0 5px;
+}
+
+.livebtn {
+  color: #fff;
+  background: red;
+}
+
+.livebtn:hover {
+  background: rgb(255, 60, 60);
 }
 
 .location {
   color: #fff;
   background: #049850;
-  box-shadow: 0 0 100px #0c004a;
 }
 
 .location:hover {

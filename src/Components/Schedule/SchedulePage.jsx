@@ -147,6 +147,7 @@ export default function SchedulePage({ pageStatus }) {
           >
             Previous
           </button>
+          <span>{page}</span>
           <button
             className={`button load ${!hasMore ? "disable" : "active"}`}
             onClick={() => {

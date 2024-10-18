@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../css/new.css";
-import { SiGooglemaps } from "react-icons/si";
+import { SiGooglemaps, SiYoutube } from "react-icons/si";
 import { HiClock, HiCalendarDays } from "react-icons/hi2";
 import { IoMaleFemaleSharp, IoMaleSharp, IoFemaleSharp } from "react-icons/io5";
 
@@ -37,25 +37,26 @@ function MatchCardR({ match }) {
 
   return (
     <>
-      <div className="match-card">
+      <div className={"match-card " + match.status}>
         <div className="card-info">
+          <span className="sport-name">
+            {match.sport.toUpperCase()} &nbsp;
+            {match.category == "Men" && (
+              <IoMaleSharp style={{ display: "inline-block" }} />
+            )}
+            {match.category == "Women" && (
+              <IoFemaleSharp style={{ display: "inline-block" }} />
+            )}
+            {match.category == "Mixed" && (
+              <IoMaleFemaleSharp style={{ display: "inline-block" }} />
+            )}
+          </span>
           <div className="team team-left">
             <img src={IITs[match.team1]} alt="IIT Logo" className="team-logo" />
             <div className="team-name">{match.team1}</div>
           </div>
           <div className="match-info">
-            <span className="sport-name">
-              {match.sport.toUpperCase()} &nbsp;&nbsp;&nbsp;
-              {match.category == "Men" && (
-                <IoMaleSharp style={{ display: "inline-block" }} />
-              )}
-              {match.category == "Women" && (
-                <IoFemaleSharp style={{ display: "inline-block" }} />
-              )}
-              {match.category == "Mixed" && (
-                <IoMaleFemaleSharp style={{ display: "inline-block" }} />
-              )}
-            </span>
+            <span className="vs">V/S</span>
             <div className="match-time-format">
               {match.status != "live" && (
                 <>
@@ -67,19 +68,38 @@ function MatchCardR({ match }) {
                 </>
               )}
               <div className="match-details">
-                <Link
-                  target="_blank"
-                  to={
-                    match.locationUrl ||
-                    "https://maps.app.goo.gl/Y438GM3RJka7UE5MA"
-                  }
-                  className="extra-button location"
-                >
-                  <SiGooglemaps
-                    style={{ display: "inline-block", marginRight: "5px" }}
-                  />{" "}
-                  {match.venue}
-                </Link>
+                {match.status == "live" && (
+                  <Link
+                    target="_blank"
+                    to={
+                      match.locationUrl ||
+                      "https://youtu.be/7d186s14Jg4?si=3L65E1MjTroqv1yJ"
+                    }
+                    className="extra-button livebtn"
+                  >
+                    <SiYoutube
+                      style={{ display: "inline-block", marginRight: "5px" }}
+                    />{" "}
+                    Live
+                  </Link>
+                )}
+                {match.status != "completed" ? (
+                  <Link
+                    target="_blank"
+                    to={
+                      match.locationUrl ||
+                      "https://maps.app.goo.gl/Y438GM3RJka7UE5MA"
+                    }
+                    className="extra-button location"
+                  >
+                    <SiGooglemaps
+                      style={{ display: "inline-block", marginRight: "5px" }}
+                    />{" "}
+                    {match.venue}
+                  </Link>) : <span><SiGooglemaps
+                      style={{ display: "inline-block", marginRight: "5px" }}
+                    /> {match.venue}</span>
+                }
               </div>
               {match.status != "live" && (
                 <>
@@ -104,7 +124,7 @@ function MatchCardR({ match }) {
             {match.status == "completed" && "Ended"}
           </div>
         )}
-      {match.status != "upcoming" &&
+        {/* {match.status != "upcoming" &&
         (match.sport == "basketball" || match.sport == "hockey") && (
           <div className="result basket hockey">
             <div className="logo-r">
@@ -131,8 +151,8 @@ function MatchCardR({ match }) {
               />
             </div>
           </div>
-        )}
-      {match.status != "upcoming" && match.sport == "cricket" && (
+        )} */}
+        {/* {match.status != "upcoming" && match.sport == "cricket" && (
         <div className="result cricket">
           <div className="logo-r">
             <img src={IITs[match.team1]} alt="IIT Logo" className="team-logo" />
@@ -152,8 +172,8 @@ function MatchCardR({ match }) {
             <img src={IITs[match.team2]} alt="IIT Logo" className="team-logo" />
           </div>
         </div>
-      )}
-      {match.status != "upcoming" && 
+      )} */}
+        {/* {match.status != "upcoming" && 
       (match.sport == "volleyball" || match.sport == "table tennis" || match.sport == "lawn tennis") 
       && (
         <div className="result volley">
@@ -204,7 +224,7 @@ function MatchCardR({ match }) {
             </tbody>
           </table>
         </div>
-      )}
+      )} */}
       </div>
     </>
   );

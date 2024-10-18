@@ -227,7 +227,7 @@
   align-items: center;
   min-height: calc(100vh - 144px);
   padding: 25px 0;
-  gap: 15px;
+  gap: 20px;
 }
 
 .next-pre-box {
