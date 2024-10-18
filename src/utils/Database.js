@@ -58,8 +58,8 @@ export default class Database {
     }
   }
 
-  async getPlayers(page, limit, searchQuery) {
-    const apiUrl = `${this.url}/players?page=${page}&limit=${limit}&search=${searchQuery}`;
+  async getPlayers(page, limit, searchQuery, sport, iit) {
+    const apiUrl = `${this.url}/players?page=${page}&limit=${limit}&search=${searchQuery}&sport=${sport == "Sport" ? "":sport}&collage=${iit == "IITs" ? "":iit}`;
     
     try {
       const response = await axios.get(apiUrl);

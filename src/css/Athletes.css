@@ -41,6 +41,7 @@
 .player-card .image {
   border-radius: 10px;
   width: 180px;
+  height: 180px;
 }
 
 .player-card .name {

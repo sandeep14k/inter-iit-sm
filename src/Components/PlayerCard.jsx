@@ -19,6 +19,8 @@ export default function PlayerCard(prop) {
             src={data.photo}
             alt="Player Photo"
             className="player-image"
+            width={180}
+            height={180}
           />
         </div>
         <div className="name">{data.name || "----- ----"}</div>
