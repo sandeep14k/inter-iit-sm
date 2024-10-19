@@ -17,13 +17,13 @@
   position: relative;
   padding: 7px;
   border-radius: 15px;
-  
+
   background-color: var(--active-color);
   color: #0c004a;
-  
+
   width: clamp(100px, 95vw, 1000px);
   transition: 300ms;
-  
+
   clip-path: polygon(
     0 25px,
     25px 0,
@@ -34,11 +34,11 @@
     25px 100%,
     0 calc(100% - 25px),
     0 25px
-    );
+  );
 }
-  
+
 .match-card:hover {
-    transform: translateY(-5px) translateX(5px);
+  transform: translateY(-5px) translateX(5px);
 }
 
 .match-card.live {
@@ -72,13 +72,12 @@
   );
 }
 
-
 .team {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 150px;
+  width: 160px;
 }
 
 .team-logo {
@@ -141,10 +140,17 @@ span.sport-name {
   translate: -50%;
   background: var(--active-color);
   color: var(--active-text-color);
-  padding: 7px 20px;
+  padding: 5px 25px;
   padding-top: 7px;
   border-radius: 0 0 15px 15px;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px));
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    /* 100% calc(100% - 20px), */
+    calc(100% - 20px) 100%,
+    20px 100%,
+    0 0
+  );
 }
 
 .vs {
@@ -152,6 +158,10 @@ span.sport-name {
   font-weight: bold;
   font-size: x-large;
   padding: 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .match-details {
@@ -235,7 +245,7 @@ span.sport-name {
 
 /* //////////////////////////////// */
 
-.result {
+/* .result {
   padding: 25px;
   background: #e1e1e1;
   border-radius: 15px;
@@ -257,7 +267,7 @@ span.sport-name {
   text-align: center;
 }
 
-.result.volley table thead td{
+.result.volley table thead td {
   padding: 10px 20px;
   border-bottom: 1px solid #000;
 }
@@ -282,5 +292,20 @@ span.sport-name {
   font-size: 18px;
   color: #3b3b3b;
   display: block;
+} */
+
+
+.result {
+  display: inline-block;
+  text-align: center;
 }
 
+.result.cricket span.sep {
+  font-size: 18px;
+  margin: 0 7px;
+}
+
+.result.cricket .overs {
+  font-size: 21px;
+  padding-top: 5px;
+}

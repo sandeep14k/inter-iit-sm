@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../../css/new.css";
+import "../../css/MatchCardR.css";
 import { SiGooglemaps, SiYoutube } from "react-icons/si";
 import { HiClock, HiCalendarDays } from "react-icons/hi2";
 import { IoMaleFemaleSharp, IoMaleSharp, IoFemaleSharp } from "react-icons/io5";
@@ -34,7 +34,7 @@ function MatchCardR({ match }) {
     "IIT Palakkad": "/IITs_Logo/Palakkad.jpg",
     "IIT Tirupati": "/IITs_Logo/Tirupati.jpg",
   };
-
+  console.log(match);
   return (
     <>
       <div className={"match-card " + match.status}>
@@ -56,7 +56,38 @@ function MatchCardR({ match }) {
             <div className="team-name">{match.team1}</div>
           </div>
           <div className="match-info">
-            <span className="vs">V/S</span>
+            <span className="vs">
+              {match.sport == "cricket" && (
+                <div className="result cricket">
+                  {match.team1_score || 0} <span className="sep">/</span>{" "}
+                  {match.team1_wickets || 0}
+                  <br />
+                  <span className="overs">{match.overs || 0}</span>
+                </div>
+              )}
+              {match.sport == "hockey" && (
+                <div className="result hockey">{match.team1_goals || 0}</div>
+              )}
+              {match.sport == "basketball" && (
+                <div className="result basketball">{match.team1_score || 0}</div>
+              )}
+              <span>V/S</span>
+              {match.sport == "cricket" && (
+                <div className="result cricket">
+                  {match.team2_score || 0} <span className="sep">/</span>{" "}
+                  {match.team2_wickets || 0}
+                  <br />
+                  <span className="overs">{match.overs || 0}</span>
+                </div>
+              )}
+              {match.sport == "hockey" && (
+                <div className="result hockey">{match.team2_goals || 0}</div>
+              )}
+              {match.sport == "basketball" && (
+                <div className="result basketball">{match.team2_score || 0}</div>
+              )}
+            </span>
+
             <div className="match-time-format">
               {match.status != "live" && (
                 <>
@@ -72,7 +103,7 @@ function MatchCardR({ match }) {
                   <Link
                     target="_blank"
                     to={
-                      match.locationUrl ||
+                      match.liveStreamUrl ||
                       "https://youtu.be/7d186s14Jg4?si=3L65E1MjTroqv1yJ"
                     }
                     className="extra-button livebtn"
@@ -96,10 +127,15 @@ function MatchCardR({ match }) {
                       style={{ display: "inline-block", marginRight: "5px" }}
                     />{" "}
                     {match.venue}
-                  </Link>) : <span><SiGooglemaps
+                  </Link>
+                ) : (
+                  <span>
+                    <SiGooglemaps
                       style={{ display: "inline-block", marginRight: "5px" }}
-                    /> {match.venue}</span>
-                }
+                    />{" "}
+                    {match.venue}
+                  </span>
+                )}
               </div>
               {match.status != "live" && (
                 <>
