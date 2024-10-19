@@ -57,7 +57,7 @@ function MatchCardR({ match }) {
           </div>
           <div className="match-info">
             <span className="vs">
-              {match.sport == "cricket" && (
+              {match.status != "upcoming" && match.sport == "cricket" && (
                 <div className="result cricket">
                   {match.team1_score || 0} <span className="sep">/</span>{" "}
                   {match.team1_wickets || 0}
@@ -65,14 +65,14 @@ function MatchCardR({ match }) {
                   <span className="overs">{match.overs || 0}</span>
                 </div>
               )}
-              {match.sport == "hockey" && (
+              {match.status != "upcoming" && match.sport == "hockey" && (
                 <div className="result hockey">{match.team1_goals || 0}</div>
               )}
-              {match.sport == "basketball" && (
+              {match.status != "upcoming" && match.sport == "basketball" && (
                 <div className="result basketball">{match.team1_score || 0}</div>
               )}
               <span>V/S</span>
-              {match.sport == "cricket" && (
+              {match.status != "upcoming" && match.sport == "cricket" && (
                 <div className="result cricket">
                   {match.team2_score || 0} <span className="sep">/</span>{" "}
                   {match.team2_wickets || 0}
@@ -80,10 +80,10 @@ function MatchCardR({ match }) {
                   <span className="overs">{match.overs || 0}</span>
                 </div>
               )}
-              {match.sport == "hockey" && (
+              {match.status != "upcoming" && match.sport == "hockey" && (
                 <div className="result hockey">{match.team2_goals || 0}</div>
               )}
-              {match.sport == "basketball" && (
+              {match.status != "upcoming" && match.sport == "basketball" && (
                 <div className="result basketball">{match.team2_score || 0}</div>
               )}
             </span>
@@ -160,107 +160,6 @@ function MatchCardR({ match }) {
             {match.status == "completed" && "Ended"}
           </div>
         )}
-        {/* {match.status != "upcoming" &&
-        (match.sport == "basketball" || match.sport == "hockey") && (
-          <div className="result basket hockey">
-            <div className="logo-r">
-              <img
-                src={IITs[match.team1]}
-                alt="IIT Logo"
-                className="team-logo"
-              />
-            </div>
-            <div className="score">
-              {match.sport == "hockey" ? match.team1_goals || 0 : match.team1_score || 0}{" "}
-              &nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;
-              {match.sport == "hockey" ? match.team2_goals || 0 : match.team2_score || 0}
-              <br />
-              <span className="score-type">
-                {match.sport == "hockey" ? "Goals" : "Baskets"}
-              </span>
-            </div>
-            <div className="logo-r">
-              <img
-                src={IITs[match.team2]}
-                alt="IIT Logo"
-                className="team-logo"
-              />
-            </div>
-          </div>
-        )} */}
-        {/* {match.status != "upcoming" && match.sport == "cricket" && (
-        <div className="result cricket">
-          <div className="logo-r">
-            <img src={IITs[match.team1]} alt="IIT Logo" className="team-logo" />
-          </div>
-          <div className="score">
-            {match.team1_score || 0} &nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;
-            {match.team1_wickets || 0}
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {match.team2_score || 0} &nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;{" "}
-            {match.team2_score || 0}
-            {match.team2_wickets || 0}
-            <br />
-            <span className="overs">{match.overs}</span>
-          </div>
-          <div className="logo-r">
-            <img src={IITs[match.team2]} alt="IIT Logo" className="team-logo" />
-          </div>
-        </div>
-      )} */}
-        {/* {match.status != "upcoming" && 
-      (match.sport == "volleyball" || match.sport == "table tennis" || match.sport == "lawn tennis") 
-      && (
-        <div className="result volley">
-          <table>
-            <thead>
-              <tr>
-                <td></td>
-                <td>Set 1</td>
-                <td>Set 2</td>
-                <td>Set 3</td>
-                <td>Set 4</td>
-                <td>Set 5</td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div className="logo-r">
-                    <img
-                      src={IITs[match.team1]}
-                      alt="IIT Logo"
-                      className="team-logo"
-                    />
-                  </div>
-                </td>
-                <td>{match.set1_score1 || 0}</td>
-                <td>{match.set2_score1 || 0}</td>
-                <td>{match.set3_score1 || 0}</td>
-                <td>{match.set4_score1 || 0}</td>
-                <td>{match.set5_score1 || 0}</td>
-              </tr>
-              <tr>
-                <td>
-                  <div className="logo-r">
-                    <img
-                      src={IITs[match.team2]}
-                      alt="IIT Logo"
-                      className="team-logo"
-                    />
-                  </div>
-                </td>
-                <td>{match.set1_score2 || 0}</td>
-                <td>{match.set2_score2 || 0}</td>
-                <td>{match.set3_score2 || 0}</td>
-                <td>{match.set4_score2 || 0}</td>
-                <td>{match.set5_score2 || 0}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      )} */}
       </div>
     </>
   );

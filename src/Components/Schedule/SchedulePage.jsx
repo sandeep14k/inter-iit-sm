@@ -2,18 +2,20 @@ import React, { useState, useEffect } from "react";
 import Footer from "../Footer.jsx";
 import Navbar from "../Navbar.jsx";
 import MatchCardR from "./MatchCardR.jsx";
-import { Input, Select, DatePicker, Space } from "antd";
+import { Input } from "antd";
 import "../../css/Schedule.css";
 import Database from "../../utils/Database";
-
-const { Option } = Select;
 
 const limit = 10;
 
 export default function SchedulePage({ pageStatus }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSport, setSelectedSport] = useState((pageStatus != "upcoming") ? "Cricket" : "Sport");
-  const [selectedDate, setSelectedDate] = useState(undefined);
+  const [selectedSport, setSelectedSport] = useState(
+    pageStatus != "upcoming" ? "Cricket" : "All"
+  );
+
+  let sports = ["Hockey","Lawn Tennis","Basketball","Volleyball","Cricket","Table Tennis"];
+  if(pageStatus == "upcoming") sports.unshift("All");
 
   let db = new Database();
 
@@ -30,51 +32,15 @@ export default function SchedulePage({ pageStatus }) {
     setToFetch(true);
   };
 
-  const selectBefore = (
-    <Space direction="vertical">
-      <DatePicker
-        style={{ minWidth: "120px" }}
-        onChange={(e) => {
-          if (!e) setSelectedDate(undefined);
-          else setSelectedDate(new Date(e.$d));
-
-          reset();
-        }}
-      />
-    </Space>
-  );
-
-  const selectAfter = (
-    <Select
-      style={{ minWidth: "100px" }}
-      value={selectedSport}
-      onChange={(e) => {
-        setSelectedSport(e);
-        reset();
-      }}
-    >
-      {pageStatus == "ongoing" && <Option value="Sport">Sport</Option>}
-      <Option value="hockey">Hockey</Option>
-      <Option value="lawn tennis">Lawn Tennis</Option>
-      <Option value="basketball">Basketball</Option>
-      <Option value="volleyball">Volleyball</Option>
-      <Option value="cricket">Cricket</Option>
-      <Option value="table tennis">Table Tennis</Option>
-    </Select>
-  );
+  const changeSport = (spr) => {
+    setSelectedSport(spr);
+    reset();
+    setToFetch(true);
+  }
 
   const fetchData = async () => {
     if (!toFetch || isLoading || !hasMore) return;
     setIsLoading(true);
-
-    let date;
-    if (selectedDate)
-      date =
-        selectedDate.getFullYear() +
-        ":" +
-        (parseInt(selectedDate.getMonth()) + 1) +
-        ":" +
-        selectedDate.getDate();
 
     const data = await db.getMatches(
       page,
@@ -99,7 +65,6 @@ export default function SchedulePage({ pageStatus }) {
   return (
     <div className="min-w-[100vw]">
       <Navbar />
-
       <div
         className="player-search-box"
         style={{
@@ -109,8 +74,6 @@ export default function SchedulePage({ pageStatus }) {
         }}
       >
         <Input
-          // addonBefore={selectBefore}
-          addonAfter={selectAfter}
           value={searchQuery}
           style={{ width: "100%", maxWidth: "1000px" }}
           onChange={(e) => {
@@ -123,6 +86,9 @@ export default function SchedulePage({ pageStatus }) {
           placeholder="Search Match Here ..."
         />
       </div>
+        <div className="chips">
+          {sports.map((e) => <div className={e == selectedSport && "active-chip"} onClick={() => changeSport(e)}> <div>{e}</div> </div>)}
+        </div>
 
       <div className="cardbox">
         {matches.length > 0 ? (
@@ -141,7 +107,7 @@ export default function SchedulePage({ pageStatus }) {
             onClick={() => {
               if (page == 1) return;
               setPage((e) => e - 1);
-              setHasMore(true)
+              setHasMore(true);
               if (!isLoading) setToFetch(true);
             }}
           >

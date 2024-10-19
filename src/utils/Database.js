@@ -17,7 +17,8 @@ export default class Database {
   }
   
   async getScheduledMatches(page, limit, searchQuery, sport) {
-    const apiUrl = `${this.url}/matches?page=${page}&limit=${limit}&search=${searchQuery}&sport=${sport.split(" ").join('')}`;
+    console.log(sport.split(" ").join('').toLowerCase())
+    const apiUrl = `${this.url}/matches?page=${page}&limit=${limit}&search=${searchQuery}&sportTableName=${sport.split(" ").join('')}`;
 
     try {
       const response = await axios.get(apiUrl);

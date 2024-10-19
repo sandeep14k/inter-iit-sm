@@ -243,3 +243,37 @@
   color: #313131;
 }
 
+.chips {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.chips > div {
+  background: #6d6d6d;
+  padding: 2px  ;
+  clip-path: polygon(20px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%);
+  margin: 0 -7px;
+  font-weight: bold;
+}
+
+.chips > div div {
+  padding: 5px 25px;
+  clip-path: polygon(20px 0%, calc(100% - 1px) 0%, calc(100% - 20px) 100%, 1px 100%);
+  background: #eee;
+  color: #6d6d6d;
+  transition: 300ms;
+}
+
+.chips > div:hover,
+.chips > div.active-chip {
+  background: #c78200;
+}
+
+.chips > div:hover div,
+.chips > div.active-chip  div {
+  background: #f89d00;
+  color: #fff;
+}
