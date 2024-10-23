@@ -105,7 +105,6 @@ const Home = () => {
 
   return (
     <div className="min-w-[100vw]">
-      <Navbar />
       <div
         className="player-search-box"
         style={{
@@ -158,7 +157,6 @@ const Home = () => {
           Next
         </button>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -1,202 +1,213 @@
-import React from 'react'
-import '../css/Contacts.css'
+import React from "react";
+import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
+import "../css/Teams.css"; // Link to your CSS file
+
+const overallCoordinators = [
+  {
+    name: "Avi",
+    role: "Overall Coordinator",
+    email: "savi20@iitk.ac.in",
+    frontImage: "../../Contacts/aviF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Mukul",
+    role: "Overall Coordinator",
+    email: "mukuls21@iitk.ac.in",
+    frontImage: "../../Contacts/aviF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  }
+];
+
+const teamMembers = [
+  {
+    name: "Nitin",
+    role: "Head, Events",
+    email: "niting21@iitk.ac.in",
+    frontImage: "../../Contacts/nitinF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  // Add other team members as per your data structure
+  {
+    name: "Pravesh",
+    role: "Events",
+    email: "praveshm21@iitk.ac.in",
+    frontImage: "../../Contacts/praveshF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Pratham",
+    role: "Finance",
+    email: "prathamg21@iitk.ac.in",
+    frontImage: "../../Contacts/prathamF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Netraj",
+    role: "Media and Publicity",
+    email: "netraj21@iitk.ac.in",
+    frontImage: "../../Contacts/netrajF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Sushant",
+    role: "Media and Publicity",
+    email: "sushantf21@iitk.ac.in",
+    frontImage: "../../Contacts/sushantF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Jayant",
+    role: "Hospitality",
+    email: "jayantn21@iitk.ac.in",
+    frontImage: "../../Contacts/jayantF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Shivani",
+    role: "Hospitality",
+    email: "shivani21@iitk.ac.in",
+    frontImage: "../../Contacts/shivaniF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Nishant",
+    role: "Hospitality",
+    email: "nishantp21@iitk.ac.in",
+    frontImage: "../../Contacts/nishantF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Naveen",
+    role: "Public Relations",
+    email: "naveenm21@iitk.ac.in",
+    frontImage: "../../Contacts/naveenF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Manuja",
+    role: "Public Relations",
+    email: "manujap21@iitk.ac.in",
+    frontImage: "../../Contacts/manujaF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Sahil",
+    role: "Marketing",
+    email: "sahil21@iitk.ac.in",
+    frontImage: "../../Contacts/sahilF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Prasang",
+    role: "Marketing",
+    email: "prasangv21@iitk.ac.in",
+    frontImage: "../../Contacts/prasangF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Keshav",
+    role: "Show Management",
+    email: "keshavc21@iitk.ac.in",
+    frontImage: "../../Contacts/keshavF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Kartik",
+    role: "Show Management",
+    email: "kartikv21@iitk.ac.in",
+    frontImage: "../../Contacts/kartikF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Nikhil",
+    role: "Show Management",
+    email: "nikhils21@iitk.ac.in",
+    frontImage: "../../Contacts/nikhilF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Mayank",
+    role: "Security",
+    email: "mshekhar21@iitk.ac.in",
+    frontImage: "../../Contacts/mayankF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Ujjawal",
+    role: "Web & App",
+    email: "ujjawal22@iitk.ac.in",
+    frontImage: "../../Contacts/ujjawalF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Priyanshu",
+    role: "Web & App",
+    email: "priyanshum21@iitk.ac.in",
+    frontImage: "../../Contacts/priyanshuF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Rudraksh",
+    role: "Design",
+    email: "rudraksh22@iitk.ac.in",
+    frontImage: "../../Contacts/rudrakshF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  },
+  {
+    name: "Shivam",
+    role: "Design",
+    email: "shivamr22@iitk.ac.in",
+    frontImage: "../../Contacts/shivamF.png",
+    social: { instagram: "#", facebook: "#", linkedin: "#" }
+  }
+];
 
 const Teams = () => {
   return (
-      <>
-      <div className='team-heading'>Organising Team <div><hr className='custom-line'></hr></div></div>
-      <div className="leftPart">
-        <div className="ocContainer_contacts">
-          <div className="box ocBox">
-            <img src="../../Contacts/aviF.png" alt="avi" />
-            <img src="../../Contacts/aviB.png" alt="avi" className="hover-img" />
-          </div>
-          <div className="box ocBox">
-            <img src="../../Contacts/aviF.png" alt="Mukul" />
-            <img src="../../Contacts/aviB.png" alt="Mukul" className="hover-img" />
-          </div>
-          {/* <div className="box ocBox">
-            <img src="../../Contacts/OCF.png" alt="Mukul" />
-            <img
-              src="../../Contacts/OCB.png"
-              alt="Mukul"
-              className="hover-img"
-            />
-          </div> */}
-        </div>
-        <div className="container_contacts">
-          <div className="box">
-            <img src="../../Contacts/nitinF.png" alt="nitin" />
-            <img
-              src="../../Contacts/nitinB.png"
-              alt="nitin"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/praveshF.png" alt="pravesh" />
-            <img
-              src="../../Contacts/praveshB.png"
-              alt="pravesh"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/netrajF.png" alt="netraj" />
-            <img
-              src="../../Contacts/netrajB.png"
-              alt="netraj"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/sushantF.png" alt="sushant" />
-            <img
-              src="../../Contacts/sushantB.png"
-              alt="sushant"
-              className="hover-img"
-            />
-          </div>
-        </div>
-        <div className="container_contacts">
-          <div className="box">
-            <img src="../../Contacts/prathamF.png" alt="pratham" />
-            <img
-              src="../../Contacts/prathamB.png"
-              alt="pratham"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/jayantF.png" alt="jayant" />
-            <img
-              src="../../Contacts/jayantB.png"
-              alt="jayant"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/shivaniF.png" alt="shivani" />
-            <img
-              src="../../Contacts/shivaniB.png"
-              alt="shivani"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/nishantF.png" alt="nishant" />
-            <img
-              src="../../Contacts/nishantB.png"
-              alt="nishant"
-              className="hover-img"
-            />
-          </div>
-        </div>
-        <div className="container_contacts">
-          <div className="box">
-            <img src="../../Contacts/naveenF.png" alt="naveen" />
-            <img
-              src="../../Contacts/naveenB.png"
-              alt="naveen"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/manujaF.png" alt="manuja" />
-            <img
-              src="../../Contacts/manujaB.png"
-              alt="manuja"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/sahilF.png" alt="sahil" />
-            <img
-              src="../../Contacts/sahilB.png"
-              alt="sahil"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/prasangF.png" alt="prasang" />
-            <img
-              src="../../Contacts/prasangB.png"
-              alt="prasang"
-              className="hover-img"
-            />
-          </div>
-        </div>
-        <div className="container_contacts">
-          <div className="box">
-            <img src="../../Contacts/keshavF.png" alt="keshav" />
-            <img
-              src="../../Contacts/keshavB.png"
-              alt="keshav"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/kartikF.png" alt="kartik" />
-            <img
-              src="../../Contacts/kartikB.png"
-              alt="kartik"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/nikhilF.png" alt="nikhil" />
-            <img
-              src="../../Contacts/nikhilB.png"
-              alt="nikhil"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/mayankF.png" alt="mayank" />
-            <img
-              src="../../Contacts/mayankB.png"
-              alt="mayank"
-              className="hover-img"
-            />
-          </div>
-        </div>
-        <div className="container_contacts">
-          <div className="box">
-            <img src="../../Contacts/ujjawalF.png" alt="ujjawal" />
-            <img
-              src="../../Contacts/ujjawalB.png"
-              alt="ujjawal"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/priyanshuF.png" alt="priyanshu" />
-            <img
-              src="../../Contacts/priyanshuB.png"
-              alt="priyanshu"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/rudrakshF.png" alt="rudraksh" />
-            <img
-              src="../../Contacts/rudrakshB.png"
-              alt="rudraksh"
-              className="hover-img"
-            />
-          </div>
-          <div className="box">
-            <img src="../../Contacts/shivamF.png" alt="shivam" />
-            <img
-              src="../../Contacts/shivamB.png"
-              alt="shivam"
-              className="hover-img"
-            />
-          </div>
-        </div>
-      </div>
-      </>
-  );
-}
+    <>
+      <div className="team-heading">Core Team</div>
 
-export default Teams
+      <div className="coreteam-grid">
+        {teamMembers.map((member, index) => {
+          const names = member.name.split(" ");
+          return (
+            <div key={index} className="stacked-layer">
+              <div className="border-box"></div>
+              <div className="coreteam-card">
+                <div className="card-image">
+                  <img
+                    src={member.frontImage}
+                    alt={`${member.name} Profile`}
+                    className="profile-img"
+                  />
+                </div>
+                <div className="coreteam-card-content">
+                  <h3>{names[0].toUpperCase()}</h3>
+                  {names.length > 1 && <h4>{names[1].toUpperCase()}</h4>}
+                  <p>{member.role}</p>
+                  <p className="email">{member.email}</p>
+                </div>
+              </div>
+              <div className="coreteam-card-hover">
+                <div className="social-icons-coreteam">
+                  <a href={member.social.instagram} target="_blank" rel="noreferrer">
+                    <FaInstagram />
+                  </a>
+                  <a href={member.social.facebook} target="_blank" rel="noreferrer">
+                    <FaFacebook />
+                  </a>
+                  <a href={member.social.linkedin} target="_blank" rel="noreferrer">
+                    <FaLinkedin />
+                  </a>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+};
+
+export default Teams;

@@ -11,7 +11,7 @@ const limit = 10;
 export default function SchedulePage({ pageStatus }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSport, setSelectedSport] = useState(
-    pageStatus != "upcoming" ? "Cricket" : "All"
+    pageStatus != "upcoming" ? "Hockey" : "All"
   );
 
   let sports = ["Hockey","Lawn Tennis","Basketball","Volleyball","Cricket","Table Tennis"];
@@ -63,8 +63,8 @@ export default function SchedulePage({ pageStatus }) {
   }, [toFetch]);
 
   return (
+    <div className="schedule-page">
     <div className="min-w-[100vw]">
-      <Navbar />
       <div
         className="player-search-box"
         style={{
@@ -126,8 +126,7 @@ export default function SchedulePage({ pageStatus }) {
           </button>
         </div>
       </div>
-
-      <Footer />
+    </div>
     </div>
   );
 }

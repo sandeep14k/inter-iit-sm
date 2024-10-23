@@ -12,7 +12,6 @@ import FeaturedEvent from '../Components/featured_event'
 const Home = () => {
   return (
     <div className='min-w-[100vw]'>
-        <Navbar/>
         <Header />
         <SocialMediaHandles/>
         <About/>
@@ -20,7 +19,6 @@ const Home = () => {
         <P_IITs/>
         <Sports/>
         <Sponser/>
-      <Footer/>
     </div>
   )
 }

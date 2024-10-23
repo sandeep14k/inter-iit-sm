@@ -30,7 +30,7 @@
 }
 
 .logo img {
-    width: 100px;
+    width: 50px;
     border-radius: 15px;
 }
 
@@ -92,11 +92,11 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 18px;
     font-weight: bold;
-    color: #007bff; /* Adjust to match your theme */
+    color: rgba(140,223,229,1); /* Adjust to match your theme */
     margin-left: 20px; /* Space it from the logo */
     text-transform: uppercase;
     letter-spacing: 1px;
-    background: linear-gradient(to right, #007bff, #ff6b6b);
+    background: linear-gradient(to right, rgba(140,223,229,1), rgba(235,161,45,1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: transform 0.3s ease, color 0.3s ease;
@@ -280,3 +280,18 @@
         left: 41% !important;
     }
 }
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    /* margin: 0 15px; */
+    position: relative;
+    padding: 5px 0;
+  }
+  
+.active-link {
+    border-bottom: 3px solid #ff0000; /* Underline for active tab */
+    color: #ff0000; /* Change color of active link */
+    /* position:absolute;
+    bottom: 0; */
+  }
