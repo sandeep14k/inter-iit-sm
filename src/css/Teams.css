@@ -77,11 +77,18 @@
   
   .coreteam-card:hover + .coreteam-card-hover {
     opacity: 1;
+}
+
+  .coreteam-card:hover .coreteam-card-hover,
+  .coreteam-card-hover:hover {
+      opacity: 1;
   }
   
   .social-icons-coreteam {
     display: flex;
     justify-content: center;
+    overflow: visible;
+    padding: 3px;
     gap: 15px;
   }
   
@@ -98,7 +105,7 @@
   .social-icons-coreteam a:hover {
     color: #0073b1;
     transform: scale(1.1);
-    z-index: 5;
+
   }
   
   /* Profile image inside the card */

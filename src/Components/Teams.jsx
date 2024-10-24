@@ -206,6 +206,46 @@ const Teams = () => {
           );
         })}
       </div>
+      <div className="team-heading">Overall Coordinators</div>
+
+      <div className="coreteam-grid">
+        {overallCoordinators.map((member, index) => {
+          const names = member.name.split(" ");
+          return (
+            <div key={index} className="stacked-layer">
+              <div className="border-box"></div>
+              <div className="coreteam-card">
+                <div className="card-image">
+                  <img
+                    src={member.frontImage}
+                    alt={`${member.name} Profile`}
+                    className="profile-img"
+                  />
+                </div>
+                <div className="coreteam-card-content">
+                  <h3>{names[0].toUpperCase()}</h3>
+                  {names.length > 1 && <h4>{names[1].toUpperCase()}</h4>}
+                  <p>{member.role}</p>
+                  <p className="email">{member.email}</p>
+                </div>
+              </div>
+              <div className="coreteam-card-hover">
+                <div className="social-icons-coreteam">
+                  <a href={member.social.instagram} target="_blank" rel="noreferrer">
+                    <FaInstagram />
+                  </a>
+                  <a href={member.social.facebook} target="_blank" rel="noreferrer">
+                    <FaFacebook />
+                  </a>
+                  <a href={member.social.linkedin} target="_blank" rel="noreferrer">
+                    <FaLinkedin />
+                  </a>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };
