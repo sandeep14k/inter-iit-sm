@@ -5,6 +5,7 @@ import "../css/Athletes.css";
 import { Input, Select } from "antd";
 import PlayerCard from "../Components/PlayerCard";
 import Database from "../utils/Database";
+import Transition from "../Components/PageTransition/PageTransition";
 
 const { Option } = Select;
 
@@ -104,6 +105,7 @@ const Home = () => {
   );
 
   return (
+    <Transition>
     <div className="min-w-[100vw]">
       <div
         className="player-search-box"
@@ -158,6 +160,7 @@ const Home = () => {
         </button>
       </div>
     </div>
+    </Transition>
   );
 };
 
