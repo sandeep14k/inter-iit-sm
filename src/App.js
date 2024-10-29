@@ -10,11 +10,13 @@ import Gallery from './Pages/Gallery';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer'; 
 import './App.css';
+import { AnimatePresence } from 'framer-motion';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Navbar /> {/* Navbar is displayed on every page */}
+    <AnimatePresence>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Result" element={<Result />} />
@@ -24,6 +26,7 @@ const App = () => {
         <Route path="/Contacts" element={<Contacts />} />
         <Route path="/gallery" element={<Gallery />} />
       </Routes>
+    </AnimatePresence>
       <Footer /> {/* Footer is displayed on every page */}
     </BrowserRouter>
   );
