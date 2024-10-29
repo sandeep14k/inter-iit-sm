@@ -5,6 +5,7 @@ import MatchCardR from "./MatchCardR.jsx";
 import { Input } from "antd";
 import "../../css/Schedule.css";
 import Database from "../../utils/Database";
+import Transition from "../PageTransition/PageTransition.jsx";
 
 const limit = 10;
 
@@ -63,6 +64,7 @@ export default function SchedulePage({ pageStatus }) {
   }, [toFetch]);
 
   return (
+    <Transition>
     <div className="schedule-page">
     <div className="min-w-[100vw]">
       <div
@@ -128,5 +130,6 @@ export default function SchedulePage({ pageStatus }) {
       </div>
     </div>
     </div>
+      </Transition>
   );
 }
