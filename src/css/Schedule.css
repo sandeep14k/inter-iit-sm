@@ -16,6 +16,11 @@
   gap: 20px;
 } 
 
+.search-icon {
+  font-size: 2em; /* Adjust the size as needed */
+  color: #555; /* Adjust the color if desired */
+}
+
 .next-pre-box {
   width: 100%;
   padding: 0 20px;
@@ -57,8 +62,12 @@
   gap: 10px 5px;
 }
 
+:where(.css-dev-only-do-not-override-14i19y2).ant-input-outlined{
+  border-color: rgba(0, 0, 0, 0.88);
+}
+
 .chips > div {
-  background: #6d6d6d;
+  background: black;
   padding: 2px;
   clip-path: polygon(0 0, calc(100% - 10px) 0%, 100% 10px, 100% 100%, 10px 100%, 0% calc(100% - 10px));
   font-weight: bold;
@@ -71,7 +80,7 @@
   padding: 5px;
   clip-path: polygon(0 0, calc(100% - 10px) 0%, 100% 10px, 100% 100%, 10px 100%, 0% calc(100% - 10px));
   background: #eee;
-  color: #6d6d6d;
+  color: black;
   transition: 300ms;
 }
 

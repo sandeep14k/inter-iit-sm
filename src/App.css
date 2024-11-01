@@ -84,10 +84,10 @@ fieldset {
     font-family: "Roboto Flex", sans-serif;
   }
 
-  /* .schedule-page, .live-score-page, .result-page {
+  .schedule-page, .live-score-page, .result-page {
     background-image: url('../public/assets/scchedule.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  } */
+  }
 

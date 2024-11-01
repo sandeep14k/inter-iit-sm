@@ -111,7 +111,7 @@ const Navbar = () => {
         className="mobile-menu-icon p-4"
         onClick={() => setIsMobile(!isMobile)}
       >
-        <GiHamburgerMenu />
+        <GiHamburgerMenu color = "white"/>
       </button>
     </nav>
   );
