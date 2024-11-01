@@ -179,6 +179,8 @@ const Teams = () => {
                   <img
                     src={member.frontImage}
                     alt={`${member.name} Profile`}
+                    width={187.22}
+                    height={202}
                     className="profile-img"
                   />
                 </div>

@@ -21,7 +21,7 @@
   background-color: var(--active-color);
   color: #0c004a;
 
-  width: clamp(100px, 95vw, 1000px);
+  width: clamp(100px, 95vw, 750px);
   transition: 300ms;
 
   clip-path: polygon(
@@ -38,7 +38,7 @@
 }
 
 .match-card:hover {
-  transform: translateY(-5px) translateX(5px);
+  transform: translateY(-5px);
 }
 
 .match-card.live {
@@ -77,32 +77,26 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 160px;
+  width: 180px;
 }
 
 .team-logo {
   width: 70px;
   height: 70px;
-  border-radius: 10px;
-  padding: 5px;
+  border-radius: 50%;
+  padding: 10px;
   background: #fff;
 }
 
 .team .team-name {
-  font-size: 18px;
+  font-size: em;
   font-family: aptops;
   text-align: center;
+  padding: 0 3px;
   padding-top: 10px;
-}
-
-.team-left span {
-  text-align: left;
-  padding-left: 20px;
-}
-
-.team-right span {
-  text-align: right;
-  padding-right: 20px;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 .match-info {
@@ -124,18 +118,19 @@
   margin-bottom: 10px;
 }
 
-.match-time-format span {
+.match-time-format > span {
   font-family: aptops;
-  padding: 0 10px;
-  font-size: 17px;
+  font-size: 80%;
   font-weight: bold;
+  text-align: center;
 }
 
 span.sport-name {
   position: absolute;
   font-family: aptops;
-  font-size: 20px;
+  font-size: calc((20px / 16) * 1em);
   top: 0;
+  width: max-content;
   left: 50%;
   translate: -50%;
   background: var(--active-color);
@@ -146,7 +141,6 @@ span.sport-name {
   clip-path: polygon(
     0 0,
     100% 0,
-    /* 100% calc(100% - 20px), */
     calc(100% - 20px) 100%,
     20px 100%,
     0 0
@@ -156,7 +150,7 @@ span.sport-name {
 .vs {
   font-family: aptops;
   font-weight: bold;
-  font-size: x-large;
+  font-size: x-calc((large / 1) * 1em6);
   padding: 20px 0;
   width: 100%;
   display: flex;
@@ -165,26 +159,28 @@ span.sport-name {
 }
 
 .match-details {
-  position: relative;
   font-weight: bold;
-  font-size: 21px;
+  font-size: calc((21px / 16) * 1em);
   text-align: center;
-  margin: 0 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin: 0 5px;
 }
 
 .extra-button {
-  padding: 7px 0;
-  width: 125px;
+  padding: 7px 5px;
+  width: 100px;
   font-weight: bold;
   font-family: aptops;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 85%;
   transition: 300ms;
   cursor: pointer;
-  margin: 0 5px;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
 }
 
 .livebtn {
@@ -226,74 +222,42 @@ span.sport-name {
   background: #3b3b3b;
 }
 
-@media screen and (max-width: 775px) {
-  .match-time-format span {
-    font-size: 10px;
+@media screen and (max-width: 750px) {
+  .team {
+    width: 140px;
   }
 }
 
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 500px) {
+  .team {
+    width: 100px;
+  }
+
   .team-logo {
     width: 50px;
     height: 50px;
+    padding: 5px;
   }
 
-  .team span {
-    font-size: 15px;
+  .team .team-name {
+    font-size: 0.8em;
+  }
+
+  .match-time-format > span {
+    font-size: 0.6em;
+  }
+
+  .match-details {
+    margin: 0;
+  }
+
+  .extra-button {
+    font-size: 0.7em;
+    width: 85px;
   }
 }
 
 /* //////////////////////////////// */
-
-/* .result {
-  padding: 25px;
-  background: #e1e1e1;
-  border-radius: 15px;
-  font-family: aptops;
-  width: max-content;
-}
-
-.result.basket,
-.result.cricket,
-.result.hockey {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.result.volley table tr td {
-  padding: 5px 20px;
-  transition: 300ms;
-  text-align: center;
-}
-
-.result.volley table thead td {
-  padding: 10px 20px;
-  border-bottom: 1px solid #000;
-}
-
-.result.volley table td:nth-child(odd) {
-  background: #ebeaea;
-}
-
-.result.volley table td:nth-child(7) {
-  background: #faf9f9;
-}
-
-.result .score {
-  font-size: 21px;
-  margin: 0 25px;
-}
-
-.result.basket .score span.score-type,
-.result.cricket .score span.overs,
-.result.hockey .score span.score-type {
-  text-align: center;
-  font-size: 18px;
-  color: #3b3b3b;
-  display: block;
-} */
-
 
 .result {
   display: inline-block;
@@ -301,11 +265,11 @@ span.sport-name {
 }
 
 .result.cricket span.sep {
-  font-size: 18px;
+  font-size: calc((18px / 16) * 1em);
   margin: 0 7px;
 }
 
 .result.cricket .overs {
-  font-size: 21px;
+  font-size: calc((21px / 16) * 1em);
   padding-top: 5px;
 }

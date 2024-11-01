@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Footer from "../Footer.jsx";
-import Navbar from "../Navbar.jsx";
 import MatchCardR from "./MatchCardR.jsx";
 import { Input } from "antd";
 import "../../css/Schedule.css";
 import Database from "../../utils/Database";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
 const limit = 10;
 
@@ -111,7 +110,7 @@ export default function SchedulePage({ pageStatus }) {
               if (!isLoading) setToFetch(true);
             }}
           >
-            Previous
+            <SlArrowLeft/>
           </button>
           <span>{page}</span>
           <button
@@ -120,9 +119,8 @@ export default function SchedulePage({ pageStatus }) {
               if (!hasMore) return;
               setPage((e) => e + 1);
               if (!isLoading) setToFetch(true);
-            }}
-          >
-            Next
+            }}>
+          <SlArrowRight/> 
           </button>
         </div>
       </div>

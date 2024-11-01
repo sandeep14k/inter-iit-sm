@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../Components/Footer";
-import Navbar from "../Components/Navbar";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import "../css/Athletes.css";
 import { Input, Select } from "antd";
 import PlayerCard from "../Components/PlayerCard";
@@ -17,7 +16,7 @@ const Home = () => {
 
   let db = new Database();
 
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setisLoading] = useState(false);
   const [players, setPlayers] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -31,8 +30,8 @@ const Home = () => {
   };
 
   const fetchData = async () => {
-    if (!toFetch || loading || !hasMore) return;
-    setLoading(true);
+    if (!toFetch || isLoading || !hasMore) return;
+    setisLoading(true);
 
     const data = await db.getPlayers(page, limit, athlete, sport, iit);
     if (data.length < limit) {
@@ -41,7 +40,7 @@ const Home = () => {
 
     if(data.length > 0) setPlayers(data);
 
-    setLoading(false);
+    setisLoading(false);
     setToFetch(false);
   };
 
@@ -135,28 +134,28 @@ const Home = () => {
       </div>
 
       <div className="next-pre-box">
-        <button
-          className={`button load ${page == 1 ? "disable" : "active"}`}
-          onClick={() => {
-            if (page == 1) return;
-            setPage((e) => e - 1);
-            setHasMore(true);
-            if (!loading) setToFetch(true);
-          }}
-        >
-          Previous
-        </button>
-        <button
-          className={`button load ${!hasMore ? "disable" : "active"}`}
-          onClick={() => {
-            if (!hasMore) return;
-            setPage((e) => e + 1);
-            if (!loading) setToFetch(true);
-          }}
-        >
-          Next
-        </button>
-      </div>
+          <button
+            className={`button load ${page == 1 ? "disable" : "active"}`}
+            onClick={() => {
+              if (page == 1) return;
+              setPage((e) => e - 1);
+              setHasMore(true);
+              if (!isLoading) setToFetch(true);
+            }}
+          >
+            <SlArrowLeft/>
+          </button>
+          <span>{page}</span>
+          <button
+            className={`button load ${!hasMore ? "disable" : "active"}`}
+            onClick={() => {
+              if (!hasMore) return;
+              setPage((e) => e + 1);
+              if (!isLoading) setToFetch(true);
+            }}>
+          <SlArrowRight/> 
+          </button>
+        </div>
     </div>
   );
 };
