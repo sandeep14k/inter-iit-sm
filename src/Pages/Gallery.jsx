@@ -3,6 +3,8 @@ import Photos from '../Components/Photos'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import { Carousel } from "antd";
+
+import Transition from "../Components/PageTransition/PageTransition";
 // import "../css/Gallery.css";
 
 const Gallery = () => {
@@ -14,6 +16,7 @@ const Gallery = () => {
     background: '#364d79',
   };
   return (
+      <Transition>
     <div>
       {/* <div >
         <Carousel autoplay effect="fade" >
@@ -34,6 +37,7 @@ const Gallery = () => {
       <div className='photo-sep'>Gallery<div><hr className='custom-line'></hr></div></div>
       <Photos/>
     </div>
+      </Transition>
   )
 }
 

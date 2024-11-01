@@ -5,9 +5,9 @@ import InstagramEmbed from "./InstagramEmbed";
 
 const SocialMediaHandles = () => {
   const posts = [
-    "https://www.instagram.com/p/C03Ihw1RkOy", // Replace with actual Instagram post URLs
-    "https://www.instagram.com/p/C0xwBviSDRi",
-    "https://www.instagram.com/p/C0v1EMIxhE6",
+    "https://www.instagram.com/p/DBI8yrzubTv/?igsh=a2s3ajhsNmlrM3h1", // Replace with actual Instagram post URLs
+    "https://www.instagram.com/p/C_vwMaiu5fk/?igsh=Y2EyaTFzM2lwaGVi",
+    "https://www.instagram.com/p/DBO5rK0OsQ_/?igsh=MWt0cXg1Znp1aG9yeA==",
   ];
 
   return (

@@ -46,19 +46,19 @@ function SamplePrevArrow(props) {
 }
 
 const sports = [
-  { name: "Cricket", image: "../../Sports/cricket.jpg" },
-  { name: "Badminton", image: "../../Sports/Badminton.svg" },
-  { name: "Basket Ball", image: "../../Sports/basketball.jpg" },
-  { name: "Hockey", image: "../../Sports/hockey.jpg" },
-  { name: "Football", image: "../../Sports/football.jpg"},
-  { name: "Lawn Tennis", image: "../../Sports/tennin.jpg"},
-  { name: "Table Tennis", image: "../../Sports/tt.jpg"},
+  { name: "Cricket", image: "../../Sports/iism/cricket.jpg" },
+  { name: "Badminton", image: "../../Sports/iism/badminton.jpg" },
+  { name: "Basket Ball", image: "../../Sports/iism/basketball.jpg" },
+  { name: "Hockey", image: "../../Sports/iism/hockey.jpg" },
+  { name: "Football", image: "../../Sports/iism/football.jpg"},
+  { name: "Lawn Tennis", image: "../../Sports/iism/tennis.jpg"},
+  { name: "Table Tennis", image: "../../Sports/iism/tt.jpg"},
   { name: "Swimming", image: "../../Sports/Swimming.svg"},
-  { name: "Athletics", image: "../../Sports/atheltics.jpg" },
+  { name: "Athletics", image: "../../Sports/iism/atheltics.jpg" },
   { name: "Water Polo", image: "../../Sports/waterpolo.jpg" },
   { name: "Weightlifting", image: "../../Sports/weightlifting.jpg" },
-  { name: "Squash" , image: "../../Sports/Squash.jpg"},
-  { name: "Volleyball", image: "../../Sports/Volleyball.jpg"},
+  { name: "Squash" , image: "../../Sports/iism/squash.jpg"},
+  { name: "Volleyball", image: "../../Sports/iism/volleyball.jpg"},
   {name: "Kho Kho", image: "../../Sports/weightlifting.jpg"}
 ];
 

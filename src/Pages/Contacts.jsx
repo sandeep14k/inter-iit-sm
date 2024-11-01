@@ -1,6 +1,8 @@
 import React from 'react'
 import Teams from '../Components/Teams'
 import CoreTeamCard from "../Components/coreTeamCard";
+
+import Transition from "../Components/PageTransition/PageTransition";
 // import "../css/Contacts.css";
 
 const overallCoordinators = [
@@ -166,6 +168,7 @@ const teamMembers = [
 const Contacts = () => {
   return (
     <>
+      <Transition>
       {/* <div className="team-heading">
         Core Team
         {/* <div>
@@ -189,6 +192,7 @@ const Contacts = () => {
         ))}
       </div> */} 
       <Teams/>
+        </Transition>
     </>
   )
 }
