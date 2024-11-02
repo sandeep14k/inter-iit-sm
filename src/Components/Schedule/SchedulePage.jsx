@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Footer from "../Footer.jsx";
-import Navbar from "../Navbar.jsx";
 import MatchCardR from "./MatchCardR.jsx";
 import { Input } from "antd";
 import "../../css/Schedule.css";
 import Database from "../../utils/Database";
 import Transition from "../PageTransition/PageTransition.jsx";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import { SearchOutlined } from "@ant-design/icons";
 
 const limit = 10;
 
@@ -77,7 +77,7 @@ export default function SchedulePage({ pageStatus }) {
       >
         <Input
           value={searchQuery}
-          style={{ width: "100%", maxWidth: "1000px" }}
+          style={{ width: "100%", maxWidth: "90em", height: "3em" }}
           onChange={(e) => {
             setSearchQuery(e.target.value);
           }}
@@ -86,6 +86,7 @@ export default function SchedulePage({ pageStatus }) {
             reset();
           }}
           placeholder="Search Match Here ..."
+          suffix={<SearchOutlined className="search-icon" />} // Apply CSS class here
         />
       </div>
         <div className="chips">
@@ -113,7 +114,7 @@ export default function SchedulePage({ pageStatus }) {
               if (!isLoading) setToFetch(true);
             }}
           >
-            Previous
+            <SlArrowLeft/>
           </button>
           <span>{page}</span>
           <button
@@ -122,9 +123,8 @@ export default function SchedulePage({ pageStatus }) {
               if (!hasMore) return;
               setPage((e) => e + 1);
               if (!isLoading) setToFetch(true);
-            }}
-          >
-            Next
+            }}>
+          <SlArrowRight/> 
           </button>
         </div>
       </div>

@@ -62,14 +62,17 @@ function MatchCardR({ match }) {
                   {match.team1_score || 0} <span className="sep">/</span>{" "}
                   {match.team1_wickets || 0}
                   <br />
-                  <span className="overs">{match.overs || 0}</span>
+                  <br />
+                  <span className="overs">{match.team1_overs || 0}</span>
                 </div>
               )}
               {match.status != "upcoming" && match.sport == "hockey" && (
                 <div className="result hockey">{match.team1_goals || 0}</div>
               )}
               {match.status != "upcoming" && match.sport == "basketball" && (
-                <div className="result basketball">{match.team1_score || 0}</div>
+                <div className="result basketball">
+                  {match.team1_score || 0}
+                </div>
               )}
               <span>V/S</span>
               {match.status != "upcoming" && match.sport == "cricket" && (
@@ -77,14 +80,17 @@ function MatchCardR({ match }) {
                   {match.team2_score || 0} <span className="sep">/</span>{" "}
                   {match.team2_wickets || 0}
                   <br />
-                  <span className="overs">{match.overs || 0}</span>
+                  <br />
+                  <span className="overs">{match.team2_overs || 0}</span>
                 </div>
               )}
               {match.status != "upcoming" && match.sport == "hockey" && (
                 <div className="result hockey">{match.team2_goals || 0}</div>
               )}
               {match.status != "upcoming" && match.sport == "basketball" && (
-                <div className="result basketball">{match.team2_score || 0}</div>
+                <div className="result basketball">
+                  {match.team2_score || 0}
+                </div>
               )}
             </span>
 
@@ -109,7 +115,7 @@ function MatchCardR({ match }) {
                     className="extra-button livebtn"
                   >
                     <SiYoutube
-                      style={{ display: "inline-block", marginRight: "5px" }}
+                      style={{ display: "inline-block", marginRight: "2px" }}
                     />{" "}
                     Live
                   </Link>
@@ -124,16 +130,17 @@ function MatchCardR({ match }) {
                     className="extra-button location"
                   >
                     <SiGooglemaps
-                      style={{ display: "inline-block", marginRight: "5px" }}
-                    />{" "}
+                      style={{ display: "inline-block", marginRight: "2px" }}
+                    />
                     {match.venue}
                   </Link>
                 ) : (
                   <span>
+                    &nbsp;&nbsp;
                     <SiGooglemaps
-                      style={{ display: "inline-block", marginRight: "5px" }}
+                      style={{ display: "inline-block", marginRight: "2px" }}
                     />{" "}
-                    {match.venue}
+                    {match.venue}&nbsp;&nbsp;
                   </span>
                 )}
               </div>

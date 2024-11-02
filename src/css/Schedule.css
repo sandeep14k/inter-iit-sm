@@ -3,220 +3,6 @@
   src: url("/public/fonts/Aptos-SemiBold.ttf");
 }
 
-.container {
-  position: relative;
-  text-align: center;
-  padding: 20px;
-  max-width: 100%;
-}
-
-.title-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  font-size: 3.2em;
-  color: #888888;
-  font-style: inter;
-}
-
-.title-container .separator {
-  padding: 0 10px;
-  white-space: nowrap;
-}
-
-.line {
-  flex: 1;
-  border: none;
-  border-top: 1.5px solid #888888;
-  margin: 0;
-}
-
-.separator {
-  margin: 0 10px;
-}
-
-/* .match-card {
-  display: flex;
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 10px;
-  width: 648px;
-  height: 275px;
-  float: left;
-  border-radius: 28px;
-  /* background-image: url("../../public/Cardbg/Cricketbg.jpg"); */
-/* box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.25);
-  background-position: center;
-  background-repeat:no-repeat;
-  align-items: center;
-  margin-left: 3%;
-} */
-
-.match-list {
-  clear: both;
-}
-
-.details {
-  text-align: center;
-  justify-self: center;
-  position: relative;
-  right: -180px;
-  width: 230px;
-  height: 187px;
-  color: #0095ff;
-  justify-content: space-around;
-  font-family: aptops;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  border-radius: 5px;
-}
-
-.dete-font {
-  background: #ffffff9a;
-  color: #000000;
-  font-family: aptops;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-shadow: #ff9100;
-}
-
-.time {
-  background-color: #ffffff00;
-  margin-top: 10%;
-  position: relative;
-  bottom: -15px;
-}
-
-.versus {
-  width: 311px;
-  height: 84px;
-  flex-shrink: 0;
-  color: #000;
-  font-family: aptops;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  position: relative;
-  bottom: -25px;
-  left: 20px;
-}
-
-.box {
-  width: 377px;
-  height: 187px;
-  background: #fbfbfb;
-  border: #000 1px;
-}
-
-.iitlogo {
-  width: 51px;
-  height: 50px;
-  flex-shrink: 0;
-  border-radius: 140.5px;
-  background: #fbfbfb;
-  margin: 10px;
-  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.25);
-}
-
-.logos {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.button-container {
-  margin-top: -50px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.button {
-  background-color: #2e2e2e;
-  color: #fff;
-  border: 1px solid transparent;
-  width: 10%;
-  height: 34px;
-  cursor: pointer;
-  text-align: center;
-  font-family: aptops;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  transition: 300ms;
-  border-radius: 17px;
-}
-
-.button.active:hover {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #000;
-}
-
-.timeline {
-  display: flex;
-  align-items: center;
-  width: 1312px;
-  padding: 10px;
-  justify-content: space-evenly;
-}
-
-.indicator {
-  width: 57px;
-  height: 38px;
-  flex-shrink: 0;
-  background-color: rgb(251, 57, 57);
-  color: #fff;
-  text-align: center;
-  justify-content: center;
-  align-content: center;
-  font-family: aptops;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.bar {
-  flex-grow: 1;
-  height: 2px;
-  width: 90%;
-  height: 38px;
-  flex-shrink: 0;
-  justify-items: space-evenly;
-  background-color: #73bbce;
-}
-
-.date {
-  display: inline-block;
-  justify-content: space-evenly;
-  margin: 0 5px;
-  font-size: 12px;
-  width: 57px;
-  height: 38px;
-  flex-shrink: 0;
-}
-
-.match {
-  display: flex;
-  align-items: center;
-  position: relative;
-  left: -120px;
-  color: #000;
-  font-family: aptops;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
 .cardbox {
   position: relative;
   display: flex;
@@ -228,14 +14,36 @@
   min-height: calc(100vh - 144px);
   padding: 25px 0;
   gap: 20px;
+} 
+
+.search-icon {
+  font-size: 2em; /* Adjust the size as needed */
+  color: #555; /* Adjust the color if desired */
 }
 
 .next-pre-box {
   width: 100%;
   padding: 0 20px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
+  gap: 30px;
+}
+.button {
+  background-color: #2e2e2e;
+  color: #fff;
+  font-size: larger;
+  padding: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 300ms;
+  border-radius: 5px;
+}
+
+.button.active:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
 }
 
 .disable {
@@ -248,22 +56,31 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  padding: 0 10px;
   padding-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px 5px;
+}
+
+:where(.css-dev-only-do-not-override-14i19y2).ant-input-outlined{
+  border-color: rgba(0, 0, 0, 0.88);
 }
 
 .chips > div {
-  background: #6d6d6d;
-  padding: 2px  ;
-  clip-path: polygon(20px 0%, 100% 0%, calc(100% - 20px) 100%, 0% 100%);
-  margin: 0 -7px;
+  background: black;
+  padding: 2px;
+  clip-path: polygon(0 0, calc(100% - 10px) 0%, 100% 10px, 100% 100%, 10px 100%, 0% calc(100% - 10px));
   font-weight: bold;
+  width: 130px;
+  text-wrap: nowrap;
+  text-align: center;
 }
 
 .chips > div div {
-  padding: 5px 25px;
-  clip-path: polygon(20px 0%, calc(100% - 1px) 0%, calc(100% - 20px) 100%, 1px 100%);
+  padding: 5px;
+  clip-path: polygon(0 0, calc(100% - 10px) 0%, 100% 10px, 100% 100%, 10px 100%, 0% calc(100% - 10px));
   background: #eee;
-  color: #6d6d6d;
+  color: black;
   transition: 300ms;
 }
 
