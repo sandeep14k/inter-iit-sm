@@ -65,10 +65,16 @@ h1 {
   width: 100%;
 }
 
+@media screen and (max-width: 1120px){
+  .social-media-cards {
+    gap: 40px;
+  }
+}
+
 .instagram-embed-container {
   /* border-radius: 20px; */
   /* box-shadow: ; */
-  height: 86%;
+  height: 98%;
   overflow: hidden;
 }
 
@@ -95,11 +101,16 @@ h1 {
     width: 40px;
     height: 40px;
   }
-  .social-media-card{
-    height: 250px;
-  }
+  
   .social-media-cards{
-    gap: 20px;
+    gap: 5px;
+  }
+}
+@media only screen and (max-width: 750px){
+  .social-media-cards{
+    flex-direction: column;
+    width: 75%;
+    margin:auto;
   }
 }
 
@@ -126,6 +137,7 @@ h1 {
 }
 
 .instagram-media {
+  min-width: 27vw !important;
   width: 100%;
   /* Ensures the embedded Instagram post takes full width */
   margin: 0;
