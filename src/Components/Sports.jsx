@@ -54,7 +54,7 @@ const sports = [
   { name: "Lawn Tennis", image: "../../Sports/iism/tennis.jpg"},
   { name: "Table Tennis", image: "../../Sports/iism/tt.jpg"},
   { name: "Swimming", image: "../../Sports/Swimming.svg"},
-  { name: "Athletics", image: "../../Sports/iism/atheltics.jpg" },
+  { name: "Athletics", image: "../../Sports/iism/athletics.jpg" },
   { name: "Water Polo", image: "../../Sports/waterpolo.jpg" },
   { name: "Weightlifting", image: "../../Sports/weightlifting.jpg" },
   { name: "Squash" , image: "../../Sports/iism/squash.jpg"},
