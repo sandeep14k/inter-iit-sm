@@ -1,98 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../../css/MatchCardR.css";
 import { SiGooglemaps, SiYoutube } from "react-icons/si";
 import { HiClock, HiCalendarDays } from "react-icons/hi2";
-import { IoMaleFemaleSharp, IoMaleSharp, IoFemaleSharp } from "react-icons/io5";
+import { SportName, TeamLogo } from "./utils/SportCardUtils";
+import { BasketScore, CricketScore, HockeyScore, LawnTennisScore, TableTennisScore, VolleyballScore } from "./utils/ScoreUI";
 
 function MatchCardR({ match }) {
   let d = new Date(match.date);
   let date = d.toDateString().split(" ");
-
-  const IITs = {
-    "IIT Bombay": "/IITs_Logo/Bombay.svg",
-    "IIT Delhi": "/IITs_Logo/Delhi.jpg",
-    "IIT Madras": "/IITs_Logo/Madras.jpg",
-    "IIT Kanpur": "/IITs_Logo/Kanpur.svg",
-    "IIT Kharagpur": "/IITs_Logo/KGP.jpg",
-    "IIT Roorkee": "/IITs_Logo/Roorkee.svg",
-    "IIT Guwahati": "/IITs_Logo/Guwahati.jpg",
-    "IIT Hyderabad": "/IITs_Logo/Hyderabad.jpg",
-    "IIT Indore": "/IITs_Logo/Indore.jpg",
-    "IIT BHU": "/IITs_Logo/BHU.jpg",
-    "IIT Jodhpur": "/IITs_Logo/Jodhpur.jpg",
-    "IIT Mandi": "/IITs_Logo/Mandi.jpg",
-    "IIT Patna": "/IITs_Logo/Patna.jpg",
-    "IIT Ropar": "/IITs_Logo/Ropar.jpg",
-    "IIT Bhubaneswar": "/IITs_Logo/Bhubaneshwar.jpg",
-    "IIT Gandhinagar": "/IITs_Logo/Gandhinagar.jpg",
-    "IIT Dhanbad": "/IITs_Logo/Dhanbad.jpg",
-    "IIT Bhilai": "/IITs_Logo/Bhilai.jpg",
-    "IIT Goa": "/IITs_Logo/Goa.jpg",
-    "IIT Jammu": "/IITs_Logo/Jammu.jpg",
-    "IIT Dharwad": "/IITs_Logo/Dharwad.jpg",
-    "IIT Palakkad": "/IITs_Logo/Palakkad.jpg",
-    "IIT Tirupati": "/IITs_Logo/Tirupati.jpg",
-  };
-  console.log(match);
+console.log(match)
   return (
     <>
       <div className={"match-card " + match.status}>
         <div className="card-info">
-          <span className="sport-name">
-            {match.sport.toUpperCase()} &nbsp;
-            {match.category == "Men" && (
-              <IoMaleSharp style={{ display: "inline-block" }} />
-            )}
-            {match.category == "Women" && (
-              <IoFemaleSharp style={{ display: "inline-block" }} />
-            )}
-            {match.category == "Mixed" && (
-              <IoMaleFemaleSharp style={{ display: "inline-block" }} />
-            )}
-          </span>
-          <div className="team team-left">
-            <img src={IITs[match.team1]} alt="IIT Logo" className="team-logo" />
-            <div className="team-name">{match.team1}</div>
-          </div>
+          <SportName match={match}/>
+          <TeamLogo team={match.team1} />
+
           <div className="match-info">
-            <span className="vs">
-              {match.status != "upcoming" && match.sport == "cricket" && (
-                <div className="result cricket">
-                  {match.team1_score || 0} <span className="sep">/</span>{" "}
-                  {match.team1_wickets || 0}
-                  <br />
-                  <br />
-                  <span className="overs">{match.team1_overs || 0}</span>
-                </div>
-              )}
-              {match.status != "upcoming" && match.sport == "hockey" && (
-                <div className="result hockey">{match.team1_goals || 0}</div>
-              )}
-              {match.status != "upcoming" && match.sport == "basketball" && (
-                <div className="result basketball">
-                  {match.team1_score || 0}
-                </div>
-              )}
-              <span>V/S</span>
-              {match.status != "upcoming" && match.sport == "cricket" && (
-                <div className="result cricket">
-                  {match.team2_score || 0} <span className="sep">/</span>{" "}
-                  {match.team2_wickets || 0}
-                  <br />
-                  <br />
-                  <span className="overs">{match.team2_overs || 0}</span>
-                </div>
-              )}
-              {match.status != "upcoming" && match.sport == "hockey" && (
-                <div className="result hockey">{match.team2_goals || 0}</div>
-              )}
-              {match.status != "upcoming" && match.sport == "basketball" && (
-                <div className="result basketball">
-                  {match.team2_score || 0}
-                </div>
-              )}
-            </span>
+            <div className="vs">
+            {match.status != "upcoming" ? (
+              <>
+                {match.sport == "cricket" && <CricketScore match={match} />}
+                {match.sport == "hockey" && <HockeyScore match={match} />}
+                {match.sport == "basketball" && <BasketScore match={match} />}
+                {match.sport == "lawn tennis" && <LawnTennisScore match={match} />}
+                {match.sport == "volleyball" && <LawnTennisScore match={match} />}
+                {match.sport == "table tennis" && <LawnTennisScore match={match} />}
+              </>
+              ) : <div>V/S</div>}
+              </div>
 
             <div className="match-time-format">
               {match.status != "live" && (
@@ -155,12 +92,9 @@ function MatchCardR({ match }) {
               )}
             </div>
           </div>
-
-          <div className="team team-right">
-            <img src={IITs[match.team2]} alt="IIT Logo" className="team-logo" />
-            <div className="team-name">{match.team2}</div>
-          </div>
+          <TeamLogo team={match.team2} />
         </div>
+
         {match.status != "upcoming" && (
           <div className={"tag " + (match.status == "completed" && "disabled")}>
             {match.status == "live" && "Live"}

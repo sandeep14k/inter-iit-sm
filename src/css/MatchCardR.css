@@ -83,8 +83,8 @@
 .team-logo {
   width: 70px;
   height: 70px;
-  border-radius: 50%;
-  padding: 10px;
+  border-radius: 25%;
+  padding: 5px;
   background: #fff;
 }
 
@@ -150,12 +150,12 @@ span.sport-name {
 .vs {
   font-family: aptops;
   font-weight: bold;
-  font-size: x-calc((large / 1) * 1em6);
   padding: 20px 0;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
+  text-align: center;
 }
 
 .match-details {
@@ -259,17 +259,82 @@ span.sport-name {
 
 /* //////////////////////////////// */
 
+
+.vs > span {
+  line-height: 35px;
+}
+
 .result {
-  display: inline-block;
-  text-align: center;
+  width: max-content;
 }
 
+.result.cricket {
+  font-size: 20px;
+}
 .result.cricket span.sep {
-  font-size: calc((18px / 16) * 1em);
-  margin: 0 7px;
+  font-size: 15px;
+}
+.result.cricket div:not([class]) {
+  font-size: 10px;
+  color: grey;
+  padding: 0;
 }
 
-.result.cricket .overs {
-  font-size: calc((21px / 16) * 1em);
-  padding-top: 5px;
+.result.hockey,
+.result.basketball {
+  font-size: 30px;
+  line-height: 30px;
+}
+.result.hockey span,
+.result.basketball span {
+  font-size: small;
+  color: grey;
+}
+
+.result.lawntt .set-box {
+  width: max-content;
+  background: #bebebe;
+  padding: 5px;
+  border-radius: 15px;
+  padding-bottom: 7px;
+  font-size: larger;
+  color: #1a1a1a;
+}
+.result.lawntt .set-box .sep {
+  font-size: small;
+}
+.result.lawntt .title {
+  font-size: medium;
+  background: #fff;
+  color: #000;
+  width: 100%;
+  border-radius: 10px;
+  padding: 2px 20px;
+  margin-bottom: 7px;
+}
+.dot-box {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  justify-content: center;
+  align-items: center;
+}
+.dot-box .dot {
+  width: 10px;
+  height: 10px;
+  background: #3a3a3a;
+  border-radius: 50%;
+}
+.dot.win {
+  background: green;
+}
+.dot.lose {
+  background: red;
+}
+.dot.playing {
+  background: #e9a506;
+}
+.dot.draw {
+  background: sandybrown;
 }
