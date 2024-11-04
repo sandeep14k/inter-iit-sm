@@ -86,11 +86,11 @@
 
 .chips > div:hover,
 .chips > div.active-chip {
-  background: #c78200;
+  background: rgba(31,70,107,1);
 }
 
 .chips > div:hover div,
 .chips > div.active-chip  div {
-  background: #f89d00;
-  color: #fff;
+  background: rgba(31,69,107,1);
+  color: rgba(235,161,45,1);
 }
