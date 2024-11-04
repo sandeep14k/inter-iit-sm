@@ -48,7 +48,7 @@
 
 .match-card.completed {
   --active-text-color: #fff;
-  --active-color: #909090;
+  --active-color: rgba(31,69,107,1);
 }
 
 .card-info {
@@ -219,7 +219,7 @@ span.sport-name {
 }
 
 .disabled {
-  background: #3b3b3b;
+  background: rgba(31,69,107,1);
 }
 
 @media screen and (max-width: 750px) {

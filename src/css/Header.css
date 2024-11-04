@@ -51,7 +51,7 @@
 @media screen and (max-width: 400px) {
     .section-title {
         font-size: 220% !important;
-        top: -2% !important;
+        top: 0% !important;
     }
 }
 
@@ -140,7 +140,7 @@
     color: grey;
     margin-bottom: 0%;
     position: absolute;
-    top: 87%;
+    top: 88%;
     left: 10%;
 }
 
@@ -220,7 +220,6 @@
         z-index: 100;
      /* Optional: for a shadow effect */
  }
-
  .play-button::before {
      content: "";
      position: absolute;
@@ -233,6 +232,32 @@
      transform: translateX(5px);
      /* Optional: for centering the triangle inside the circle */
  }
+ @media screen and (max-width: 600px){
+    .play-button{
+        width: 60px;
+        height: 60px;
+        bottom: 45%;
+    }
+    .play-button::before {
+        border-left: 30px solid black;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+    }
+ }
+ @media screen and (max-width: 470px){
+    .play-button{
+        width: 50px;
+        height: 50px;
+        bottom: 50%;
+    }
+    .play-button::before {
+        border-left: 25px solid black;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+ }
+
+ 
  .play-button:hover {
      border: 2px solid orange;
      transition: all;
@@ -247,12 +272,12 @@
      
     .section-date {
             font-size: 50px;
-            top: 72%;
+            top: 76%;
         }
     
         .section-date2 {
             font-size: 40px;
-            top: 82%;
+            top: 85%;
         }
     
  }
@@ -272,11 +297,11 @@
  @media screen and (max-width: 350px) {
      
     .section-date {
-            top: 73%;
+            top: 74%;
         }
     
         .section-date2 {
-            top: 80%;
+            top: 81%;
         }
     
  }
