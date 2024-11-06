@@ -167,7 +167,7 @@ const P_IITs = () => {
           Participating IITs
         </legend>
       </fieldset>
-      <div className="w-[80vw] h-[50vh] overflow-visible" onWheel={handleScroll}>
+      <div className="w-[100vw] h-[50vh] overflow-visible" onWheel={handleScroll}>
         <Slider
           {...settings}
           ref={sliderRef}

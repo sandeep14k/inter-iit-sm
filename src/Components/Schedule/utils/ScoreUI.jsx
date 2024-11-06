@@ -28,13 +28,6 @@ export function CricketScore({ match }) {
         </div>
       </div>
       <span>
-        {/* V/S <br />
-        {match.status == "live" && (
-          <>
-            <FcStart style={{ display: "inline-block" }} />{" "}
-            {match.active == 1 ? match.team1 : match.team2}
-          </>
-        )} */}
       </span>
       <div className="result cricket">
         {match.team2_score || 0} <span className="sep">/</span>{" "}

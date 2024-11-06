@@ -75,7 +75,7 @@ const Photos = () => {
         <div className="modal" onClick={closeModal}>
           <span className="close">&times;</span>
           <div className="modal-content">
-            <img src={selectedImage.ImageUrl} alt={selectedImage.title} className="modal-image" />
+            <img src={selectedImage.ImageUrl} alt={selectedImage.title} className="modal-image" width={350} height={260} />
             <div className="modal-title">{selectedImage.title}</div>
           </div>
         </div>

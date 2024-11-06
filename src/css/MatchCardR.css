@@ -7,6 +7,10 @@
   filter: drop-shadow(0 3px 5px rgb(187, 187, 187));
 }
 
+.cardbox * {
+  overflow-x: visible;
+}
+
 .match-card {
   --active-color: #60dede;
   --active-text-color: #0c004a;
@@ -292,7 +296,8 @@ span.sport-name {
 }
 
 .result.lawntt .set-box {
-  width: max-content;
+  /* width: max-content; */
+  flex-basis: 2;
   background: #bebebe;
   padding: 5px;
   border-radius: 15px;
@@ -311,6 +316,7 @@ span.sport-name {
   border-radius: 10px;
   padding: 2px 20px;
   margin-bottom: 7px;
+  text-wrap: nowrap;
 }
 .dot-box {
   display: flex;
@@ -319,6 +325,7 @@ span.sport-name {
   padding: 0 10px;
   justify-content: center;
   align-items: center;
+  flex-basis: 1;
 }
 .dot-box .dot {
   width: 10px;

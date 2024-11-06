@@ -9,7 +9,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 // import Brochure from "../../public/Brochure/Brochure.pdf";
 
 const Navbar = () => {
-  const [isMobile, setIsMobile] = useState(false);
   const [activeTab, setActiveTab] = useState("/"); // State to track active tab
   const navigate = useNavigate();
 
@@ -33,6 +32,7 @@ const Navbar = () => {
   }, [activeTab]);
 
   return (
+    <>
     <nav className="navbar">
       <div className="logo-motto">
         <div className="logo">
@@ -42,65 +42,66 @@ const Navbar = () => {
         </div>
         <div className="Motto">Awe Conquer Inspire</div>
       </div>
-      <ul className={isMobile ? "nav-links-mobile" : "nav-links"}>
-        <li>
+      <input type="checkbox" hidden name="showNav" id="showNav" />
+      <ul className="nav-links">
+        <li className={activeTab === "/" ? "active-link" : ""}>
           <Link 
             to="/" 
-            className={activeTab === "/" ? "active-link" : ""}
+            
             onClick={() => handleClick("/")}
           >
             About
           </Link>
         </li>
-        <li>
+        <li className={activeTab === "/Livescores" ? "active-link" : ""}>
           <Link 
             to="/Livescores" 
-            className={activeTab === "/Livescores" ? "active-link" : ""}
+            
             onClick={() => handleClick("/Livescores")}
-          >
+            >
             Live Score
           </Link>
         </li>
-        <li>
+        <li className={activeTab === "/Schedule" ? "active-link" : ""}>
           <Link 
             to="/Schedule" 
-            className={activeTab === "/Schedule" ? "active-link" : ""}
+            
             onClick={() => handleClick("/Schedule")}
-          >
+            >
             Schedule
           </Link>
         </li>
-        <li>
+        <li className={activeTab === "/Result" ? "active-link" : ""}>
           <Link 
             to="/Result" 
-            className={activeTab === "/Result" ? "active-link" : ""}
+            
             onClick={() => handleClick("/Result")}
-          >
+            >
             Result
           </Link>
         </li>
-        <li>
+        <li className={activeTab === "/Athletes" ? "active-link" : ""}>
           <Link 
             to="/Athletes" 
-            className={activeTab === "/Athletes" ? "active-link" : ""}
+            
             onClick={() => handleClick("/Athletes")}
-          >
+            >
             Players
           </Link>
         </li>
-        <li>
+        <li className={activeTab === "/Contacts" ? "active-link" : ""}>
           <Link 
             to="/Contacts" 
-            className={activeTab === "/Contacts" ? "active-link" : ""}
+            
             onClick={() => handleClick("/Contacts")}
-          >
+            >
             Contact
           </Link>
         </li>
-        <li>
+        <li className={activeTab === "/gallery" ? "active-link" : ""}>
           <Link 
             to="/gallery" 
-            className={activeTab === "/gallery" ? "active-link" : ""}
+            
             onClick={() => handleClick("/gallery")}
           >
             Gallery
@@ -109,11 +110,14 @@ const Navbar = () => {
       </ul>
       <button
         className="mobile-menu-icon p-4"
-        onClick={() => setIsMobile(!isMobile)}
-      >
-        <GiHamburgerMenu color = "white"/>
+        >
+        <label htmlFor="showNav">
+
+        <GiHamburgerMenu color = "black"/>
+        </label>
       </button>
     </nav>
+        </>
   );
 };
 
