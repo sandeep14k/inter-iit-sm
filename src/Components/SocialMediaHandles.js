@@ -2,6 +2,7 @@
 import React from "react";
 import "../css/SocialMediaHandles.css";
 import InstagramEmbed from "./InstagramEmbed";
+import { FaLinkedin } from "react-icons/fa";
 
 const SocialMediaHandles = () => {
   const posts = [
@@ -20,17 +21,29 @@ const SocialMediaHandles = () => {
         <hr className="line" />
       </div>
       <div className="social-media">
-        <img
-          src="../../assets/Facebook Circled.png"
-          alt="Facebook"
-          className="socialmedialogo"
-        />
-        <img src="../../assets/TwitterX.png" alt="Twitter" className="socialmedialogo" />
-        <img
-          src="../../assets/Instagram.png"
-          alt="Instagram"
-          className="socialmedialogo"
-        />
+        <a
+          href="https://www.instagram.com/interiit_sports2024?igsh=MmpteTdsMTFnemg2"
+          target="_blank"
+        >
+          <img
+            src="../../assets/Instagram.png"
+            alt="Instagram"
+            className="socialmedialogo"
+          />
+        </a>
+        <a href="https://x.com/interiit_sports?s=09" target="_blank">
+          <img
+            src="../../assets/TwitterX.png"
+            alt="Twitter"
+            className="socialmedialogo"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/inter-iit-sports-meet/about/"
+          target="_blank"
+        >
+          <FaLinkedin className="socialmedialogo" />
+        </a>
       </div>
       <span className="social-media-cards-title md:text-[64px] sm:text-[40px] text-[30px]">
         Latest stories running around
