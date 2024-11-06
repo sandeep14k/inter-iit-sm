@@ -9,7 +9,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 // import Brochure from "../../public/Brochure/Brochure.pdf";
 
 const Navbar = () => {
-  const [activeTab, setActiveTab] = useState("/"); // State to track active tab
+  const [activeTab, setActiveTab] = useState(window.location.pathname); // State to track active tab
   const navigate = useNavigate();
 
   const handleMenuClick = (e) => {
