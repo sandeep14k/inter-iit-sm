@@ -4,9 +4,9 @@ import { BsGenderMale, BsGenderFemale, BsGenderTrans } from "react-icons/bs";
 export default function PlayerCard(prop) {
   let data = prop.data;
   let gIcon =
-    data.Gender == "male" ? (
+    data.gender == "Male" ? (
       <BsGenderMale />
-    ) : data.Gender == "female" ? (
+    ) : data.gender == "Female" ? (
       <BsGenderFemale />
     ) : (
       <BsGenderTrans />
