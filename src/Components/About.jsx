@@ -20,7 +20,7 @@ const About = () => {
           alt=""
           className="saturate-[0.4] contrast-[0.7] md:w-[40vw] md:h-[30vw] w-[100vw] h-[30vh] object-cover"
         />
-        <span className="about font-bold md:text-[10vw] text-[12vw] text-white absolute md:right-[20%] md:top-[25%] right-[32%]">
+        <span className="about font-bold md:text-[10vw] text-[15vw] text-white absolute md:right-[20%] md:top-[25%] right-[29%]">
           About
         </span>
       </motion.div>
@@ -50,7 +50,7 @@ const About = () => {
           in December, the Aquatics events are held separately in October,
           making it a highlight on the academic calendar.
         </div>
-        <div className="txt w-[120px] xl:text-[14px] text-[12px]  my-5 lg:text-end text-center">
+        <div className="lg:inline flex txt lg:w-[120px] w-[95vw] xl:text-[14px] text-[12px] my-5  text-end lg:pl-[0] pl-[60vw]">
           Preparation for the inter IITs starts way before the event with
           hundreds of students involved in the success of the event
         </div>

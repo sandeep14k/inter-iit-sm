@@ -123,7 +123,7 @@ const Sports = () => {
       <h2 className="text-center sm:text-7xl text-4xl text-white mt-8 sm:h-[100px] h-[80px] font-bold mb-4">
         Sports at Play
       </h2>
-      <div className="sports sm:text-lg text-base lg:px-[100px] sm:px-[50px] px-[10px] sm:min-h-[0vh] min-h-[35vh] sm:max-h-[35vh] w-[90vw] text-white mb-5">
+      <div className="sports sm:text-lg text-base lg:px-[100px] sm:px-[50px] px-[10px] sm:min-h-[0vh] min-h-[35vh] sm:max-h-[35vh] w-[90vw] text-white mb-[-4rem]">
         Welcome to the highly anticipated Inter-IIT Sports Meet, 2024! This
         year's competition promises to be an exhilarating showcase of athletic
         talent, teamwork, and sportsmanship. Here's a glimpse into the exciting

@@ -45,6 +45,7 @@
     .section-title {
         font-size: 250% !important;
         top: -2% !important;
+        left: 30px !important;
     }
     
 }
