@@ -2,7 +2,7 @@ import React from 'react'
 import Photos from '../Components/Photos'
 import Transition from "../Components/PageTransition/PageTransition";
 
-const Gallery = () => {
+const Gallery = ({role}) => {
   // const contentStyle = {
   //   height: '450px',
   //   color: '#fff',

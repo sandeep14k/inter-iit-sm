@@ -41,7 +41,7 @@ const sportsData = {
     { name: "Weightlifting", image: "../../Sports/iism/weight_lifting.jpg" },
     { name: "Squash", image: "../../Sports/iism/squash.jpg" },
     { name: "Volleyball", image: "../../Sports/iism/volleyball.jpg" },
-    { name: "Chess", image: "../../Sports/iism/volleyball.jpg" }, // Chess for students
+    { name: "Chess", image: "../../Sports/iism/chess.jpg" }, // Chess for students
   ],
   staff: [
     { name: "Cricket", image: "../../Sports/iism/cricket.jpg" },

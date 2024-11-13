@@ -53,23 +53,23 @@ const App = () => {
           {/* Conditionally render routes based on selected role */}
           {role === 'student' ? (
             <>
-              <Route path="/" element={<Home />} />
-              <Route path="/Result" element={<Result />} />
-              <Route path="/Schedule" element={<Schedule />} />
-              <Route path="/Livescores" element={<Livescores />} />
-              <Route path="/Athletes" element={<Athletes />} />
-              <Route path="/Contacts" element={<Contacts />} />
-              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/" element={<Home role={role}/>} />
+              <Route path="/Result" element={<Result role={role} />} />
+              <Route path="/Schedule" element={<Schedule role={role}/>} />
+              <Route path="/Livescores" element={<Livescores role={role}/>} />
+              <Route path="/Athletes" element={<Athletes role={role}/>} />
+              <Route path="/Contacts" element={<Contacts role={role} />} />
+              <Route path="/gallery" element={<Gallery role={role} />} />
             </>
           ) : (
             <>
-              <Route path="/" element={<Home />} />
-              <Route path="/Result" element={<Result />} />
-              <Route path="/Schedule" element={<Schedule />} />
-              <Route path="/Livescores" element={<Livescores />} />
-              <Route path="/Athletes" element={<Athletes />} />
-              <Route path="/Contacts" element={<Contacts />} />
-              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/" element={<Home role={role}/>} />
+              <Route path="/Result" element={<Result role={role}/>} />
+              <Route path="/Schedule" element={<Schedule role={role}/>} />
+              <Route path="/Livescores" element={<Livescores role={role} />} />
+              <Route path="/Athletes" element={<Athletes role={role}/>} />
+              <Route path="/Contacts" element={<Contacts role={role}/>} />
+              <Route path="/gallery" element={<Gallery role={role}/>} />
             </>
           )}
         </Routes>

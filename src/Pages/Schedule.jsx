@@ -1,9 +1,9 @@
 import SchedulePage from "../Components/Schedule/SchedulePage";
 
-export default function Schedule() {
+export default function Schedule({role}) {
   return (
     <>
-      <SchedulePage pageStatus="upcoming" />
+      <SchedulePage role ={role} pageStatus="upcoming" />
     </>
   );
 }
