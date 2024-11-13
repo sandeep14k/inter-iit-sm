@@ -5,19 +5,10 @@ import '../css/Navbar.css';
 import {Link, useNavigate} from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const Navbar = () => {
+const Navbar = ({ role }) => {
   const [activeTab, setActiveTab] = useState(window.location.pathname); // State to track active tab
   const navigate = useNavigate();
-
-  const handleMenuClick = (e) => {
-    switch (e.key) {
-      case "1":
-        navigate("/gallery");
-        break;
-      default:
-        break;
-    }
-  };
+  
 
   const handleClick = (tab) => {
     console.log(`Clicked on ${tab}`);
@@ -95,15 +86,11 @@ const Navbar = () => {
             Gallery
           </Link>
         </li>
-        <li className={activeTab === "/Contacts" ? "active-link" : ""}>
-          <Link 
-            to="/Contacts" 
-            
-            onClick={() => handleClick("/Contacts")}
-            >
-            Contact
-          </Link>
+        {role !== "staff" && (
+          <li className={activeTab === "/Contacts" ? "active-link" : ""}>
+            <Link to="/Contacts" onClick={() => handleClick("/Contacts")}>Contact</Link>
           </li>
+        )}
       </ul>
       <button
         className="mobile-menu-icon p-4"

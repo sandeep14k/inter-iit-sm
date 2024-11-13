@@ -26,24 +26,42 @@ function SamplePrevArrow(props) {
   );
 }
 
-const sports = [
-  { name: "Cricket", image: "../../Sports/iism/cricket.jpg" },
-  { name: "Badminton", image: "../../Sports/iism/badminton.jpg" },
-  { name: "Basketball", image: "../../Sports/iism/basketball.jpg" },
-  { name: "Hockey", image: "../../Sports/iism/hockey.jpg" },
-  { name: "Football", image: "../../Sports/iism/football.jpg" },
-  { name: "Lawn Tennis", image: "../../Sports/iism/tennis.jpg" },
-  { name: "Table Tennis", image: "../../Sports/iism/tt.jpg" },
-  { name: "Swimming", image: "../../Sports/iism/swimming.jpg" },
-  { name: "Athletics", image: "../../Sports/iism/athletics.jpg" },
-  { name: "Water Polo", image: "../../Sports/iism/waterpolo.jpg" },
-  { name: "Weightlifting", image: "../../Sports/iism/weight_lifting.jpg" },
-  { name: "Squash", image: "../../Sports/iism/squash.jpg" },
-  { name: "Volleyball", image: "../../Sports/iism/volleyball.jpg" },
-  { name: "Kho Kho", image: "../../Sports/iism/khokho.jpg" }
-];
+const sportsData = {
+  student: [
+    { name: "Cricket", image: "../../Sports/iism/cricket.jpg" },
+    { name: "Badminton", image: "../../Sports/iism/badminton.jpg" },
+    { name: "Basketball", image: "../../Sports/iism/basketball.jpg" },
+    { name: "Hockey", image: "../../Sports/iism/hockey.jpg" },
+    { name: "Football", image: "../../Sports/iism/football.jpg" },
+    { name: "Lawn Tennis", image: "../../Sports/iism/tennis.jpg" },
+    { name: "Table Tennis", image: "../../Sports/iism/tt.jpg" },
+    { name: "Swimming", image: "../../Sports/iism/swimming.jpg" },
+    { name: "Athletics", image: "../../Sports/iism/athletics.jpg" },
+    { name: "Water Polo", image: "../../Sports/iism/waterpolo.jpg" },
+    { name: "Weightlifting", image: "../../Sports/iism/weight_lifting.jpg" },
+    { name: "Squash", image: "../../Sports/iism/squash.jpg" },
+    { name: "Volleyball", image: "../../Sports/iism/volleyball.jpg" },
+    { name: "Chess", image: "../../Sports/iism/volleyball.jpg" }, // Chess for students
+  ],
+  staff: [
+    { name: "Cricket", image: "../../Sports/iism/cricket.jpg" },
+    { name: "Badminton", image: "../../Sports/iism/badminton.jpg" },
+    { name: "Basketball", image: "../../Sports/iism/basketball.jpg" },
+    { name: "Hockey", image: "../../Sports/iism/hockey.jpg" },
+    { name: "Football", image: "../../Sports/iism/football.jpg" },
+    { name: "Lawn Tennis", image: "../../Sports/iism/tennis.jpg" },
+    { name: "Table Tennis", image: "../../Sports/iism/tt.jpg" },
+    { name: "Swimming", image: "../../Sports/iism/swimming.jpg" },
+    { name: "Athletics", image: "../../Sports/iism/athletics.jpg" },
+    { name: "Water Polo", image: "../../Sports/iism/waterpolo.jpg" },
+    { name: "Weightlifting", image: "../../Sports/iism/weight_lifting.jpg" },
+    { name: "Squash", image: "../../Sports/iism/squash.jpg" },
+    { name: "Volleyball", image: "../../Sports/iism/volleyball.jpg" },
+    // No additional sport for staff (no Kho Kho or Chess)
+  ],
+};
 
-const Sports = () => {
+const Sports = ({ role }) => {
   const settings = {
     centerMode: true,
     dots: false,
@@ -63,11 +81,13 @@ const Sports = () => {
     ],
   };
 
+  const sports = role !== "student" ? sportsData.staff : sportsData.student;
+
   return (
     <div className="carousel-container">
       <h2 className="carousel-title">Sports at Play</h2>
       <p className="carousel-description">
-        Welcome to the highly anticipated Inter-IIT Sports Meet, 2024! This
+        Welcome to the highly anticipated Inter-IIT {role !== "student" ? "Staff Sports" : "Sports"} Meet, 2024! This
         year's competition promises to be an exhilarating showcase of athletic
         talent, teamwork, and sportsmanship. Here's a glimpse into the exciting
         games that will be featured:

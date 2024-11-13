@@ -2,14 +2,13 @@ import React from "react";
 import "../css/Header.css";
 import { motion } from "framer-motion";
 
-function Header() {
+function Header({ role }) {
   return (
     <div className="section-header">
       <div className="section-title">
-        57th Inter IIT <br />
-        Sports Meet
+        {role !== "student" ? "29th": "57th"} Inter IIT <br /> {role !== "student" ? "Staff": "Sports"} Meet
       </div>
-      <div className="sportsbg">SPORTS</div>
+      <div className="sportsbg">{role !== "student" ? "STAFF" : "SPORTS"}</div>
       <div className="cards-container">
         <motion.img
           initial={{ x: -200, opacity: 0 }}
@@ -55,7 +54,9 @@ function Header() {
         top spot
       </div>
       <div className="section-date">IIT Kanpur </div>
-      <div className="section-date2">10th Dec to 17th Dec</div>
+      <div className="section-date2">
+        {role !== "student" ? "19th Dec to 25th Dec" : "10th Dec to 17th Dec"}
+      </div>
     </div>
   );
 }

@@ -9,16 +9,21 @@ import { SearchOutlined } from "@ant-design/icons";
 
 const limit = 10;
 
-export default function SchedulePage({ pageStatus }) {
+export default function SchedulePage({ pageStatus, role }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSport, setSelectedSport] = useState(
-    pageStatus != "upcoming" ? "Hockey" : "All"
+    pageStatus !== "upcoming" ? "Basketball" : "All"
   );
 
-  let sports = ["Hockey","Lawn Tennis","Basketball","Volleyball","Cricket","Table Tennis"];
-  if(pageStatus == "upcoming") sports.unshift("All");
+  // Define sports lists based on role
+  const studentSports = ["Basketball", "Lawn Tennis", "Hockey", "Volleyball", "Cricket", "Table Tennis"];
+  const staffSports = ["Basketball", "Football", "Volleyball", "Table Tennis", "Tennis", "Cricket", "Badminton", "Squash", "Athletics"];
 
-  let db = new Database();
+  // Select appropriate sports list based on role
+  let sports = role !== "student" ? staffSports : studentSports;
+  if (pageStatus === "upcoming") sports.unshift("All");
+
+  const db = new Database();
 
   const [matches, setMatches] = useState([]);
   const [page, setPage] = useState(1);
@@ -37,7 +42,7 @@ export default function SchedulePage({ pageStatus }) {
     setSelectedSport(spr);
     reset();
     setToFetch(true);
-  }
+  };
 
   const fetchData = async () => {
     if (!toFetch || isLoading || !hasMore) return;
@@ -65,71 +70,80 @@ export default function SchedulePage({ pageStatus }) {
 
   return (
     <Transition>
-    <div className="schedule-page">
-    <div className="min-w-[100vw]">
-      <div
-        className="player-search-box"
-        style={{
-          padding: "10px 30px",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <Input
-          value={searchQuery}
-          style={{ width: "100%", maxWidth: "90em", height: "3em" }}
-          onChange={(e) => {
-            setSearchQuery(e.target.value);
-          }}
-          onKeyUp={(e) => {
-            if (e.code !== "Enter") return;
-            reset();
-          }}
-          placeholder="Search Match Here ..."
-          suffix={<SearchOutlined className="search-icon" />} // Apply CSS class here
-        />
-      </div>
-        <div className="chips">
-          {sports.map((e) => <div className={e == selectedSport && "active-chip"} onClick={() => changeSport(e)}> <div>{e}</div> </div>)}
-        </div>
-
-      <div className="cardbox">
-        {matches.length > 0 ? (
-          matches.map((match) => (
-            <MatchCardR match={match} key={match.matchID} />
-          ))
-        ) : !isLoading ? (
-          <p>No Matches found.</p>
-        ) : (
-          ""
-        )}
-
-        <div className="next-pre-box">
-          <button
-            className={`button load ${page == 1 ? "disable" : "active"}`}
-            onClick={() => {
-              if (page == 1) return;
-              setPage((e) => e - 1);
-              setHasMore(true);
-              if (!isLoading) setToFetch(true);
+      <div className="schedule-page">
+        <div className="min-w-[100vw]">
+          <div
+            className="player-search-box"
+            style={{
+              padding: "10px 30px",
+              display: "flex",
+              justifyContent: "center",
             }}
           >
-            <SlArrowLeft/>
-          </button>
-          <span>{page}</span>
-          <button
-            className={`button load ${!hasMore ? "disable" : "active"}`}
-            onClick={() => {
-              if (!hasMore) return;
-              setPage((e) => e + 1);
-              if (!isLoading) setToFetch(true);
-            }}>
-          <SlArrowRight/> 
-          </button>
+            <Input
+              value={searchQuery}
+              style={{ width: "100%", maxWidth: "90em", height: "3em" }}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+              }}
+              onKeyUp={(e) => {
+                if (e.code !== "Enter") return;
+                reset();
+              }}
+              placeholder="Search Match Here ..."
+              suffix={<SearchOutlined className="search-icon" />}
+            />
+          </div>
+          <div className="chips">
+            {sports.map((sport) => (
+              <div
+                key={sport}
+                className={sport === selectedSport ? "active-chip" : ""}
+                onClick={() => changeSport(sport)}
+              >
+                <div>{sport}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="cardbox">
+            {matches.length > 0 ? (
+              matches.map((match) => (
+                <MatchCardR match={match} key={match.matchID} />
+              ))
+            ) : !isLoading ? (
+              <p>No Matches found.</p>
+            ) : (
+              ""
+            )}
+
+            <div className="next-pre-box">
+              <button
+                className={`button load ${page === 1 ? "disable" : "active"}`}
+                onClick={() => {
+                  if (page === 1) return;
+                  setPage((e) => e - 1);
+                  setHasMore(true);
+                  if (!isLoading) setToFetch(true);
+                }}
+              >
+                <SlArrowLeft />
+              </button>
+              <span>{page}</span>
+              <button
+                className={`button load ${!hasMore ? "disable" : "active"}`}
+                onClick={() => {
+                  if (!hasMore) return;
+                  setPage((e) => e + 1);
+                  if (!isLoading) setToFetch(true);
+                }}
+              >
+                <SlArrowRight />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    </div>
-      </Transition>
+    </Transition>
   );
 }
