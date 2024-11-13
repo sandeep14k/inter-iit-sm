@@ -16,7 +16,6 @@ const FeaturedEvent = () => {
         <div className="image-container">
           <motion.div
             initial={{ x: -75, opacity: 0 }}
-            // animate={{x:0, opacity:1}}
             transition={{ duration: 0.5 }}
             whileInView="visible"
             variants={{
@@ -37,8 +36,6 @@ const FeaturedEvent = () => {
             </div>
           </motion.div>
           <motion.div
-            // initial={{ y: 200, opacity: 0 }}
-            // animate={{x:0, opacity:1}}
             transition={{ duration: 0.5 }}
             whileInView="visible"
             variants={{
@@ -60,7 +57,6 @@ const FeaturedEvent = () => {
           </motion.div>
           <motion.div
             initial={{ x: 75, opacity: 0 }}
-            // animate={{x:0, opacity:1}}
             transition={{ duration: 0.5 }}
             whileInView="visible"
             variants={{

@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-// src/SectionHeader.js
-
 import React from "react";
 import "../css/Header.css";
 import { motion } from "framer-motion";
@@ -16,7 +13,6 @@ function Header() {
       <div className="cards-container">
         <motion.img
           initial={{ x: -200, opacity: 0 }}
-          // animate={{x:0, opacity:1}}
           transition={{ duration: 0.5, delay: 0.4 }}
           whileInView="visible"
           variants={{
@@ -29,7 +25,6 @@ function Header() {
         />
         <motion.img
           initial={{ x: -200, opacity: 0 }}
-          // animate={{x:0, opacity:1}}
           transition={{ duration: 0.5, delay: 0.2}}
           whileInView="visible"
           variants={{
@@ -42,7 +37,6 @@ function Header() {
         />
         <motion.img
           initial={{ x: -200, opacity: 0 }}
-          // animate={{x:0, opacity:1}}
           transition={{ duration: 0.5 }}
           whileInView="visible"
           variants={{

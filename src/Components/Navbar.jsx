@@ -2,11 +2,8 @@
 import { useWindowScroll } from "react-use";
 import React, { useEffect,useRef,useState} from 'react';
 import '../css/Navbar.css';
-import { Menu, Dropdown, Button } from "antd";
-import { DownOutlined } from "@ant-design/icons";
 import {Link, useNavigate} from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
-// import Brochure from "../../public/Brochure/Brochure.pdf";
 
 const Navbar = () => {
   const [activeTab, setActiveTab] = useState(window.location.pathname); // State to track active tab

@@ -42,7 +42,6 @@ const Footer = ({ onRoleChange }) => {
               </a>
             </div>
           </span>
-          {/* Change Section Button */}
         <button
           onClick={onRoleChange}
           className="change-section-button"

@@ -37,17 +37,10 @@ const P_IITs = () => {
           initialSlide: 2,
         },
       },
-      // {
-      //   breakpoint: 480,
-      //   settings: {
-      //     slidesToShow: 1,
-      //     slidesToScroll: 1
-      //   }
-      // }
     ],
-    draggable: true, // Allows dragging with the mouse
-    swipeToSlide: true, // Enables swipe or drag to slide functionality
-    pauseOnHover: true, // Pauses sliding when hovering
+    draggable: true, 
+    swipeToSlide: true, 
+    pauseOnHover: true, 
   };
 
   const IITs = [
