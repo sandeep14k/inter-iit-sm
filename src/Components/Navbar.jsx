@@ -40,7 +40,7 @@ const Navbar = () => {
             <img src="/assets/logo.png" alt="logo" />
           </Link>
         </div>
-        <div className="Motto">Awe Conquer Inspire</div>
+        <div className="Motto">Awe. Conquer. Inspire.</div>
       </div>
       <input type="checkbox" hidden name="showNav" id="showNav" />
       <ul className="nav-links">
@@ -89,6 +89,15 @@ const Navbar = () => {
             Players
           </Link>
         </li>
+        <li className={activeTab === "/gallery" ? "active-link" : ""}>
+          <Link 
+            to="/gallery" 
+            
+            onClick={() => handleClick("/gallery")}
+            >
+            Gallery
+          </Link>
+        </li>
         <li className={activeTab === "/Contacts" ? "active-link" : ""}>
           <Link 
             to="/Contacts" 
@@ -97,16 +106,7 @@ const Navbar = () => {
             >
             Contact
           </Link>
-        </li>
-        <li className={activeTab === "/gallery" ? "active-link" : ""}>
-          <Link 
-            to="/gallery" 
-            
-            onClick={() => handleClick("/gallery")}
-          >
-            Gallery
-          </Link>
-        </li>
+          </li>
       </ul>
       <button
         className="mobile-menu-icon p-4"

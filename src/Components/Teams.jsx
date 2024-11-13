@@ -30,7 +30,7 @@ const teamMembers = [
   // Add other team members as per your data structure
   {
     name: "Pravesh",
-    role: "Events",
+    role: "Head,Events",
     email: "praveshm21@iitk.ac.in",
     frontImage: "../../Contacts/praveshF.png",
     social: { instagram: "#", facebook: "#", linkedin: "#" }

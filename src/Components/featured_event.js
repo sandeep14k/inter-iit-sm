@@ -33,7 +33,7 @@ const FeaturedEvent = () => {
             <div className="image-text">
               <p className="image-number">38th</p>
               <p className="image-title">Inter IIT Aquatics Meet</p>
-              <p className="image-date">4 - 8 October</p>
+              <p className="image-date">1 - 5 October</p>
             </div>
           </motion.div>
           <motion.div
@@ -77,7 +77,7 @@ const FeaturedEvent = () => {
             <div className="image-text">
               <div className="image-number">29th</div>
               <div className="image-title">Inter IIT Staff Meet</div>
-              <div className="image-date">18 - 25 December</div>
+              <div className="image-date">19 - 25 December</div>
             </div>
           </motion.div>
         </div>

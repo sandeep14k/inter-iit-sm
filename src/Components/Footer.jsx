@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/footer.css';
 import { CiInstagram } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
 import { FaXTwitter } from "react-icons/fa6";
@@ -7,7 +8,7 @@ import { CiHome } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
 
-const Footer = () => {
+const Footer = ({ onRoleChange }) => {
   return (
     <footer className="min-h-[60vh] bg-black w-[100vw]">
       <div className="py-[75px] sm:px-5 px-1 grid md:grid-cols-3 grid-cols-2 sm:gap-10 gap-[0]">
@@ -41,6 +42,14 @@ const Footer = () => {
               </a>
             </div>
           </span>
+          {/* Change Section Button */}
+        <button
+          onClick={onRoleChange}
+          className="change-section-button"
+          style={{ marginTop: '10px', padding: '8px 16px', cursor: 'pointer', fontSize: '1rem' }}
+        >
+          Change Section
+        </button>
         </div>
         <div className="flex flex-col gap-6">
           <span className="text-white sm:text-2xl text-xl font-semibold main-txt">

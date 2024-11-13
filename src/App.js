@@ -13,42 +13,69 @@ import './App.css';
 import { AnimatePresence } from 'framer-motion';
 import Loader from './Components/PageTransition/Loader';
 import axios from 'axios';
+import Selection from './Pages/Selection'; // New Selection page
 
 const App = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const [role, setRole] = useState(localStorage.getItem('userRole') || null); // New state to store user role
 
-  useEffect(()=>{
-    axios.interceptors.request.use((config)=>{
-      setLoading(true);
-      return config;
-    }, (error)=>{
-        return Promise.reject(error);
-    });
-    axios.interceptors.response.use((config)=>{
-      setLoading(false);
-      return config;
-    }, (error)=>{
-        return Promise.reject(error);
-    });
+  // Save role to local storage whenever it changes
+  useEffect(() => {
+    if (role) {
+      localStorage.setItem('userRole', role);
+    }
+  }, [role]);
+
+  // Function to handle setting a new role
+  const handleRoleChange = (newRole) => {
+    setRole(newRole);
+    localStorage.setItem('userRole', newRole);
+  };
+
+  // Function to clear the role and redirect to selection page
+  const handleClearRole = () => {
+    setRole(null);
+    localStorage.removeItem('userRole'); // Remove role from local storage
+  };
+
+  if (!role) {
+    return <Selection setRole={handleRoleChange} />;
+  }
 
 
-  }, [])
   return (
     <BrowserRouter>
-      <Navbar /> {/* Navbar is displayed on every page */}
-    <Loader show={loading}/>
-    <AnimatePresence>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Result" element={<Result />} />
-        <Route path="/Schedule" element={<Schedule />} />
-        <Route path="/Livescores" element={<Livescores />} />
-        <Route path="/Athletes" element={<Athletes />} />
-        <Route path="/Contacts" element={<Contacts />} />
-        <Route path="/gallery" element={<Gallery />} />
-      </Routes>
-    </AnimatePresence>
-      <Footer /> {/* Footer is displayed on every page */}
+      <Navbar role={role} /> {/* Pass role to Navbar for role-specific items */}
+      <Loader show={loading} />
+      <AnimatePresence>
+        <div className={role ? 'app-content' : ''}>
+        <Routes>
+          {/* Conditionally render routes based on selected role */}
+          {role === 'student' ? (
+            <>
+              <Route path="/" element={<Home />} />
+              <Route path="/Result" element={<Result />} />
+              <Route path="/Schedule" element={<Schedule />} />
+              <Route path="/Livescores" element={<Livescores />} />
+              <Route path="/Athletes" element={<Athletes />} />
+              <Route path="/Contacts" element={<Contacts />} />
+              <Route path="/gallery" element={<Gallery />} />
+            </>
+          ) : (
+            <>
+              <Route path="/" element={<Home />} />
+              <Route path="/Result" element={<Result />} />
+              <Route path="/Schedule" element={<Schedule />} />
+              <Route path="/Livescores" element={<Livescores />} />
+              <Route path="/Athletes" element={<Athletes />} />
+              <Route path="/Contacts" element={<Contacts />} />
+              <Route path="/gallery" element={<Gallery />} />
+            </>
+          )}
+        </Routes>
+       </div>
+      </AnimatePresence>
+      <Footer onRoleChange={handleClearRole} /> 
     </BrowserRouter>
   );
 };

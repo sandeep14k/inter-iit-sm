@@ -1,8 +1,9 @@
 import React from 'react'
+import '../css/Sponser.css'
 
 const Sponser = () => {
   return (
-    <div className='relative'>
+    <div className='SponsorBox'>
         <fieldset >
             <legend className='md:text-[50px] sm:text-[40px] text-[30px]  md:px-[75px] px-[20px]'>Sponsorship</legend></fieldset>
       <div className='grid grid-cols-1 sm:grid-cols-3 content-center pt-5'>
