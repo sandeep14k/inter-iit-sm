@@ -123,7 +123,7 @@ const Home = () => {
             setAthlete(e.target.value);
           }}
           onKeyUp={(e) => {
-            if (e.code !== "Enter") return;
+            if (e.key !== "Enter") return;
             reset();
           }}
           placeholder="Search Best Player Here ..."
