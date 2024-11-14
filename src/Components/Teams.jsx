@@ -109,7 +109,7 @@ const teamMembers = [
     name: "Shivani",
     role: "Hospitality",
     email: "shivani21@iitk.ac.in",
-    frontImage: "../../Contacts/ShivaniF.png",
+    frontImage: "../../Contacts/shivaniF.png",
     social: { 
       instagram: "https://www.instagram.com/shixvani__/",
       facebook: "https://www.linkedin.com/in/shivani-2107a9229",
