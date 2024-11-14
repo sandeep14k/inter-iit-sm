@@ -87,9 +87,10 @@ export default function SchedulePage({ pageStatus, role }) {
                 setSearchQuery(e.target.value);
               }}
               onKeyUp={(e) => {
-                if (e.code !== "Enter") return;
+                if (e.key !== "Enter") return;
                 reset();
               }}
+              // onSubmit={()=>console.log(1)}
               placeholder="Search Match Here ..."
               suffix={<SearchOutlined className="search-icon" />}
             />
