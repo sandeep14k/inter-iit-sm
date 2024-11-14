@@ -5,8 +5,9 @@ import '../css/Selection.css'; // Import the CSS file
 const Selection = ({ setRole }) => {
   return (
     <div className="selection-container">
-      <video className="background-video" autoPlay loop muted>
+      <video className="background-video" autoPlay loop muted playsInline>
         <source src="loading.mp4" type="video/mp4" />
+        <source src="loading.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
       <div className="overlaySelection">
