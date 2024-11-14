@@ -58,7 +58,7 @@ const Home = () => {
         reset();
       }}
     >
-      <Option value="IITs">IITs</Option>
+      <Option value="IITs">Teams</Option>
       <Option value="IIT Madras">IIT Madras</Option>
       <Option value="IIT Delhi">IIT Delhi</Option>
       <Option value="IIT Bombay">IIT Bombay</Option>

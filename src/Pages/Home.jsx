@@ -6,16 +6,16 @@ import About from '../Components/About'
 import Header from '../Components/Header'
 import SocialMediaHandles from '../Components/SocialMediaHandles'
 import FeaturedEvent from '../Components/featured_event'
-const Home = () => {
+const Home = ({role}) => {
   return (
     <div className='min-w-[100vw]'>
-        <Header />
-        <SocialMediaHandles/>
-        <About/>
-        <FeaturedEvent />
-        <P_IITs/>
-        <Sports/>
-        <Sponser/>
+        <Header role={role}/>
+        <SocialMediaHandles role={role}/>
+        <About role={role}/>
+        <FeaturedEvent role={role}/>
+        <P_IITs role={role}/>
+        <Sports role={role}/>
+        <Sponser role={role}/>
     </div>
   )
 }

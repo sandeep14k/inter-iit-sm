@@ -8,13 +8,9 @@
 .slick-prev {
     left: 40%;
     width: 42px;
-        /* Adjust the size as needed */
         height: 42px;
-        /* Adjust the size as needed */
         background-color: white !important;
-        /* Circle color */
         border-radius: 50% !important;
-        /* Makes the button circular */
         position: absolute !important;
         display: flex !important;
         align-items: center;
@@ -31,7 +27,6 @@
         width: 0;
         height: 0;
         border-right: 20px solid black;
-        /* Triangle color */
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
         transform: translateX(-2px);
@@ -42,7 +37,6 @@
         width: 0;
         height: 0;
         border-left: 20px solid black;
-        /* Triangle color */
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
         transform: translateX(2px);
@@ -51,13 +45,9 @@
 .slick-next {
     right: 40%;
     width: 42px;
-        /* Adjust the size as needed */
         height: 42px;
-        /* Adjust the size as needed */
         background-color: white !important;
-        /* Circle color */
         border-radius: 50% !important;
-        /* Makes the button circular */
         position: absolute !important;
         display: flex !important;
         align-items: center;

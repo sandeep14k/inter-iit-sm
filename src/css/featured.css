@@ -76,9 +76,7 @@
 .image-text {
   color: black;
   margin: 0;
-  /* Removes space between the lines */
   line-height: 1.2;
-  /* Tightly packs the lines */
   padding: 0;
   scrollbar-width: none;
 }
@@ -88,15 +86,11 @@
   font-size: 64px;
   color: #000000;
   margin: 0;
-  /* Removes space between the lines */
-
   padding: 0;
 }
 
 .image-title {
   margin: 0;
-  /* Removes space between the lines */
-
   padding: 0;
   font-family: "Roboto Flex-Regular", Helvetica;
   font-size: 32px;
@@ -107,8 +101,6 @@
 
 .image-date {
   margin: 0;
-  /* Removes space between the lines */
-
   padding: 0;
   font-family: "Roboto Flex-Regular", Helvetica;
   font-size: 24px;

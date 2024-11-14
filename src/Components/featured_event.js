@@ -16,7 +16,6 @@ const FeaturedEvent = () => {
         <div className="image-container">
           <motion.div
             initial={{ x: -75, opacity: 0 }}
-            // animate={{x:0, opacity:1}}
             transition={{ duration: 0.5 }}
             whileInView="visible"
             variants={{
@@ -33,12 +32,10 @@ const FeaturedEvent = () => {
             <div className="image-text">
               <p className="image-number">38th</p>
               <p className="image-title">Inter IIT Aquatics Meet</p>
-              <p className="image-date">4 - 8 October</p>
+              <p className="image-date">1 - 5 October</p>
             </div>
           </motion.div>
           <motion.div
-            // initial={{ y: 200, opacity: 0 }}
-            // animate={{x:0, opacity:1}}
             transition={{ duration: 0.5 }}
             whileInView="visible"
             variants={{
@@ -60,7 +57,6 @@ const FeaturedEvent = () => {
           </motion.div>
           <motion.div
             initial={{ x: 75, opacity: 0 }}
-            // animate={{x:0, opacity:1}}
             transition={{ duration: 0.5 }}
             whileInView="visible"
             variants={{
@@ -77,7 +73,7 @@ const FeaturedEvent = () => {
             <div className="image-text">
               <div className="image-number">29th</div>
               <div className="image-title">Inter IIT Staff Meet</div>
-              <div className="image-date">18 - 25 December</div>
+              <div className="image-date">19 - 25 December</div>
             </div>
           </motion.div>
         </div>

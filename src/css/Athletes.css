@@ -43,7 +43,9 @@
   width: 180px;
   height: 180px;
 }
-
+.player-card .image .player-image{
+  height:100%
+}
 .player-card .name {
   padding-top: 10px;
   text-transform: capitalize;
@@ -77,4 +79,9 @@
 .disable {
   background: #9e9e9e;
   color: #313131;
+}
+
+:where(.css-dev-only-do-not-override-14i19y2).ant-input-group-wrapper-outlined .ant-input-group-addon {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid black;
 }

@@ -1,4 +1,3 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BsGenderMale, BsGenderFemale, BsGenderTrans } from "react-icons/bs";
 
 export default function PlayerCard(prop) {

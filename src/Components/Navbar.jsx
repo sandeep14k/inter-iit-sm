@@ -2,25 +2,13 @@
 import { useWindowScroll } from "react-use";
 import React, { useEffect,useRef,useState} from 'react';
 import '../css/Navbar.css';
-import { Menu, Dropdown, Button } from "antd";
-import { DownOutlined } from "@ant-design/icons";
 import {Link, useNavigate} from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
-// import Brochure from "../../public/Brochure/Brochure.pdf";
 
-const Navbar = () => {
+const Navbar = ({ role }) => {
   const [activeTab, setActiveTab] = useState(window.location.pathname); // State to track active tab
   const navigate = useNavigate();
-
-  const handleMenuClick = (e) => {
-    switch (e.key) {
-      case "1":
-        navigate("/gallery");
-        break;
-      default:
-        break;
-    }
-  };
+  
 
   const handleClick = (tab) => {
     console.log(`Clicked on ${tab}`);
@@ -40,7 +28,7 @@ const Navbar = () => {
             <img src="/assets/logo.png" alt="logo" />
           </Link>
         </div>
-        <div className="Motto">Awe Conquer Inspire</div>
+        <div className="Motto">Awe. Conquer. Inspire.</div>
       </div>
       <input type="checkbox" hidden name="showNav" id="showNav" />
       <ul className="nav-links">
@@ -89,24 +77,20 @@ const Navbar = () => {
             Players
           </Link>
         </li>
-        <li className={activeTab === "/Contacts" ? "active-link" : ""}>
-          <Link 
-            to="/Contacts" 
-            
-            onClick={() => handleClick("/Contacts")}
-            >
-            Contact
-          </Link>
-        </li>
         <li className={activeTab === "/gallery" ? "active-link" : ""}>
           <Link 
             to="/gallery" 
             
             onClick={() => handleClick("/gallery")}
-          >
+            >
             Gallery
           </Link>
         </li>
+        {role !== "staff" && (
+          <li className={activeTab === "/Contacts" ? "active-link" : ""}>
+            <Link to="/Contacts" onClick={() => handleClick("/Contacts")}>Contact</Link>
+          </li>
+        )}
       </ul>
       <button
         className="mobile-menu-icon p-4"
