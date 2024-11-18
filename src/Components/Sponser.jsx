@@ -5,7 +5,7 @@ const Sponser = () => {
   return (
     <div className='SponsorBox'>
         <fieldset >
-            <legend className='md:text-[50px] sm:text-[40px] text-[30px]  md:px-[75px] px-[20px]'>Sponsorship</legend></fieldset>
+            <legend className='md:text-[5vh] sm:text-[5vh] text-[5vh]  md:px-[75px] px-[20px]'>Sponsorship</legend></fieldset>
       <div className='grid grid-cols-1 sm:grid-cols-3 content-center pt-5'>
         <div className='flex flex-col justify-center items-center gap-5'>
 

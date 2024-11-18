@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const About = ({ role }) => {
   return (
-    <div className="w-[100vw] py-10 bg-[#242424] flex lg:flex-row flex-col lg:justify-between items-center">
+    <div className="w-[100vw] py-10 bg-[#242424] flex lg:flex-row flex-col lg:justify-between items-center ">
       <motion.div
         initial={{ x: -200, opacity: 0 }}
         transition={{ duration: 0.5 }}
@@ -19,7 +19,7 @@ const About = ({ role }) => {
           alt=""
           className="saturate-[0.4] contrast-[0.7] md:w-[40vw] md:h-[30vw] w-[100vw] h-[30vh] object-cover"
         />
-        <span className="about font-bold md:text-[10vw] text-[15vw] text-white absolute md:right-[20%] md:top-[25%] right-[29%]">
+        <span className="about font-bold md:text-[10vw] text-[20vw] text-white absolute md:right-[20%] md:top-[25%] right-[20%]">
           About
         </span>
       </motion.div>
@@ -35,7 +35,7 @@ const About = ({ role }) => {
       >
         {role === "student" ? (
           <>
-            <div className="my-5 txt xl:text-lg md:text-sm text-[13px]">
+            <div className="my-5 txt xl:text-lg md:text-sm text-[1.8vh]">
               Started in 1961, the Inter IIT Sports Meet has an illustrious legacy
               as the longest-running inter-collegiate sports event, showcasing the
               prowess of India's top engineering institutions. With unwavering
@@ -43,13 +43,13 @@ const About = ({ role }) => {
               over 4,000 talented athletes from all 23 IITs, competing in 13 diverse
               sports, all vying for the coveted General Championship Trophy.
             </div>
-            <div className="txt xl:text-lg md:text-sm text-[13px]">
+            <div className="txt xl:text-lg md:text-sm text-[1.8vh]">
               The Inter IIT Sports Meet is an eagerly anticipated annual sports
               tournament of the Indian Institutes of Technology. Typically organized
               in December, the Aquatics events are held separately in October,
               making it a highlight on the academic calendar.
             </div>
-            <div className="lg:inline flex txt lg:w-[120px] w-[95vw] xl:text-[14px] text-[12px] my-5  text-end lg:pl-[0] pl-[60vw]">
+            <div className="lg:inline flex txt lg:w-[120px] w-[95vw] xl:text-[14px] text-[1.5vh] my-5  text-end lg:pl-[0] pl-[60vw]">
               Preparation for the inter IITs starts way before the event with
               hundreds of students involved in the success of the event.
             </div>

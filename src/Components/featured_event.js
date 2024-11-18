@@ -6,7 +6,7 @@ const FeaturedEvent = () => {
   return (
     <div className="Featured">
       <div className="top-section">
-        <div className="text-wrapper-35 md:text-[50px] sm:text-[40px] text-[30px]">
+        <div className="text-wrapper-35 md:text-[3.5vw] sm:text-[4vw] text-[8vw]">
           Inter IIT Featured Events
         </div>
         <center>
