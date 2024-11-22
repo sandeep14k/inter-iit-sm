@@ -1,3 +1,4 @@
+/* src/Navbar.css */
 .ant-btn {
   background: none !important;
   border: none !important;
@@ -7,10 +8,9 @@
 }
 
 .ant-btn span {
-  font-size: 1em !important; /* 1em = base font size */
-  padding-bottom: 0.5em !important; /* Relative to font size */
+  font-size: 16px !important;
+  padding-bottom: 8px !important;
 }
-
 .IISM {
   display: inline-flex;
 }
@@ -24,10 +24,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.3vh 1.5vw; /* Adjusted to vw and vh */
+  padding: 5px 25px;
   padding-right: 4%;
   background-color: white;
-  height: 9vh;
+  height: 75px;
   z-index: 999;
   position: fixed;
   top: 0;
@@ -35,61 +35,44 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 1100px) {
-  .logo img {
-    max-width: 50px;
-  }
-}
-@media screen and (max-width: 1300px) {
-  .navbar {
-    height: 9vh;
-  }
-}
-
 .logo img {
-  width: 10vw;
-  max-width: 50px;
-  /* border-radius: none; */
-}
-@media screen and (max-width: 1300px) {
-  .logo img {
-    max-width: 35px;
-  }
+  width: 2.5em;
+  border-radius: 15px;
 }
 
 .tagline {
-  font-size: 1.5vh;
+  font-size: 1.5em;
   color: grey;
-  margin-left: 1vw; /* Relative to screen width */
+  margin-left: 10px;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   background-color: whitesmoke;
-  border: 0.1vw solid #dcdcdc;
-  border-radius: 2vw;
-  padding: 0.2vh;
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+  padding: 4px;
 }
 
 .nav-links li {
-  margin: 0 1vw; /* Adjust spacing */
+  margin: 0 15px;
   position: relative;
-  padding: 0.5vh 0;
+  padding: 5px 0;
 }
 
 .nav-links li::after {
   content: "";
   display: block;
   width: 0;
-  height: 0.3vh;
+  height: 3px;
   background: #ff0000;
   transition: width 0.3s;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 0.5vh;
+  border-radius: 5px;
 }
 
 .nav-links li:not([class="active-link"]):hover::after {
@@ -113,35 +96,36 @@
 
 .Motto {
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 2.9vh;
+  font-size: 18px;
   font-weight: bold;
-  color: rgba(140, 223, 229, 1); /* Theme color */
-  margin-left: 2vw;
+  color: rgba(140, 223, 229, 1); /* Adjust to match your theme */
+  margin-left: 20px; /* Space it from the logo */
   text-transform: uppercase;
-  letter-spacing: 0.1vw;
+  letter-spacing: 1px;
   background: #26577b;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-@media (max-width: 1024px) {
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 7.5vh;
-    left: -40vw;
-    width: 40vw;
-    bottom: 0;
-    position: fixed;
-    background: linear-gradient(#ffffff, #ffffffc3 20%);
-    padding: 1vh;
-    backdrop-filter: blur(10px);
-    transition: left 300ms;
-    border-radius: 0;
-    border: 0;
-  }
+
+@media (max-width: 958px) {
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 75px;
+      left: -250px;
+      width: 250px;
+      bottom: 0;
+      position: fixed;
+      background: linear-gradient(#ffffff, #ffffffc3 20%);
+      padding: 10px;
+      backdrop-filter: blur(10px);
+      transition: left 300ms;
+      border-radius: 0;
+      border: 0;
+    }
 
   #showNav:checked ~ .nav-links {
     left: 0;
@@ -152,35 +136,164 @@
   }
 
   .nav-links li {
-    padding: 1.5vh 2vw;
+    padding: 15px 20px;
   }
 
   .mobile-menu-icon {
     display: block;
-    font-size: 4vh;
+    font-size: 24px;
     cursor: pointer;
     fill: #000;
     transition: 300ms;
   }
 }
 
+/* @media  screen and (max-width: 460px) {
+    .nav-links-mobile {
+        width: 50%;
+    }
+    
+} */
+
+@media screen and (max-width: 900px) {
+  .card {
+    width: 350px !important;
+  }
+  .card:nth-child(1) {
+    position: absolute !important;
+    top: 150px !important;
+    left: 2% !important;
+    z-index: 1 !important;
+    height: 75% !important;
+  }
+  .card:nth-child(2) {
+    position: absolute !important;
+    top: 97px !important;
+    left: 27% !important;
+    z-index: 2;
+    height: 75% !important;
+  }
+
+  .card:nth-child(3) {
+    position: absolute !important;
+    top: 32px !important;
+    left: 54% !important;
+    z-index: 3 !important;
+    height: 75% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card:nth-child(1) {
+    left: 2% !important;
+  }
+  .card:nth-child(2) {
+    left: 24% !important;
+  }
+  .card:nth-child(3) {
+    left: 50% !important;
+  }
+}
+@media screen and (max-width: 650px) {
+  .card:nth-child(1) {
+    left: -8% !important;
+  }
+  .card:nth-child(2) {
+    left: 20% !important;
+  }
+  .card:nth-child(3) {
+    left: 50% !important;
+  }
+}
+@media screen and (max-width: 575px) {
+  .card {
+    width: 300px !important;
+  }
+  .card:nth-child(1) {
+    height: 70% !important;
+    left: -4% !important;
+  }
+  .card:nth-child(2) {
+    height: 70% !important;
+    left: 23% !important;
+  }
+  .card:nth-child(3) {
+    height: 70% !important;
+    left: 53% !important;
+  }
+}
+@media screen and (max-width: 470px) {
+  .card {
+    width: 250px !important;
+  }
+
+  .card:nth-child(1) {
+    top: 160px !important;
+    height: 60% !important;
+    left: -7% !important;
+  }
+  .card:nth-child(2) {
+    top: 105px !important;
+    height: 60% !important;
+    left: 22% !important;
+  }
+  .card:nth-child(3) {
+    top: 45px !important;
+    height: 60% !important;
+    left: 55% !important;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .card:nth-child(1) {
+    left: -8% !important;
+  }
+
+  .card:nth-child(2) {
+    left: 20% !important;
+  }
+
+  .card:nth-child(3) {
+    left: 51% !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  .card:nth-child(1) {
+    left: -11% !important;
+  }
+
+  .card:nth-child(2) {
+    left: 17% !important;
+  }
+
+  .card:nth-child(3) {
+    left: 47% !important;
+  }
+}
+@media screen and (max-width: 350px) {
+  .card:nth-child(1) {
+    left: -13% !important;
+  }
+
+  .card:nth-child(2) {
+    left: 14% !important;
+  }
+
+  .card:nth-child(3) {
+    left: 41% !important;
+  }
+}
 
 .nav-links li a {
   text-decoration: none;
   color: black;
+  /* margin: 0 15px; */
   position: relative;
   font-weight: 500;
-  font-size: 2.5vh;
-  padding: 0.5vh 0;
+  padding: 5px 0;
 }
 
 .active-link a {
-  border-bottom: 0.45vh solid #ff0000;
+  border-bottom: 3px solid #ff0000;
   color: #ff0000 !important;
-}
-
-@media (min-width: 2500px) {
-  .navbar{
-    height: 10vh;
-  }
 }

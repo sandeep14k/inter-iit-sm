@@ -59,7 +59,7 @@ const SocialMediaHandles = () => {
           <FaLinkedin className="socialmedialogo" />
         </a>
       </div>
-      <span className="social-media-cards-title md:text-[10vh] sm:text-[6vh] text-[5vh]">
+      <span className="social-media-cards-title md:text-[64px] sm:text-[40px] text-[30px]">
         Latest stories running around
       </span>
       <hr className="underline" />

@@ -1,8 +1,10 @@
+/* src/SectionHeader.css */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
 .section-header {
     position: relative;
+    /* Ensure positioning context for absolute children */
     height: 86vh;
     background-color: white;
     color: black;
@@ -14,12 +16,12 @@
 
 .section-title {
     position: absolute;
-    left: 5vw; /* Adjusted to vw */
+    left: 100px;
     top: 3%;
-    font-size: 3.5vw; /* Scaled font size */
+    font-size: 350%;
     font-weight: 600;
-    margin-bottom: 0;
-    text-shadow: 0.2vw 0.2vw 0.1vw rgba(0, 0, 0, 0.175); /* Adjusted shadow */
+    margin-bottom: 0%;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.175);
 }
 
 .section-date {
@@ -28,42 +30,32 @@
     top: 77%;
     font-family: 'Roboto Condensed', sans-serif;
     text-align: right;
-    font-size: 4vw; /* Scaled to vw */
+    font-size: 64px;
     font-weight: 500;
-    margin-bottom: 0;
+    margin-bottom: 0%;
 }
-
 @media screen and (max-width: 1200px) {
     .section-title {
-        font-size: 3vw;
-        left: 4vw;
-        top: 0;
+        font-size: 300% !important;
+            left: 66px;
+                top: 0%;
     }
 }
-
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 600px) {
     .section-title {
-        font-size: 3.5vw;
-        top: 1%;
-        left: 4vw;
+        font-size: 250% !important;
+        top: -2% !important;
+        left: 30px !important;
+    }
+    
+}
+@media screen and (max-width: 470px) {
+    .section-title {
+        font-size: 220% !important;
+        top: 4% !important;
+        left: 15px !important;
     }
 }
-
-/* @media screen and (max-width: 600px) {
-    .section-title {
-        font-size: 6.8vw;
-        top: -2%;
-        left: 2vw;
-    }
-} */
-
-/* @media screen and (max-width: 470px) {
-    .section-title {
-        font-size: 7vw;
-        top: 4%;
-        left: 1vw;
-    }
-} */
 
 .section-date2 {
     position: absolute;
@@ -71,28 +63,31 @@
     top: 88%;
     font-family: 'Roboto Condensed', sans-serif;
     text-align: right;
-    font-size: 4vw; /* Adjusted font size */
+    font-size: 64px;
     font-weight: 300;
-    margin-bottom: 0;
+    margin-bottom: 0%;
 }
 
 .cards-container {
     display: flex;
     justify-content: space-between;
-    gap: 0;
+    gap: 0px;
+    /* Reduce the gap between the cards */
     overflow: hidden;
+    /* Hide overflow to remove scrollbars */
     background-color: white;
 }
 
 .card {
     width: 35%;
-    border-radius: 1vw;
+    border-radius: 10px;
     transition: transform 0.3s;
+
 }
 
 .card:nth-child(1) {
     position: absolute;
-    top: 10vh;
+    top: 100px;
     left: 9%;
     z-index: 1;
     height: 90%;
@@ -100,8 +95,9 @@
 
 .card:nth-child(2) {
     position: relative;
-    top: 5vh;
+    top: 50px;
     left: 31%;
+    /* Adjust based on card width */
     z-index: 2;
     height: 80vh;
 }
@@ -110,96 +106,41 @@
     position: absolute;
     top: 0;
     left: 55%;
+    /* Adjust based on card width */
     z-index: 3;
     height: 90%;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 768px) {
     .cards-container {
         flex-wrap: wrap;
         gap: 0;
     }
 
     .card:nth-child(1) {
-        transform: translateY(2vh);
-        height: 80vh;
+        transform: translateY(20px);
     }
 
     .card:nth-child(2) {
-        transform: translateY(1vh);
-        height: 80vh;
+        transform: translateY(10px);
     }
 
     .card:nth-child(3) {
         transform: translateY(0);
         z-index: 1;
-        height: 80vh;
     }
-    .section-date {
-        font-size: 3.5vw;
+    .section-date{
+        font-size: 55px;
     }
-    .section-date2 {
-        font-size: 3.5vw;
+    .section-date2{
+        font-size: 45px;
     }
 }
 
-/* @media (max-width: 768px) {
-    .cards-container {
-        flex-wrap: wrap;
-        gap: 0;
-    }
-
-    .card:nth-child(1) {
-        transform: translateY(2vh);
-    }
-
-    .card:nth-child(2) {
-        transform: translateY(1vh);
-    }
-
-    .card:nth-child(3) {
-        transform: translateY(0);
-        z-index: 1;
-    }
-    .section-date {
-        font-size: 6vw;
-    }
-    .section-date2 {
-        font-size: 5.5vw;
-    }
-} */
-
-/* @media screen and (max-width: 470px) {
-    .cards-container {
-        flex-wrap: wrap;
-        gap: 0;
-    }
-
-    .card:nth-child(1) {
-        transform: translateY(2vh);
-    }
-
-    .card:nth-child(2) {
-        transform: translateY(1vh);
-    }
-
-    .card:nth-child(3) {
-        transform: translateY(0);
-        z-index: 1;
-    }
-    .section-date {
-        font-size: 6vw;
-    }
-    .section-date2 {
-        font-size: 5.5vw;
-    }
-} */
-
-
 .section-stage {
-    font-size: 0.8vw;
+    font-size: 10px;
     color: grey;
-    margin-bottom: 0;
+    margin-bottom: 0%;
     position: absolute;
     top: 88%;
     left: 10%;
@@ -209,370 +150,161 @@
     position: absolute;
     font-family: 'Orbitron', sans-serif;
     width: 100vw;
-    font-size: 28vh;
+    font-size: 275px;
     z-index: 100;
     color: #eceaea4d;
     top: 20%;
     text-align: center;
 }
-
 @media screen and (max-width: 1200px) {
     .sportsbg {
-        font-size: 20vh;
+        font-size: 200px;
     }
 }
-
-@media screen and (max-width: 1300px) {
-    .sportsbg {
-        font-size: 20vw;
-    }
-}
-
 @media screen and (max-width: 1000px) {
     .sportsbg {
-        font-size: 15vh;
+        font-size: 180px;
     }
 }
-
 @media screen and (max-width: 850px) {
     .sportsbg {
         top: 28%;
-        font-size: 13vh;
+        font-size: 160px;
     }
 }
-
 @media screen and (max-width: 750px) {
     .sportsbg {
-        font-size: 12vh;
+
+        font-size: 140px;
     }
 }
-
 @media screen and (max-width: 650px) {
     .sportsbg {
-        font-size: 10vh;
+
+        font-size: 120px;
     }
 }
-
 @media screen and (max-width: 550px) {
     .sportsbg {
-        font-size: 8vh;
+
+        font-size: 100px;
     }
 }
-
 @media screen and (max-width: 450px) {
     .sportsbg {
         top: 35%;
-        font-size: 7vh;
+        font-size: 80px;
     }
 }
-
 @media screen and (max-width: 350px) {
     .sportsbg {
         top: 35%;
-        font-size: 5vh;
+        font-size: 60px;
     }
 }
 
-.play-button {
-    width: 4vw;
-    height: 4vw;
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0.2vw 0.4vw rgba(0, 0, 0, 0.2);
-    bottom: 47%;
-    right: 48%;
-    z-index: 100;
-}
-
-.play-button::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 2vw solid black;
-    border-top: 1vw solid transparent;
-    border-bottom: 1vw solid transparent;
-    transform: translateX(5px);
-}
-
-@media screen and (min-width: 2500px) {
-    .card {
-        width: 40vw !important;
-      }
-    .card:nth-child(1) {
-        position: absolute !important;
-        top: 17.3vh !important;
-        left: 2vw !important;
-        z-index: 1 !important;
-        height: 73vh !important;
-      }
-    .card:nth-child(2) {
-        position: absolute !important;
-        top: 12.7vh !important;
-        left: 27vw !important;
-        z-index: 2;
-        height: 73vh !important;
-      }
-    
-    .card:nth-child(3) {
-        position: absolute !important;
-        top: 6.7vh !important;
-        left: 54vw !important;
-        z-index: 3 !important;
-        height: 73vh !important;
-      }
-    .section-title {
-        font-size: 3.3vw !important;
-        top: 4vh !important;
-        left: 4vw !important;
-      }
-    .section-date {
-        font-size: 3.2vw !important;
-        top: 80% !important;
-      }
-    .section-date2 {
-        font-size: 3vw !important;
-        top: 90% !important;
-      }
-    .section-stage {
-        font-size: 0.6vw;
-        top: 90%;
-        left: 5%;
-      }
-    .sportsbg {
-        font-size: 14vw !important;
-        top: 28% !important;
-      }
-    .play-button {
-        width: 4vw;
-        height: 4vw;
-        bottom: 40%;
-    }
-    .play-button::before {
-        border-left: 1.8vw solid black;
-        border-top: 0.9vw solid transparent;
-        border-bottom: 0.9vw solid transparent;
-    }
-}
-
-@media screen and (max-width: 1100px) {
-    .play-button {
-        width: 3.5vw;
-        height: 3.5vw;
-        bottom: 35%;
-    }
-    .play-button::before {
-        border-left: 1.8vw solid black;
-        border-top: 0.9vw solid transparent;
-        border-bottom: 0.9vw solid transparent;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .play-button {
-        width: 3vw;
-        height: 3vw;
+ .play-button {
+     width: 75px;
+     /* Adjust the size as needed */
+     height: 75px;
+     /* Adjust the size as needed */
+     background-color: white;
+     /* Circle color */
+     border-radius: 50%;
+     /* Makes the button circular */
+     position: absolute;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    bottom: 40%;
+        right: 48%;
+        z-index: 100;
+     /* Optional: for a shadow effect */
+ }
+ .play-button::before {
+     content: "";
+     position: absolute;
+     width: 0;
+     height: 0;
+     border-left: 35px solid black;
+     /* Triangle color */
+     border-top: 20px solid transparent;
+     border-bottom: 20px solid transparent;
+     transform: translateX(5px);
+     /* Optional: for centering the triangle inside the circle */
+ }
+ @media screen and (max-width: 600px){
+    .play-button{
+        width: 60px;
+        height: 60px;
         bottom: 45%;
     }
     .play-button::before {
-        border-left: 1.5vw solid black;
-        border-top: 0.75vw solid transparent;
-        border-bottom: 0.75vw solid transparent;
+        border-left: 30px solid black;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
     }
-}
-
-@media screen and (max-width: 575px) {
-    .play-button {
-        width: 6.7vw;
-        height: 6.7vw;
-        bottom: 55%;
+ }
+ @media screen and (max-width: 470px){
+    .play-button{
+        width: 50px;
+        height: 50px;
+        bottom: 52%;
         right: 42%;
     }
     .play-button::before {
-        padding-right:1vw;
-        border-left: 3.8vw solid black;
-        border-top: 2.0vw solid transparent;
-        border-bottom: 2.0vw solid transparent;
+        border-left: 25px solid black;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
     }
-}
+ }
 
-@media screen and (max-width: 1100px) {
-    .card {
-        width: 50vw !important;
-      }
-    .card:nth-child(1) {
-        position: absolute !important;
-        top: 15vh !important;
-        left: 2vw !important;
-        z-index: 1 !important;
-        height: 65vh !important;
-      }
-    .card:nth-child(2) {
-        position: absolute !important;
-        top: 9.7vh !important;
-        left: 27vw !important;
-        z-index: 2;
-        height: 65vh !important;
-      }
+ 
+ .play-button:hover {
+     border: 2px solid orange;
+     transition: all;
+     /* Orange border on hover */
+     box-shadow: 0px 8px 16px rgba(255, 165, 0, 0.5);
+     /* Orange shadow on hover */
+     cursor: pointer;
+     /* Pointer cursor on hover */
+ }
+
+ @media screen and (max-width: 600px) {
+     
+    .section-date {
+            font-size: 50px;
+            top: 76%;
+        }
     
-    .card:nth-child(3) {
-        position: absolute !important;
-        top: 3.2vh !important;
-        left: 54vw !important;
-        z-index: 3 !important;
-        height: 65vh !important;
-      }
-    .section-title {
-        font-size: 8vw !important;
-        top: 3vh !important;
-        left: 2vw !important;
-      }
+        .section-date2 {
+            font-size: 40px;
+            top: 85%;
+        }
+    
+ }
+ @media screen and (max-width: 470px) {
+     
     .section-date {
-        font-size: 8vw !important;
-      }
-    .section-date2 {
-        font-size: 7vw !important;
-      }
-    .section-stage {
-        font-size: 2vw;
-      }
-    .sportsbg {
-        font-size: 20vw !important;
-        top: 30% !important;
-      }
-    .play-button {
-          width: 6.7vw;
-          height: 6.7vw;
-          bottom: 55%;
-          right: 42%;
-      }
-    .play-button::before {
-          padding-right:1vw;
-          border-left: 3.8vw solid black;
-          border-top: 2.0vw solid transparent;
-          border-bottom: 2.0vw solid transparent;
-      }
-    .social-media-cards-title {
-          color: #000000;
-          font-family: 'Ubuntu Condensed', sans-serif;
-          font-size: 6vw;
-      }
-}
-
-  
-@media screen and (max-width: 900px) {
-    .card {
-      width: 50vw !important;
-    }
-    .card:nth-child(1) {
-      position: absolute !important;
-      top: 15vh !important;
-      left: 2vw !important;
-      z-index: 1 !important;
-      height: 65vh !important;
-    }
-    .card:nth-child(2) {
-      position: absolute !important;
-      top: 9.7vh !important;
-      left: 27vw !important;
-      z-index: 2;
-      height: 65vh !important;
-    }
-  
-    .card:nth-child(3) {
-      position: absolute !important;
-      top: 3.2vh !important;
-      left: 54vw !important;
-      z-index: 3 !important;
-      height: 65vh !important;
-    }
-    .section-title {
-      font-size: 8vw !important;
-      top: 3vh !important;
-      left: 2vw !important;
-    }
+        font-size: 40px;
+            top: 68%;
+        }
+    
+        .section-date2 {
+            font-size: 30px;
+            top: 78%;
+        }
+    
+ }
+ @media screen and (max-width: 350px) {
+     
     .section-date {
-      font-size: 8vw !important;
-    }
-    .section-date2 {
-      font-size: 7vw !important;
-    }
-    .section-stage {
-      font-size: 2vw;
-    }
-    .sportsbg {
-      font-size: 20vw !important;
-      bottom: 40% !important;
-    }
-    .play-button {
-        width: 6.7vw;
-        height: 6.7vw;
-        bottom: 55%;
-        right: 42%;
-    }
-    .play-button::before {
-        padding-right:1vw;
-        border-left: 3.8vw solid black;
-        border-top: 2.0vw solid transparent;
-        border-bottom: 2.0vw solid transparent;
-    }
-    .social-media-cards-title {
-        color: #000000;
-        font-family: 'Ubuntu Condensed', sans-serif;
-        font-size: 6vw;
-    }
-    .rectangle{
-        height: 20vh;
-        width: 30vw;
-    }
-  }
-  
-@media screen and (max-width: 575px) {
-    .card:nth-child(1) {
-      height: 65vh !important;
-      width: 50vw !important;
-      left: 5vw !important;
-    }
-    .card:nth-child(2) {
-      height: 65vh !important;
-      width: 50vw !important;
-      left: 25vw !important;
-    }
-    .card:nth-child(3) {
-      height: 65vh !important;
-      width: 50vw !important;
-      left: 50vw !important;
-    }
-    .logo img {
-      min-width: 35px;
-    }
-    .Motto{
-      font-size: 2.1vh !important;
-    }
-    .section-title{
-      font-size: 8vw !important;
-      left: 2vw !important;
-    }
-    .section-date{
-        font-size: 9vw !important;
-    }
-    .section-date2{
-        font-size: 7vw !important;
-    }
-    .sportsbg{
-        font-size: 20vw !important;
-    }
-    .section-stage{
-        font-size: 2.0vw;
-    }
-    .section-date {
-        top: 65vh;
-    }
-    .section-date2 {
-        top: 72vh;
-    }
-}  
+            top: 74%;
+        }
+    
+        .section-date2 {
+            top: 81%;
+        }
+    
+ }
