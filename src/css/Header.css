@@ -27,7 +27,7 @@
 .section-date {
     position: absolute;
     right: 5%;
-    top: 77%;
+    top: 73%;
     font-family: 'Roboto Condensed', sans-serif;
     text-align: right;
     font-size: 64px;
@@ -60,7 +60,7 @@
 .section-date2 {
     position: absolute;
     right: 5%;
-    top: 88%;
+    top: 85%;
     font-family: 'Roboto Condensed', sans-serif;
     text-align: right;
     font-size: 64px;
@@ -159,6 +159,10 @@
 @media screen and (max-width: 1200px) {
     .sportsbg {
         font-size: 200px;
+        top: 33%;
+    }
+    .play-button{
+        bottom: 46%;
     }
 }
 @media screen and (max-width: 1000px) {
@@ -168,7 +172,7 @@
 }
 @media screen and (max-width: 850px) {
     .sportsbg {
-        top: 28%;
+        top: 37%;
         font-size: 160px;
     }
 }
@@ -222,6 +226,12 @@
         z-index: 100;
      /* Optional: for a shadow effect */
  }
+ @media screen and (max-width: 1200px) {
+    
+    .play-button{
+        bottom: 46%;
+    }
+}
  .play-button::before {
      content: "";
      position: absolute;
@@ -250,7 +260,7 @@
     .play-button{
         width: 50px;
         height: 50px;
-        bottom: 52%;
+        bottom: 56%;
         right: 42%;
     }
     .play-button::before {
