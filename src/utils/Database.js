@@ -6,7 +6,7 @@ export default class Database {
 
   constructor()
   {
-    this.url = 'http://13.53.40.126/api';
+    this.url = 'https://iism24.iitk.ac.in/api';
   }
 
   async getMatches(page, limit, searchQuery, sport, status) {
