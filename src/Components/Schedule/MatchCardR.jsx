@@ -4,10 +4,21 @@ import "../../css/MatchCardR.css";
 import { SiGooglemaps, SiYoutube } from "react-icons/si";
 import { HiClock, HiCalendarDays } from "react-icons/hi2";
 import { SportName, TeamLogo } from "./utils/SportCardUtils";
-import { BasketScore, CricketScore, HockeyScore, LawnTennisScore, TableTennisScore, VolleyballScore } from "./utils/ScoreUI";
+import { BasketScore, CricketScore, HockeyScore, LawnTennisScore } from "./utils/ScoreUI";
+
+function formatAMPM(date) {
+  var hours = parseInt(date.split(":")[0]);
+  var minutes = parseInt(date.split(":")[1]);
+  var ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0'+minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return strTime;
+}
 
 function MatchCardR({ match }) {
-  let d = new Date(match.date);
+  let d = new Date(match.date );
   let date = d.toDateString().split(" ");
 console.log(match)
   return (
@@ -27,6 +38,9 @@ console.log(match)
                 {match.sport == "lawn tennis" && <LawnTennisScore match={match} />}
                 {match.sport == "volleyball" && <LawnTennisScore match={match} />}
                 {match.sport == "table tennis" && <LawnTennisScore match={match} />}
+                {match.sport == "badminton" && <LawnTennisScore match={match} />}
+                {match.sport == "squash" && <LawnTennisScore match={match} />}
+                {match.sport == "football" && <HockeyScore match={match} />}
               </>
               ) : <div>V/S</div>}
               </div>
@@ -69,7 +83,7 @@ console.log(match)
                     <SiGooglemaps
                       style={{ display: "inline-block", marginRight: "2px" }}
                     />
-                    {match.venue}
+                    {match.venue || "NewSac"}
                   </Link>
                 ) : (
                   <span>
@@ -77,7 +91,7 @@ console.log(match)
                     <SiGooglemaps
                       style={{ display: "inline-block", marginRight: "2px" }}
                     />{" "}
-                    {match.venue}&nbsp;&nbsp;
+                    {match.venue || "NewSac"}&nbsp;&nbsp;
                   </span>
                 )}
               </div>
@@ -86,7 +100,7 @@ console.log(match)
                   &nbsp;
                   <span>
                     <HiClock style={{ display: "inline-block" }} /> &nbsp;
-                    {match.time.split(":").splice(0, 2).join(":")}&nbsp;
+                    {formatAMPM(match.time)}&nbsp;
                   </span>
                 </>
               )}

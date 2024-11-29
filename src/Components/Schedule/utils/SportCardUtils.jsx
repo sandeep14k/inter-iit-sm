@@ -15,7 +15,7 @@ const IITs = {
   "IIT MANDI": "/IITs_Logo/Mandi.jpg",
   "IIT PATNA": "/IITs_Logo/Patna.jpg",
   "IIT ROPAR": "/IITs_Logo/Ropar.jpg",
-  "IIT BHUBANESHWAR": "/IITs_Logo/Bhubaneshwar.jpg",
+  "IIT BHUBANESWAR": "/IITs_Logo/Bhubaneswar.jpg",
   "IIT GANDHINAGAR": "/IITs_Logo/Gandhinagar.jpg",
   "IIT DHANBAD": "/IITs_Logo/Dhanbad.jpg",
   "IIT BHILAI": "/IITs_Logo/Bhilai.jpg",
@@ -30,13 +30,11 @@ export function SportName({ match }) {
   return (
     <span className="sport-name">
       {match.sport.toUpperCase()} &nbsp;
-      {match.category == "Men" && (
+      {match.category == "MEN" ? (
         <IoMaleSharp style={{ display: "inline-block" }} />
-      )}
-      {match.category == "Women" && (
+      ) : match.category == "WOMEN" ? (
         <IoFemaleSharp style={{ display: "inline-block" }} />
-      )}
-      {match.category == "Mixed" && (
+      ) : (
         <IoMaleFemaleSharp style={{ display: "inline-block" }} />
       )}
     </span>
