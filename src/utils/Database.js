@@ -4,21 +4,24 @@ import axios from 'axios';
 
 export default class Database {
 
-  constructor()
-  {
+  constructor(role) {
     this.url = 'https://iism24.iitk.ac.in/api';
+    this.role = role;
   }
 
   async getMatches(page, limit, searchQuery, sport, status) {
-    if(status == "upcoming") return await this.getScheduledMatches(page, limit, searchQuery, sport);
-    if(status == "live") return await this.getLiveMatches(page, limit, searchQuery, sport);
-    if(status == "completed") return await this.getCompletedMatches(page, limit, searchQuery, sport);
+    if (status == "upcoming") return await this.getScheduledMatches(page, limit, searchQuery, sport);
+    if (status == "live") return await this.getLiveMatches(page, limit, searchQuery, sport);
+    if (status == "completed") return await this.getCompletedMatches(page, limit, searchQuery, sport);
     else return [];
   }
-  
+
   async getScheduledMatches(page, limit, searchQuery, sport) {
-    console.log(sport.split(" ").join('').toLowerCase())
-    const apiUrl = `${this.url}/matches?page=${page}&limit=${limit}&search=${searchQuery}&sportTableName=${sport.split(" ").join('')}`;
+    let apiUrl;
+    if (this.role == "student")
+      apiUrl = `${this.url}/matches?page=${page}&limit=${limit}&search=${searchQuery}&sportTableName=${sport.split(" ").join('')}`;
+    else
+      apiUrl = `${this.url}/getMatchStaff?status=upcoming&page=${page}&limit=${limit}&search=${searchQuery}&sport=${sport}`;
 
     try {
       const response = await axios.get(apiUrl);
@@ -30,28 +33,34 @@ export default class Database {
       return [];
     }
   }
-  
+
   async getLiveMatches(page, limit, searchQuery, sport) {
-    const apiUrl = `${this.url}/getLiveMatches?page=${page}&limit=${limit}&search=${searchQuery}&sportTableName=${sport.split(" ").join('')}`;
-
+    let apiUrl;
+    if (this.role == "student")
+      apiUrl = `${this.url}/getLiveMatches?page=${page}&limit=${limit}&search=${searchQuery}&sportTableName=${sport.split(" ").join('')}`;
+    else
+      apiUrl = `${this.url}/getMatchStaff?status=live&page=${page}&limit=${limit}&search=${searchQuery}&sport=${sport}`
     try {
       const response = await axios.get(apiUrl);
       const data = await response.data.matches || [];
-      
+
       return data;
     } catch (error) {
       console.error("Error fetching matches:", error.message);
       return [];
     }
   }
-  
-  async getCompletedMatches(page, limit, searchQuery, sport) {
-    const apiUrl = `${this.url}/getCompletedMatches?page=${page}&limit=${limit}&search=${searchQuery}&sportTableName=${sport.split(" ").join('')}`;
 
+  async getCompletedMatches(page, limit, searchQuery, sport) {
+    let apiUrl;
+    if (this.role == "student")
+      apiUrl = `${this.url}/getCompletedMatches?page=${page}&limit=${limit}&search=${searchQuery}&sportTableName=${sport.split(" ").join('')}`;
+    else
+      apiUrl = `${this.url}/getMatchStaff?status=completed&page=${page}&limit=${limit}&search=${searchQuery}&sport=${sport}`
     try {
       const response = await axios.get(apiUrl);
       const data = await response.data.matches || [];
-      
+
       return data;
     } catch (error) {
       console.error("Error fetching matches:", error.message);
@@ -60,8 +69,11 @@ export default class Database {
   }
 
   async getPlayers(page, limit, searchQuery, sport, iit) {
-    const apiUrl = `${this.url}/players?page=${page}&limit=${limit}&search=${searchQuery}&sport=${sport == "Sport" ? "":sport}&collage=${iit == "IITs" ? "":iit}`;
-    
+    let apiUrl;
+    if (this.role == "student")
+      apiUrl = `${this.url}/players?page=${page}&limit=${limit}&search=${searchQuery}&sport=${sport == "Sport" ? "" : sport}&collage=${iit == "IITs" ? "" : iit}`;
+    else
+      apiUrl = `${this.url}/getMatchStaff?page=${page}&limit=${limit}&search=${searchQuery}&sport=${sport}`
     try {
       const response = await axios.get(apiUrl);
       const data = await response.data.players || [];

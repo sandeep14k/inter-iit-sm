@@ -21,9 +21,9 @@ export default function SchedulePage({ pageStatus, role }) {
 
   // Select appropriate sports list based on role
   let sports = role !== "student" ? staffSports : studentSports;
-  if (pageStatus === "upcoming") sports.unshift("All");
+  if (pageStatus === "upcoming" && role == "student") sports.unshift("All");
 
-  const db = new Database();
+  const db = new Database(role);
 
   const [matches, setMatches] = useState([]);
   const [page, setPage] = useState(1);

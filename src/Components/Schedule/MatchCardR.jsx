@@ -100,7 +100,7 @@ console.log(match)
                   &nbsp;
                   <span>
                     <HiClock style={{ display: "inline-block" }} /> &nbsp;
-                    {formatAMPM(match.time)}&nbsp;
+                    {match.time.split(":").splice(0,2).join(":")}&nbsp;
                   </span>
                 </>
               )}
