@@ -2,6 +2,10 @@ import { BsGenderMale, BsGenderFemale, BsGenderTrans } from "react-icons/bs";
 
 export default function PlayerCard(prop) {
   let data = prop.data;
+
+  let collegeFolder = data.team.split(" ")[1].toLowerCase();
+  let photoUrl = `https://firebasestorage.googleapis.com/v0/b/iism2024.appspot.com/o/studentPhotos%2F${collegeFolder}%2F${data.email}.jpg?alt=media`;
+
   let gIcon =
     data.gender == "Male" ? (
       <BsGenderMale />
@@ -15,7 +19,7 @@ export default function PlayerCard(prop) {
       <div className="player-card">
         <div className="image">
           <img
-            src={data.photo}
+            src={photoUrl}
             alt="Player Photo"
             className="player-image"
             width={180}
