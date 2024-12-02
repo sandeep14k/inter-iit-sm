@@ -11,19 +11,18 @@ const limit = 10;
 
 export default function SchedulePage({ pageStatus, role }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSport, setSelectedSport] = useState(
-    pageStatus !== "upcoming" ? "Basketball" : "All"
-  );
-
+  
   // Define sports lists based on role
   const studentSports = ["Basketball", "Lawn Tennis", "Hockey", "Volleyball", "Cricket", "Table Tennis"];
   const staffSports = ["Basketball", "Football", "Volleyball", "Table Tennis", "Tennis", "Cricket", "Badminton", "Squash", "Athletics"];
-
+  
   // Select appropriate sports list based on role
   let sports = role !== "student" ? staffSports : studentSports;
-  if (pageStatus === "upcoming") sports.unshift("All");
+  if (pageStatus === "upcoming" && role == "student") sports.unshift("All");
+  
+  const [selectedSport, setSelectedSport] = useState(sports[0]);
 
-  const db = new Database();
+  const db = new Database(role);
 
   const [matches, setMatches] = useState([]);
   const [page, setPage] = useState(1);
