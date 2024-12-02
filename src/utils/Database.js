@@ -70,7 +70,7 @@ export default class Database {
 
   async getPlayers(page, limit, searchQuery, sport, iit) {
     let apiUrl;
-    if (this.role == "student")
+    if (this.role != "staff")
       apiUrl = `${this.url}/players?page=${page}&limit=${limit}&search=${searchQuery}&sport=${sport == "Sport" ? "" : sport}&collage=${iit == "IITs" ? "" : iit}`;
     else
       apiUrl = `${this.url}/getMatchStaff?page=${page}&limit=${limit}&search=${searchQuery}&sport=${sport}`
