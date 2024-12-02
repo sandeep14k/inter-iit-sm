@@ -2,7 +2,7 @@ import { BsGenderMale, BsGenderFemale, BsGenderTrans } from "react-icons/bs";
 
 export default function PlayerCard(prop) {
   let data = prop.data;
-  const email = data.email;
+  const email = data.email.toLowerCase();
   const team = data.team;
   const collegeFolder = team.split(" ")[1].toLowerCase();
   let gIcon =
