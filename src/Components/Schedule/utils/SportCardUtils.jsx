@@ -6,6 +6,7 @@ const IITs = {
   "IIT MADRAS": "/IITs_Logo/Madras.jpg",
   "IIT KANPUR": "/IITs_Logo/Kanpur.svg",
   "IIT KHARAGPUR": "/IITs_Logo/KGP.jpg",
+  "IIT KGP": "/IITs_Logo/KGP.jpg",
   "IIT ROORKEE": "/IITs_Logo/Roorkee.svg",
   "IIT GUWAHATI": "/IITs_Logo/Guwahati.jpg",
   "IIT HYDERABAD": "/IITs_Logo/Hyderabad.jpg",
@@ -44,8 +45,8 @@ export function SportName({ match }) {
 export function TeamLogo({ team }) {
   return (
     <div className="team team-left">
-      <img src={IITs[team]} alt="IIT Logo" className="team-logo" />
-      <div className="team-name">{team}</div>
+      <img src={IITs[team.toUpperCase()]} alt="IIT Logo" className="team-logo" />
+      <div className="team-name">{team.toUpperCase()}</div>
     </div>
   );
 }
