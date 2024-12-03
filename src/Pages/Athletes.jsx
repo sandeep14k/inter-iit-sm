@@ -70,7 +70,7 @@ const Home = () => {
       <Option value="IIT Ropar">IIT Ropar</Option>
       <Option value="IIT Hyderabad">IIT Hyderabad</Option>
       <Option value="IIT Indore">IIT Indore</Option>
-      <Option value="IIT Dhanbad">IIT Dhanbad</Option>
+      <Option value="ISM Dhanbad">IIT Dhanbad</Option>
       <Option value="IIT BHU">IIT BHU</Option>
       <Option value="IIT Patna">IIT Patna</Option>
       <Option value="IIT Gandhinagar">IIT Gandhinagar</Option>

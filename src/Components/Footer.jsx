@@ -8,7 +8,7 @@ import { CiHome } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
 
-const Footer = ({ onRoleChange }) => {
+const Footer = ({ onRoleChange , role }) => {
   return (
     <footer className="min-h-[60vh] bg-black w-[100vw]">
       <div className="py-[75px] sm:px-5 px-1 grid md:grid-cols-3 grid-cols-2 sm:gap-10 gap-[0]">
@@ -47,7 +47,7 @@ const Footer = ({ onRoleChange }) => {
           className="change-section-button"
           style={{ marginTop: '10px', padding: '8px 16px', cursor: 'pointer', fontSize: '1rem' }}
         >
-          Change Section
+          Switch to  {role !== "staff" ? "IISSM'24": "IISM'24"}
         </button>
         </div>
         <div className="flex flex-col gap-6">

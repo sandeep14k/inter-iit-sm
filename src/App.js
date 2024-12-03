@@ -65,7 +65,7 @@ const App = () => {
             </Routes>
           </div>
         </AnimatePresence>
-        <Footer onRoleChange={handleClearRole} />
+        <Footer onRoleChange={handleClearRole} role={role} />
       </BrowserRouter>
     </HelmetProvider>
   );

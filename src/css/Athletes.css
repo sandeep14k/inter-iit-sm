@@ -3,8 +3,9 @@
 }
 
 .player-card-box {
-  width: 100vw;
+  width: 90vw;
   padding: 50px 50px;
+  margin-left: 5vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,6 +16,7 @@
 .player-card {
   background: #e3e3e3;
   padding: 15px;
+  width: 200px;
   border-radius: 15px;
   transition: 300ms;
   display: flex;
@@ -43,9 +45,11 @@
   width: 180px;
   height: 180px;
 }
+
 .player-card .image .player-image{
   height:100%
 }
+
 .player-card .name {
   padding-top: 10px;
   text-transform: capitalize;
