@@ -44,8 +44,8 @@ export function SportName({ match }) {
 export function TeamLogo({ team }) {
   return (
     <div className="team team-left">
-      <img src={IITs[team].toUpperCase()} alt="IIT Logo" className="team-logo" />
-      <div className="team-name">{team.toUpperCase()}</div>
+      <img src={IITs[team]} alt="IIT Logo" className="team-logo" />
+      <div className="team-name">{team}</div>
     </div>
   );
 }
