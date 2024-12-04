@@ -15,7 +15,7 @@ const Home = ({role}) => {
         <FeaturedEvent role={role}/>
         <P_IITs role={role}/>
         <Sports role={role}/>
-        {/* <Sponser role={role}/> */}
+        <Sponser role={role}/>
     </div>
   )
 }

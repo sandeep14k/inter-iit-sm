@@ -50,7 +50,7 @@ const App = () => {
           <title>Inter IIT Sports Meet 2024</title>
           <meta name="description" content={metaDescriptionContent} />
         </Helmet>
-        <Navbar role={role} />
+        <Navbar onRoleChange={handleClearRole} role={role} />
         <Loader show={loading} />
         <AnimatePresence>
           <div className={role ? 'app-content' : ''}>

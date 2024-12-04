@@ -5,7 +5,7 @@ import '../css/Navbar.css';
 import {Link, useNavigate} from 'react-router-dom';
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const Navbar = ({ role }) => {
+const Navbar = ({ onRoleChange , role }) => {
   const [activeTab, setActiveTab] = useState(window.location.pathname); // State to track active tab
   const navigate = useNavigate();
   
@@ -23,11 +23,9 @@ const Navbar = ({ role }) => {
     <>
     <nav className="navbar">
       <div className="logo-motto">
-        <div className="logo">
-          <Link to="/" onClick={() => handleClick("/")}>
-            <img src="/assets/logo.png" alt="logo" />
-          </Link>
-        </div>
+      <div className="logo" onClick={onRoleChange} style={{ cursor: 'pointer' }}>
+        <img src="/assets/logo.png" alt="logo" />
+      </div>
         <div className="Motto">Awe. Conquer. Inspire.</div>
       </div>
       <input type="checkbox" hidden name="showNav" id="showNav" />

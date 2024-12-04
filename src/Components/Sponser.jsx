@@ -1,53 +1,47 @@
-import React from 'react'
-import '../css/Sponser.css'
+import React from 'react';
+import '../css/Sponser.css';
 
-const Sponser = () => {
+const AppDetails = () => {
   return (
-    <div className='SponsorBox'>
-        <fieldset >
-            <legend className='md:text-[50px] sm:text-[40px] text-[30px]  md:px-[75px] px-[20px]'>Sponsorship</legend></fieldset>
-      <div className='grid grid-cols-1 sm:grid-cols-3 content-center pt-5'>
-        <div className='flex flex-col justify-center items-center gap-5'>
-
-            <div className='md:w-[200px] md:h-[220px]  w-[150px] h-[150px] flex justify-center items-center'>
-
-            <img src="../../Sponsors/Gujurat_Tourism.png" alt=""/>
-            </div >
-            <span className='md:text-2xl text-xl font-semibold'>Tourism Partner</span>
-            <div className='md:w-[250px] md:h-[250px] w-[200px] h-[200px]  flex justify-center items-center'>
-
-            <img src="../../Sponsors/easemytrip-com-seeklogo.svg" alt=""/>
-            </div>
+    <div className="AppDetailsBox overflow-hidden">
+      <div className="flex flex-col items-center text-center py-10 px-5 bg-gray-50 overflow-hidden">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold overflow-hidden">
+          Inter IIT Sports Meet 2024
+        </h1>
+        <p className="text-gray-600 text-sm sm:text-base md:text-lg mt-4">
+        Welcome to the official app for Inter IIT Sports Meet 2024, where passion meets competition. Featuring 200+ thrilling matches across 6 exciting sports, 23 IITs battling for the General Championship, and over 2000 participants showcasing their skills. Stay ahead with live streaming of matches, real-time score updates, detailed results, and a comprehensive player database. Experience the ultimate sports journey like never before!
+        </p>
+        <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-6">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.iism.iitk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center bg-blue-500 text-white px-5 py-3 rounded-md hover:bg-blue-600 transition"
+          >
+            <img
+              src="/assets/play-store.svg"
+              alt="Google Play"
+              className="w-32 h-16 mr-8"
+            />
+            Get it on Google Play
+          </a>
+          <a
+            href="https://apps.apple.com/in/app/inter-iit-sports-meet-24/id6738761317"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center bg-black text-white px-5 py-3 rounded-md hover:bg-gray-800 transition"
+          >
+            <img
+              src="/assets/app-store.svg"
+              alt="App Store"
+              className="w-32 h-16 mr-8"
+            />
+            Download on the App Store
+          </a>
         </div>
-        <div className='flex flex-col justify-center items-center gap-5'>
-
-            <div className='md:w-[200px] md:h-[220px] w-[150px] h-[150px]  flex justify-center items-center'>
-
-            <img src="../../Sponsors/Hyperice.jpeg" alt=""/>
-            </div >
-            <span className='md:text-2xl text-xl font-semibold'>Recovery Partner</span>
-            <div className='md:w-[250px] md:h-[250px] w-[200px] h-[200px] flex justify-center items-center'>
-
-            <img src="../../Sponsors/hitbullseye.png" alt=""/>
-            </div>
-        </div>
-        <div className='flex flex-col justify-center items-center gap-5'>
-
-            <div className='md:w-[200px] md:h-[220px] w-[150px] h-[150px] flex justify-center items-center'>
-
-            <img src="../../Sponsors/MiraeAsset.jpeg" alt=""/>
-            </div >
-            <span className='md:text-2xl text-xl font-semibold'>Wealth Management Partner</span>
-            <div className='md:w-[250px] md:h-[250px] w-[200px] h-[200px] flex justify-center items-center'>
-
-            <img src="../../Sponsors/Afton.png" alt="" className='invert'/>
-            </div>
-        </div>
-        
-        
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sponser
+export default AppDetails;
