@@ -102,7 +102,7 @@ const P_IITs = () => {
     },
     {
       name: "IIT Bhubaneswar",
-      img: "../../IITs_Logo/Bhubaneshwar.jpg",
+      img: "../../IITs_Logo/Bhubaneswar.jpg",
     },
     {
       name: "IIT Gandhinagar",
