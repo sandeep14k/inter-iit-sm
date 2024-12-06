@@ -164,7 +164,7 @@ const teamMembers = [
     name: "Kartik",
     role: "Show Management",
     email: "kartikv21@iitk.ac.in",
-    frontImage: "../../Contacts/kartikF.jpg",
+    frontImage: "../../Contacts/kartikF.png",
     social: { 
       instagram: "https://www.instagram.com/kartikv21/",
       facebook: "https://www.facebook.com/profile.php?id=100075444030031",
