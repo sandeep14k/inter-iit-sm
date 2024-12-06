@@ -130,6 +130,7 @@
   }
   
   .coreteam-card-content h3,
+  .coreteam-card-content h5,
   .coreteam-card-content h4 {
     font-weight: 700;
     color: rgba(235,161,45,1);
