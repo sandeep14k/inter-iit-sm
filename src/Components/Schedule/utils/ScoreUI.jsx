@@ -20,7 +20,7 @@ export function CricketScore({ match }) {
           <GiAbstract004 style={{ display: "inline-block" }} />
         </div>
         <br />
-        {match.balls / 6 || 0}
+        {match.team1_overs || 0}
         <br />
         <div>
           <GiTennisBall style={{ display: "inline-block" }} />
@@ -39,7 +39,7 @@ export function CricketScore({ match }) {
           <GiAbstract004 style={{ display: "inline-block" }} />
         </div>
         <br />
-        {match.balls / 6 || 0}
+        {match.team2_overs || 0}
         <br />
         <div>
           <GiTennisBall style={{ display: "inline-block" }} />
