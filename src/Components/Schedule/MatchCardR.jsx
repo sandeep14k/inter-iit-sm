@@ -72,10 +72,14 @@ function MatchCardR({ match }) {
             <div className="match-time-format">
               {match.status != "live" && (
                 <>
-                  <span>
-                    <HiCalendarDays style={{ display: "inline-block" }} />
-                    &nbsp; {date[2] + " " + date[1]}&nbsp;
-                  </span>
+  <span>
+  <HiCalendarDays style={{ display: "inline-block", fontSize: "25px" }} />
+  &nbsp;
+  <span style={{ fontSize: "18px" }}>
+    {date[2] + " " + date[1]}
+  </span>
+  &nbsp;
+</span>
                   &nbsp;
                 </>
               )}
@@ -120,8 +124,11 @@ function MatchCardR({ match }) {
                 <>
                   &nbsp;
                   <span>
-                    <HiClock style={{ display: "inline-block" }} /> &nbsp;
-                    {match.time.split(":").splice(0, 2).join(":")}&nbsp;
+                    <HiClock style={{ display: "inline-block", fontSize: "25px" }} /> &nbsp;
+                    <span style={{ fontSize: "18px" }}>
+                      {match.time.split(":").splice(0, 2).join(":")}
+                    </span>
+                    &nbsp;
                   </span>
                 </>
               )}

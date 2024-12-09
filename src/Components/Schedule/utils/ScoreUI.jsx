@@ -104,18 +104,19 @@ export function LawnTennisScore({ match }) {
   let w1 = 0;
   let w2 = 0;
 
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= match.active; i++) {
+    console.log(match.i);
     if (i > match.active) {
       dot1.push(<div className="dot not-done"></div>);
       dot2.push(<div className="dot not-done"></div>);
     } else if (i == match.active) {
       dot1.push(<div className="dot playing"></div>);
       dot2.push(<div className="dot playing"></div>);
-    } else if (match[`set${match.i}_score1`] < match[`set${match.i}_score2`]) {
+    } else if (match[`set${i}_score1`] < match[`set${i}_score2`]) {
       w2++;
       dot1.push(<div className="dot lose"></div>);
       dot2.push(<div className="dot won"></div>);
-    } else if (match[`set${match.i}_score1`] > match[`set${match.i}_score2`]) {
+    } else if (match[`set${i}_score1`] > match[`set${i}_score2`]) {
       dot1.push(<div className="dot won"></div>);
       dot2.push(<div className="dot lose"></div>);
       w1++;

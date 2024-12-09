@@ -176,7 +176,7 @@ span.sport-name {
 
 .extra-button {
   padding: 7px 5px;
-  width: 100px;
+  width: 110px;
   font-weight: bold;
   font-family: aptops;
   border-radius: 5px;
@@ -291,8 +291,8 @@ span.sport-name {
 }
 .result.hockey span,
 .result.basketball span {
-  font-size: small;
-  color: grey;
+  font-size: medium;
+  color: black;
 }
 
 .result.lawntt .set-box {
@@ -333,7 +333,7 @@ span.sport-name {
   background: #3a3a3a;
   border-radius: 50%;
 }
-.dot.win {
+.dot.won {
   background: green;
 }
 .dot.lose {
@@ -341,6 +341,19 @@ span.sport-name {
 }
 .dot.playing {
   background: #e9a506;
+  animation: blink-animation 1s infinite;
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .dot.draw {
   background: sandybrown;
