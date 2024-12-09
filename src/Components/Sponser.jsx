@@ -16,7 +16,7 @@ const AppDetails = () => {
             href="https://play.google.com/store/apps/details?id=com.iism.iitk"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center bg-blue-500 text-white px-5 py-3 rounded-md hover:bg-blue-600 transition"
+            className="flex items-center bg-black text-white px-5 py-3 rounded-md hover:bg-blue-600 transition"
           >
             <img
               src="/assets/play-store.svg"
@@ -34,7 +34,7 @@ const AppDetails = () => {
             <img
               src="/assets/app-store.svg"
               alt="App Store"
-              className="w-32 h-16 mr-8"
+              className="w-29 h-16 mr-8"
             />
             Download on the App Store
           </a>
