@@ -80,21 +80,21 @@ function MatchCardR({ match }) {
                 </>
               )}
               <div className="match-details">
-                {match.status == "live" && (
-                  <Link
-                    target="_blank"
-                    to={
-                      match.liveStreamUrl ||
-                      "https://youtu.be/7d186s14Jg4?si=3L65E1MjTroqv1yJ"
-                    }
-                    className="extra-button livebtn"
-                  >
-                    <SiYoutube
-                      style={{ display: "inline-block", marginRight: "2px" }}
-                    />{" "}
-                    Live
-                  </Link>
-                )}
+              {match.status === "live" && 
+                match.liveStreamUrl?.toLowerCase() !== "na" && (
+              <Link
+                target="_blank"
+                to={
+                  match.liveStreamUrl ||
+                  "https://youtu.be/7d186s14Jg4?si=3L65E1MjTroqv1yJ"
+                }
+                className="extra-button livebtn"
+               >
+              <SiYoutube
+              style={{ display: "inline-block", marginRight: "2px" }}
+              />{" "}
+              Live
+             </Link>)}
                 {match.status != "completed" ? (
                   <Link
                     target="_blank"

@@ -2,6 +2,86 @@ import React from "react";
 import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 import "../css/Teams.css"; // Link to your CSS file
 
+const keyOfficials = [
+  {
+    name: "Dr. Pratik Sen",
+    role: "Chairperson",
+    email: "psen@iitk.ac.in",
+    frontImage: "../../Contacts/pratik.jpg",
+    // social: { 
+    //   instagram: "https://www.instagram.com/___avisharma___/",
+    //   facebook: "https://www.facebook.com/profile.php?id=100057527562934",
+    //   linkedin: "https://www.linkedin.com/in/sharma-avi/"
+    // }
+  },
+  {
+    name: "Dr. Indra S. Sen",
+    role: "Convener",
+    email: "isen@iitk.ac.in",
+    frontImage: "../../Contacts/Indra.jpeg",
+    // social: { 
+    //   instagram: "https://www.instagram.com/mukul.saini63/",
+    //   facebook: "https://www.facebook.com/mukul.saini.1291",
+    //   linkedin: "https://www.linkedin.com/in/mukul-saini-40b478242/"
+    // }
+  },
+  {
+    name: "Dr. Aditya H. Kelkar",
+    role: "Co-Convener",
+    email: "akelkar@iitk.ac.in",
+    frontImage: "../../Contacts/aditya.jpg",
+    // social: { 
+    //   instagram: "https://www.instagram.com/mukul.saini63/",
+    //   facebook: "https://www.facebook.com/mukul.saini.1291",
+    //   linkedin: "https://www.linkedin.com/in/mukul-saini-40b478242/"
+    // }
+  },
+  {
+    name: "Dr. Sruti S. Ragavan",
+    role: "Convener, Digital",
+    email: "srutis@iitk.ac.in",
+    frontImage: "../../Contacts/sruti.jpeg",
+    // social: { 
+    //   instagram: "https://www.instagram.com/mukul.saini63/",
+    //   facebook: "https://www.facebook.com/mukul.saini.1291",
+    //   linkedin: "https://www.linkedin.com/in/mukul-saini-40b478242/"
+    // }
+  },
+  {
+    name: "Mr. Hemant K. Tiwari",
+    role: "Organising Secretary",
+    email: "hktiwari@iitk.ac.in",
+    frontImage: "../../Contacts/Hemant.jpg",
+    // social: { 
+    //   instagram: "https://www.instagram.com/mukul.saini63/",
+    //   facebook: "https://www.facebook.com/mukul.saini.1291",
+    //   linkedin: "https://www.linkedin.com/in/mukul-saini-40b478242/"
+    // }
+  },
+  {
+    name: "Avi",
+    role: "Overall Coordinator",
+    email: "savi20@iitk.ac.in",
+    frontImage: "../../Contacts/aviF.png",
+    // social: { 
+    //   instagram: "https://www.instagram.com/___avisharma___/",
+    //   facebook: "https://www.facebook.com/profile.php?id=100057527562934",
+    //   linkedin: "https://www.linkedin.com/in/sharma-avi/"
+    // }
+  },
+  {
+    name: "Mukul",
+    role: "Overall Coordinator",
+    email: "mukuls21@iitk.ac.in",
+    frontImage: "../../Contacts/mukulF.jpg",
+    // social: { 
+    //   instagram: "https://www.instagram.com/mukul.saini63/",
+    //   facebook: "https://www.facebook.com/mukul.saini.1291",
+    //   linkedin: "https://www.linkedin.com/in/mukul-saini-40b478242/"
+    // }
+  }
+];
+
 const overallCoordinators = [
   {
     name: "Avi",
@@ -164,7 +244,7 @@ const teamMembers = [
     name: "Kartik",
     role: "Show Management",
     email: "kartikv21@iitk.ac.in",
-    frontImage: "../../Contacts/kartikF.jpg",
+    frontImage: "../../Contacts/kartikF.png",
     social: { 
       instagram: "https://www.instagram.com/kartikv21/",
       facebook: "https://www.facebook.com/profile.php?id=100075444030031",
@@ -255,6 +335,36 @@ const teamMembers = [
 const Teams = () => {
   return (
     <>
+      <div className="team-heading">Key Officials</div>
+
+      <div className="coreteam-grid">
+        {keyOfficials.map((member, index) => {
+          const names = member.name.split(" ");
+          return (
+            <div key={index} className="stacked-layer">
+              <div className="border-box"></div>
+              <div className="coreteam-card">
+                <div className="card-image">
+                  <img
+                    src={member.frontImage}
+                    alt={`${member.name} Profile`}
+                    width={187.22}
+                    height={202}
+                    className="profile-img"
+                  />
+                </div>
+                <div className="coreteam-card-content">
+                  <h5>{member.name.toUpperCase()}</h5>
+                  {/* {names.length > 1 && <h4>{names[1].toUpperCase()}</h4>} */}
+                  <p>{member.role}</p>
+                  <p className="email">{member.email}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      
       <div className="team-heading">Core Team</div>
 
       <div className="coreteam-grid">
@@ -297,7 +407,7 @@ const Teams = () => {
           );
         })}
       </div>
-      <div className="team-heading">Overall Coordinators</div>
+      {/* <div className="team-heading">Overall Coordinators</div>
 
       <div className="coreteam-grid">
         {overallCoordinators.map((member, index) => {
@@ -336,7 +446,7 @@ const Teams = () => {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </>
   );
 };

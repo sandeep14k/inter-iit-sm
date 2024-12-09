@@ -1,3 +1,27 @@
-.SponsorBox{
-    padding-top: 1rem;
-}
+.AppDetailsBox {
+    background-color: #ffffff;
+  }
+  
+  .AppDetailsBox h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #222222;
+  }
+  
+  .AppDetailsBox p {
+    font-family: 'Arial', sans-serif;
+    color: #666666;
+  }
+  
+  .AppDetailsBox a {
+    text-decoration: none;
+  }
+  
+  .AppDetailsBox a:hover {
+    opacity: 0.9;
+  }
+  
+  .AppDetailsBox img {
+    max-width: 100%;
+    height: auto;
+  }
+  
