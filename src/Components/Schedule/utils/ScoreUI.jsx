@@ -110,7 +110,8 @@ export function LawnTennisScore({ match }) {
     if (i > match.active) {
       dot1.push(<div className="dot not-done"></div>);
       dot2.push(<div className="dot not-done"></div>);
-    } else if (i == match.active) {
+    } else if (i == match.active && match.status == 'live') {
+      if(match.status == 'live')
       dot1.push(<div className="dot playing"></div>);
       dot2.push(<div className="dot playing"></div>);
     } else if (match[`set${i}_score1`] < match[`set${i}_score2`]) {
