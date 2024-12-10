@@ -27,8 +27,7 @@ export function CricketScore({ match }) {
           &nbsp;&nbsp; overs
         </div>
       </div>
-      <span>
-      </span>
+      <span></span>
       <div className="result cricket">
         {match.team2_score || 0} <span className="sep">/</span>{" "}
         {match.team2_wickets || 0}
@@ -101,27 +100,29 @@ export function BasketScore({ match }) {
 export function LawnTennisScore({ match }) {
   let dot1 = [];
   let dot2 = [];
-  let w1 = 0;
-  let w2 = 0;
+  let s1 = 0;
+  let s2 = 0;
 
   for (let i = 1; i <= match.active; i++) {
-    if(match[`set${i}_score1`] == null) match[`set${i}_score1`] = 0;
-    if(match[`set${i}_score2`] == null) match[`set${i}_score2`] = 0;
+    if (match[`set${i}_score1`] == null) match[`set${i}_score1`] = 0;
+    if (match[`set${i}_score2`] == null) match[`set${i}_score2`] = 0;
+
+    s1 += parseInt(match[`set${i}_score1`]);
+    s2 += parseInt(match[`set${i}_score2`]);
+
     if (i > match.active) {
       dot1.push(<div className="dot not-done"></div>);
       dot2.push(<div className="dot not-done"></div>);
-    } else if (i == match.active && match.status == 'live') {
-      if(match.status == 'live')
-      dot1.push(<div className="dot playing"></div>);
+    } else if (i == match.active && match.status == "live") {
+      if (match.status == "live")
+        dot1.push(<div className="dot playing"></div>);
       dot2.push(<div className="dot playing"></div>);
     } else if (match[`set${i}_score1`] < match[`set${i}_score2`]) {
-      w2++;
       dot1.push(<div className="dot lose"></div>);
       dot2.push(<div className="dot won"></div>);
     } else if (match[`set${i}_score1`] > match[`set${i}_score2`]) {
       dot1.push(<div className="dot won"></div>);
       dot2.push(<div className="dot lose"></div>);
-      w1++;
     } else {
       dot1.push(<div className="dot draw"></div>);
       dot2.push(<div className="dot draw"></div>);
@@ -137,11 +138,11 @@ export function LawnTennisScore({ match }) {
           </div>
           {match.status == "live"
             ? match[`set${match.active}_score1`] || 0
-            : w1}
+            : s1}
           <span className="sep">&nbsp; : &nbsp;</span>
           {match.status == "live"
             ? match[`set${match.active}_score2`] || 0
-            : w2}
+            : s2}
         </div>
       </div>
       <div className="dot-box">{dot2}</div>
