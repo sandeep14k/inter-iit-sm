@@ -105,7 +105,8 @@ export function LawnTennisScore({ match }) {
   let w2 = 0;
 
   for (let i = 1; i <= match.active; i++) {
-    console.log(match.i);
+    if(match[`set${i}_score1`] == null) match[`set${i}_score1`] = 0;
+    if(match[`set${i}_score2`] == null) match[`set${i}_score2`] = 0;
     if (i > match.active) {
       dot1.push(<div className="dot not-done"></div>);
       dot2.push(<div className="dot not-done"></div>);
